@@ -1,0 +1,52 @@
+{
+  "estadisticas": [
+    {
+      "id": 1,
+      "titulo": "Autores Publicando",
+      "valor": 1500,
+      "sufijo": "+",
+      "icono": "📚",
+      "activo": true
+    },
+    {
+      "id": 2,
+      "titulo": "Libros en la Plataforma",
+      "valor": 3000,
+      "sufijo": "+",
+      "icono": "📖",
+      "activo": true
+    },
+    {
+      "id": 3,
+      "titulo": "Afiliados Activos",
+      "valor": 500,
+      "sufijo": "+",
+      "icono": "💼",
+      "activo": true
+    },
+    {
+      "id": 4,
+      "titulo": "Lectores Registrados",
+      "valor": 25000,
+      "sufijo": "+",
+      "icono": "👥",
+      "activo": true
+    },
+    {
+      "id": 5,
+      "titulo": "Ventas Mensuales",
+      "valor": 15000,
+      "sufijo": "+",
+      "icono": "💰",
+      "activo": true
+    },
+    {
+      "id": 6,
+      "titulo": "Países Alcanzados",
+      "valor": 45,
+      "sufijo": "+",
+      "icono": "🌍",
+      "activo": true
+    }
+  ]
+} 

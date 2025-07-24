@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Escritor | Publiery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard-escritor-mejorado.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Header -->
+    <header class="dashboard-header">
+      <div class="header-content">
+        <div class="header-left">
+          <h1>Dashboard Escritor</h1>
+          <p id="escritorNombre">Cargando...</p>
+        </div>
+        <div class="header-right">
+          <div class="notifications-badge" id="notificationsBadge">
+            <span id="notificationsCount">0</span>
+          </div>
+          <button id="logoutBtn" class="btn btn-secondary">Cerrar Sesión</button>
+        </div>
+      </div>
+    </header>
+    <!-- Navigation -->
+    <nav class="dashboard-nav">
+      <ul>
+        <li class="active" data-tab="inicio">🏠 Inicio</li>
+        <li data-tab="analytics">📊 Analytics</li>
+        <li data-tab="libros">📚 Mis Libros</li>
+        <li data-tab="subir-libro">📝 Subir Libro</li>
+        <li data-tab="royalties">💰 Royalties</li>
+        <li data-tab="notificaciones">🔔 Notificaciones</li>
+        <li data-tab="mi-testimonio">💬 Mi Testimonio</li>
+        <li data-tab="configuracion">⚙️ Configuración</li>
+      </ul>
+    </nav>
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <!-- Pestaña Configuración -->
+      <section class="tab" id="configuracion">
+        <h2>⚙️ Configuración de Cuenta</h2>
+        <div class="configuracion-grid">
+          <!-- Perfil -->
+          <div class="card">
+            <h3>👤 Perfil de Escritor</h3>
+            <form id="formPerfil">
+              <div class="form-group">
+                <label for="nombrePerfil">Nombre completo:</label>
+                <input type="text" id="nombrePerfil" required>
+              </div>
+              <div class="form-group">
+                <label for="emailPerfil">Email:</label>
+                <input type="email" id="emailPerfil" required>
+              </div>
+              <div class="form-group">
+                <label for="biografiaPerfil">Biografía:</label>
+                <textarea id="biografiaPerfil" rows="4"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Actualizar Perfil</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- Fin Pestaña Configuración -->
+      <!-- Pestaña Inicio -->
+      <section class="tab active" id="inicio">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">📚</div>
+            <div class="stat-content">
+              <h3 id="totalLibros">0</h3>
+              <p>Libros Publicados</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">💰</div>
+            <div class="stat-content">
+              <h3 id="totalVentas">0</h3>
+              <p>Ventas Totales</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">💵</div>
+            <div class="stat-content">
+              <h3 id="gananciasTotales">$0</h3>
+              <p>Ganancias Acumuladas</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📈</div>
+            <div class="stat-content">
+              <h3 id="gananciaPromedio">$0</h3>
+              <p>Promedio por Venta</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-grid">
+          <div class="card">
+            <h3>📈 Tendencias de Ventas</h3>
+            <canvas id="chartTendencias" height="200"></canvas>
+          </div>
+          <div class="card">
+            <h3>📚 Libros Más Vendidos</h3>
+            <div id="librosTop" class="libros-top">
+              <p>Cargando...</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>🔄 Actividad Reciente</h3>
+          <div id="actividadReciente" class="actividad-list">
+            <p>Cargando actividad...</p>
+          </div>
+        </div>
+      </section>
+      <!-- Pestaña Analytics -->
+      <section class="tab" id="analytics">
+        <div class="analytics-header">
+          <h2>📊 Analytics Avanzados</h2>
+          <div class="analytics-controls">
+            <select id="periodoAnalytics">
+              <option value="3">Últimos 3 meses</option>
+              <option value="6">Últimos 6 meses</option>
+              <option value="12" selected>Últimos 12 meses</option>
+            </select>
+            <button id="actualizarAnalytics" class="btn btn-primary">🔄 Actualizar</button>
+          </div>
+        </div>
+        <div class="analytics-grid">
+          <div class="card">
+            <h3>📈 Tendencias Mensuales</h3>
+            <canvas id="chartTendenciasMensuales" height="250"></canvas>
+          </div>
+          <div class="card">
+            <h3>📊 Análisis por Categoría</h3>
+            <canvas id="chartCategorias" height="250"></canvas>
+          </div>
+          <div class="card">
+            <h3>💰 Análisis de Precios</h3>
+            <canvas id="chartPrecios" height="250"></canvas>
+          </div>
+          <div class="card">
+            <h3>📅 Ventas por Día de la Semana</h3>
+            <canvas id="chartDiasSemana" height="250"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <h3>👥 Top Afiliados</h3>
+          <div id="afiliadosTop" class="afiliados-table">
+            <p>Cargando afiliados...</p>
+          </div>
+        </div>
+      </section>
+      <!-- Pestaña Mis Libros -->
+      <section class="tab" id="libros">
+        <div class="libros-header">
+          <h2>📚 Mis Libros</h2>
+          <button id="btnNuevoLibro" class="btn btn-primary">📝 Nuevo Libro</button>
+        </div>
+        <div class="libros-filters">
+          <select id="filtroEstado">
+            <option value="">Todos los estados</option>
+            <option value="aprobado">Aprobados</option>
+            <option value="pendiente">Pendientes</option>
+            <option value="rechazado">Rechazados</option>
+          </select>
+          <select id="filtroCategoria">
+            <option value="">Todas las categorías</option>
+            <option value="negocios">Negocios</option>
+            <option value="autoayuda">Autoayuda</option>
+            <option value="tecnologia">Tecnología</option>
+            <option value="salud">Salud</option>
+            <option value="educacion">Educación</option>
+          </select>
+        </div>
+        <div id="librosGrid" class="libros-grid">
+          <p>Cargando libros...</p>
+        </div>
+      </section>
+      <!-- Pestaña Subir Libro -->
+      <section class="tab" id="subir-libro">
+        <div class="card">
+          <h2>📝 Subir Nuevo Libro</h2>
+          <form id="formSubirLibro" class="form-libro">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="tituloLibro">Título del Libro *</label>
+                <input type="text" id="tituloLibro" required>
+              </div>
+              <div class="form-group">
+                <label for="categoriaLibro">Categoría *</label>
+                <select id="categoriaLibro" required>
+                  <option value="">Seleccionar categoría</option>
+                  <option value="negocios">Negocios</option>
+                  <option value="autoayuda">Autoayuda</option>
+                  <option value="tecnologia">Tecnología</option>
+                  <option value="salud">Salud</option>
+                  <option value="educacion">Educación</option>
+                  <option value="ficcion">Ficción</option>
+                  <option value="no-ficcion">No Ficción</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="precioLibro">Precio (COP) *</label>
+                <input type="number" id="precioLibro" min="1000" step="1000" required>
+              </div>
+              <div class="form-group">
+                <label for="isbnLibro">ISBN (opcional)</label>
+                <input type="text" id="isbnLibro" placeholder="978-0-000000-0-0">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="descripcionLibro">Descripción *</label>
+              <textarea id="descripcionLibro" rows="4" required placeholder="Describe tu libro..."></textarea>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="archivoPDF">Archivo PDF *</label>
+                <input type="file" id="archivoPDF" accept=".pdf" required>
+                <small>Máximo 10MB</small>
+              </div>
+              <div class="form-group">
+                <label for="portadaLibro">Portada (opcional)</label>
+                <input type="file" id="portadaLibro" accept="image/*">
+                <small>JPG o PNG, máximo 2MB</small>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">📤 Subir Libro</button>
+              <button type="reset" class="btn btn-secondary">🔄 Limpiar</button>
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>📋 Requisitos para Subir un Libro</h3>
+          <div class="requisitos-grid">
+            <div class="requisito">
+              <h4>📄 Características Técnicas</h4>
+              <ul>
+                <li>Formato: PDF (pronto EPUB, MOBI)</li>
+                <li>Peso máximo: 10 MB</li>
+                <li>Tamaño ideal: A4 o carta</li>
+              </ul>
+            </div>
+            <div class="requisito">
+              <h4>🖼️ Requisitos de Portada</h4>
+              <ul>
+                <li>Formato JPG o PNG</li>
+                <li>Resolución mínima: 800x1200 px</li>
+                <li>Peso máximo: 2 MB</li>
+              </ul>
+            </div>
+            <div class="requisito">
+              <h4>📜 Normatividad en Colombia</h4>
+              <ul>
+                <li>Registro gratuito en la <strong>DNDA</strong>: <a href="https://www.derechodeautor.gov.co/" target="_blank">derechodeautor.gov.co</a></li>
+                <li>ISBN no obligatorio, pero puedes agregarlo</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Pestaña Royalties -->
+      <section class="tab" id="royalties">
+        <div class="royalties-header">
+          <h2>💰 Royalties y Ganancias</h2>
+          <div class="royalties-summary">
+            <div class="summary-item">
+              <span class="label">Total Ganado:</span>
+              <span class="value" id="totalGanado">$0</span>
+            </div>
+            <div class="summary-item">
+              <span class="label">Disponible:</span>
+              <span class="value" id="disponibleRetiro">$0</span>
+            </div>
+            <div class="summary-item">
+              <span class="label">Retirado:</span>
+              <span class="value" id="totalRetirado">$0</span>
+            </div>
+          </div>
+        </div>
+        <div class="content-grid">
+          <div class="card">
+            <h3>📈 Ganancias por Mes</h3>
+            <canvas id="chartGanancias" height="250"></canvas>
+          </div>
+          <div class="card">
+            <h3>📊 Royalties por Libro</h3>
+            <canvas id="chartRoyaltiesLibros" height="250"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <h3>📋 Historial de Royalties</h3>
+          <div id="historialRoyalties" class="royalties-table">
+            <p>Cargando historial...</p>
+          </div>
+        </div>
+      </section>
+      <!-- Pestaña Notificaciones -->
+      <section class="tab" id="notificaciones">
+        <div class="notificaciones-header">
+          <h2>🔔 Centro de Notificaciones</h2>
+          <div class="notificaciones-actions">
+            <button id="marcarTodasLeidas" class="btn btn-secondary">Marcar todas como leídas</button>
+            <button id="actualizarNotificaciones" class="btn btn-primary">🔄 Actualizar</button>
+          </div>
+        </div>
+        <div class="notificaciones-filters">
+          <label>
+            <input type="checkbox" id="filtroNoLeidas" checked> Solo no leídas
+          </label>
+        </div>
+        <div id="notificacionesList" class="notificaciones-list">
+          <p>Cargando notificaciones...</p>
+        </div>
+      </section>
+      <!-- Pestaña Mi Testimonio -->
+      <section class="tab" id="mi-testimonio">
+        <h2>💬 Mi Testimonio</h2>
+        <div class="testimonio-container">
+          <!-- Eliminar listaTestimoniosAdmin aquí -->
+          <div class="testimonio-info">
+            <h3>Comparte tu experiencia como escritor</h3>
+            <p>Ayuda a otros escritores compartiendo tu experiencia con Publiery. Tu testimonio puede inspirar a nuevos autores a publicar sus obras en nuestra plataforma.</p>
+          </div>
+          <form id="formTestimonio" class="testimonio-form">
+            <div class="form-group">
+              <label for="testimonioTexto">Testimonio:</label>
+              <textarea id="testimonioTexto" name="testimonio" rows="6" placeholder="Cuéntanos tu experiencia como escritor en Publiery, cómo te ha ayudado la plataforma, qué has logrado, etc. (Mínimo 50 caracteres)" required minlength="50" maxlength="500"></textarea>
+              <small class="char-count">0 caracteres</small>
+            </div>
+            <div class="form-group">
+              <label for="testimonioImagen">Foto de perfil (opcional):</label>
+              <input type="file" id="testimonioImagen" name="imagen" accept="image/*">
+              <small>Formatos: JPG, PNG. Máximo 2MB.</small>
+            </div>
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="aceptarPublicacion" required>
+                Acepto que mi testimonio sea publicado en la página principal de Publiery
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary" id="btnEnviarTestimonio">
+              Enviar Testimonio
+            </button>
+          </form>
+          <div id="mensajeTestimonio" class="mensaje" style="display: none;"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <!-- Modal Editar Libro -->
+  <div id="modalEditarLibro" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>✏️ Editar Libro</h3>
+        <span class="close" onclick="cerrarModalEditar()">&times;</span>
+      </div>
+      <form id="formEditarLibro" class="form-libro">
+        <input type="hidden" id="editLibroId">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="editTitulo">Título del Libro</label>
+            <input type="text" id="editTitulo" disabled>
+            <small>El título no se puede editar</small>
+          </div>
+          <div class="form-group">
+            <label for="editCategoria">Categoría *</label>
+            <select id="editCategoria" required>
+              <option value="">Seleccionar categoría</option>
+              <option value="negocios">Negocios</option>
+              <option value="autoayuda">Autoayuda</option>
+              <option value="tecnologia">Tecnología</option>
+              <option value="salud">Salud</option>
+              <option value="educacion">Educación</option>
+              <option value="ficcion">Ficción</option>
+              <option value="no-ficcion">No Ficción</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="editPrecio">Precio (COP)</label>
+            <input type="number" id="editPrecio" disabled>
+            <small>El precio no se puede editar</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="editDescripcion">Descripción *</label>
+          <textarea id="editDescripcion" rows="4" required placeholder="Describe tu libro..."></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">💾 Guardar Cambios</button>
+          <button type="button" onclick="cerrarModalEditar()" class="btn btn-secondary">❌ Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/dashboard-escritor-mejorado.js"></script>
+</body>
+</html> 

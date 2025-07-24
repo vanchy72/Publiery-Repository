@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Restablecer Contraseña - Publiery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body { background: #f4f6fb; font-family: 'Poppins', sans-serif; }
+    .reset-container { max-width: 400px; margin: 60px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 2.5rem 2rem; }
+    h1 { color: #232946; text-align: center; }
+    form { margin-top: 2rem; }
+    input { width: 100%; padding: 0.7rem; margin-bottom: 1.2rem; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem; }
+    button { width: 100%; padding: 0.7rem; background: #10b981; color: #fff; border: none; border-radius: 6px; font-weight: 600; font-size: 1rem; cursor: pointer; }
+    .mensaje { margin-top: 1rem; text-align: center; font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+  <div class="reset-container">
+    <h1>Restablecer Contraseña</h1>
+    <form id="formRestablecer">
+      <input type="password" id="nuevaPass" placeholder="Nueva contraseña" required minlength="6">
+      <input type="password" id="confirmarPass" placeholder="Confirmar contraseña" required minlength="6">
+      <button type="submit">Guardar nueva contraseña</button>
+    </form>
+    <div id="mensaje" class="mensaje"></div>
+  </div>
+  <script>
+    // Obtener token de la URL
+    function getToken() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('token') || '';
+    }
+    document.getElementById('formRestablecer').onsubmit = async function(e) {
+      e.preventDefault();
+      const token = getToken();
+      const nueva = document.getElementById('nuevaPass').value;
+      const confirmar = document.getElementById('confirmarPass').value;
+      const mensaje = document.getElementById('mensaje');
+      if (nueva.length < 6) {
+        mensaje.textContent = 'La contraseña debe tener al menos 6 caracteres.';
+        return;
+      }
+      if (nueva !== confirmar) {
+        mensaje.textContent = 'Las contraseñas no coinciden.';
+        return;
+      }
+      mensaje.textContent = 'Procesando...';
+      try {
+        const res = await fetch('api/usuarios/restablecer_contrasena_token.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token, nueva })
+        });
+        const data = await res.json();
+        if (data.success) {
+          mensaje.textContent = '¡Contraseña restablecida con éxito! Ya puedes iniciar sesión.';
+        } else {
+          mensaje.textContent = data.error || 'No se pudo restablecer la contraseña.';
+        }
+      } catch (err) {
+        mensaje.textContent = 'Error de conexión.';
+      }
+    };
+  </script>
+</body>
+</html> 

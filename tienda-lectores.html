@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tienda de Libros - Publiery</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/tienda.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #4f46e5;
+      color: #fff;
+      width: 100vw;
+      margin: 0;
+      padding: 0.7rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+    }
+    .logo-tienda {
+      font-size: 1.7rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .logo-tienda img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: #fff;
+      object-fit: cover;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .logo-tienda span {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    @media (max-width: 700px) {
+      .header-container {
+        padding: 0 8px;
+      }
+      .logo-tienda span {
+        font-size: 1rem;
+      }
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .main-content {
+      padding: 2rem 0;
+    }
+    
+    .tienda-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .tienda-header h1 {
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+    
+    .tienda-header p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+    
+    .libros-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .libro-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+    
+    .libro-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .libro-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    
+    .libro-card h3 {
+      color: #333;
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+    
+    .libro-card p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+    
+    .libro-precio {
+      margin: 1rem 0;
+    }
+    
+    .precio-original {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 0.9rem;
+      margin-right: 0.5rem;
+    }
+    
+    .precio-afiliado {
+      color: #10b981;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+    
+    /* Modal styles */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    
+    .modal-contenido {
+      background-color: #fff;
+      width: 95%;
+      max-width: 1100px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2rem;
+      border-radius: 12px;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-cerrar {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: #999;
+      cursor: pointer;
+    }
+    
+    .btn-cerrar:hover {
+      color: #333;
+    }
+    
+    .modal-grid {
+      display: flex;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+    
+    .modal-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .modal-portada {
+      width: 180px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .modal-precio {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #10b981;
+      margin: 1rem 0 0.5rem;
+    }
+    
+    #comprarLibroBtn {
+      background-color: #10b981;
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    #comprarLibroBtn:hover {
+      background-color: #059669;
+    }
+    
+    .columna-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .modal-titulo {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    
+    .modal-descripcion {
+      text-align: justify;
+      line-height: 1.5;
+      max-width: 90%;
+      margin-top: 1rem;
+      color: #666;
+    }
+    
+    .columna-autor {
+      border-left: 2px solid #e0e0e0;
+      padding-left: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .modal-autor-foto {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 0.5rem;
+    }
+    
+    .modal-autor-nombre {
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+      text-align: center;
+      color: #333;
+    }
+    
+    .modal-autor-bio {
+      font-size: 1rem;
+      text-align: justify;
+      line-height: 1.4;
+      padding: 0 0.5rem;
+      color: #666;
+    }
+    
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+    }
+    
+    .error {
+      text-align: center;
+      padding: 2rem;
+      color: #dc3545;
+      background: #f8d7da;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Publiery</h1>
+      <nav>
+        <a href="index.html" class="btn-outline">Inicio</a>
+        <a href="login.html" class="btn" onclick="logout()">Cerrar Sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Loading -->
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Cargando tienda...</p>
+      </div>
+
+      <!-- Error -->
+      <div id="error" class="error" style="display: none;"></div>
+
+      <!-- Tienda Header -->
+      <div class="tienda-header">
+        <h1>📚 Tienda de Libros</h1>
+        <p>Descubre increíbles libros de desarrollo personal y emprendimiento</p>
+      </div>
+
+      <!-- Libros Grid -->
+      <div id="contenedorLibros" class="libros-grid">
+        <!-- Los libros se cargarán dinámicamente -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal Detalle Libro -->
+  <div id="detalleLibro" class="modal">
+    <div class="modal-contenido">
+      <button id="cerrarDetalle" class="btn-cerrar">&times;</button>
+
+      <div class="modal-grid">
+        <!-- Columna 1: Portada, Precio, Comprar -->
+        <div class="modal-col columna-libro">
+          <img class="modal-portada" src="" alt="Portada del libro" />
+          <p class="modal-precio">$00.000</p>
+          <button id="comprarLibroBtn">Comprar</button>
+        </div>
+
+        <!-- Columna 2: Título y Descripción -->
+        <div class="modal-col columna-info">
+          <h2 class="modal-titulo">Título del libro</h2>
+          <p class="modal-descripcion">Descripción detallada del libro...</p>
+        </div>
+
+        <!-- Columna 3: Autor -->
+        <div class="modal-col columna-autor">
+          <img class="modal-autor-foto" src="" alt="Foto del autor" />
+          <p class="modal-autor-nombre"><strong>Nombre del autor</strong></p>
+          <p class="modal-autor-bio">Biografía del autor...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Variables globales
+    let userData = null;
+    let currentLibro = null;
+
+    // Inicialización
+    document.addEventListener('DOMContentLoaded', async function() {
+      console.log('🚀 Iniciando Tienda para Lectores...');
+      
+      if (!checkAuthentication()) {
+        window.location.href = 'login.html';
+        return;
+      }
+
+      // Cargar datos del usuario
+      await loadUserData();
+      
+      // Cargar libros
+      await loadLibros();
+      
+      console.log('✅ Tienda inicializada correctamente');
+    });
+
+    // Verificar autenticación
+    function checkAuthentication() {
+      console.log('🔐 Verificando autenticación...');
+      
+      const userDataStr = localStorage.getItem('user_data');
+      
+      if (!userDataStr) {
+        console.log('❌ No hay user_data');
+        return false;
+      }
+      
+      try {
+        const user = JSON.parse(userDataStr);
+        console.log('👤 Usuario:', user);
+        
+        if (user.rol !== 'lector' && user.rol !== 'afiliado' && user.rol !== 'admin') {
+          console.log('❌ Rol no válido:', user.rol);
+          return false;
+        }
+        
+        return true;
+      } catch (error) {
+        console.error('❌ Error parseando user_data:', error);
+        return false;
+      }
+    }
+
+    // Cargar datos del usuario
+    async function loadUserData() {
+      try {
+        const userDataStr = localStorage.getItem('user_data');
+        if (userDataStr) {
+          userData = JSON.parse(userDataStr);
+          updateUserInfo();
+        }
+      } catch (error) {
+        console.error('Error cargando datos del usuario:', error);
+      }
+    }
+
+    // Actualizar información del usuario
+    function updateUserInfo() {
+      if (userData && userData.nombre) {
+        document.getElementById('userName').textContent = userData.nombre;
+      }
+    }
+
+    // Cargar libros
+    async function loadLibros() {
+      try {
+        showLoading(true);
+        
+        const response = await fetch('api/libros/disponibles.php', {
+          credentials: 'include'
+        });
+        const data = await response.json();
+        
+        if (data.success) {
+          const contenedorLibros = document.getElementById('contenedorLibros');
+          if (contenedorLibros) {
+            contenedorLibros.innerHTML = data.libros.map(libro => `
+              <div class="libro-card" onclick="mostrarModalLibro(${JSON.stringify(libro).replace(/"/g, '&quot;')})">
+                <img src="images/${libro.imagen_portada || 'default-book.jpg'}" alt="${libro.titulo}" onerror="this.src='images/default-book.jpg'">
+                <h3>${libro.titulo}</h3>
+                <p>${libro.descripcion}</p>
+                <div class="libro-precio">
+                  <span class="precio-original">$${libro.precio ? parseFloat(libro.precio).toLocaleString() : '0'}</span>
+                  <span class="precio-afiliado">$${libro.precio_afiliado ? parseFloat(libro.precio_afiliado).toLocaleString() : '0'}</span>
+                </div>
+              </div>
+            `).join('');
+            console.log('✅ Libros cargados correctamente');
+          }
+        } else {
+          showError('Error cargando libros: ' + (data.error || 'Error desconocido'));
+        }
+      } catch (error) {
+        console.error('❌ Error cargando libros:', error);
+        showError('Error de conexión al cargar libros');
+      } finally {
+        showLoading(false);
+      }
+    }
+
+    // Mostrar modal del libro
+    function mostrarModalLibro(libro) {
+      console.log('📖 Mostrando modal del libro:', libro.titulo);
+      
+      currentLibro = libro;
+      const modal = document.getElementById('detalleLibro');
+      if (!modal) {
+        console.error('❌ Modal no encontrado');
+        return;
+      }
+      
+      // Imagen grande del libro
+      const portadaElement = modal.querySelector('.modal-portada');
+      if (portadaElement) {
+        portadaElement.src = `images/${libro.imagen_portada || 'default-book.jpg'}`;
+        portadaElement.onerror = function() {
+          this.src = 'images/default-book.jpg';
+        };
+      }
+      
+      // Precio
+      const precioElement = modal.querySelector('.modal-precio');
+      if (precioElement) {
+        let precioFormateado = '0';
+        
+        if (libro.precio_afiliado && libro.precio_afiliado !== null && libro.precio_afiliado !== undefined) {
+          precioFormateado = parseFloat(libro.precio_afiliado).toLocaleString();
+        } else if (libro.precio && libro.precio !== null && libro.precio !== undefined) {
+          precioFormateado = parseFloat(libro.precio).toLocaleString();
+        }
+        
+        precioElement.textContent = `$${precioFormateado}`;
+      }
+      
+      // Título y descripción
+      const tituloElement = modal.querySelector('.modal-titulo');
+      if (tituloElement) {
+        tituloElement.textContent = libro.titulo;
+      }
+      
+      const descripcionElement = modal.querySelector('.modal-descripcion');
+      if (descripcionElement) {
+        descripcionElement.textContent = libro.descripcion;
+      }
+      
+      // Foto y nombre del autor
+      const autorFotoElement = modal.querySelector('.modal-autor-foto');
+      if (autorFotoElement) {
+        autorFotoElement.src = `images/${libro.autor_foto || 'default-author.jpg'}`;
+        autorFotoElement.onerror = function() {
+          this.src = 'images/default-author.jpg';
+        };
+      }
+      
+      const autorNombreElement = modal.querySelector('.modal-autor-nombre');
+      if (autorNombreElement) {
+        autorNombreElement.innerHTML = `<strong>${libro.autor_nombre}</strong>`;
+      }
+      
+      // Bio del autor
+      const autorBioElement = modal.querySelector('.modal-autor-bio');
+      if (autorBioElement) {
+        autorBioElement.textContent = libro.autor_bio || 'Biografía no disponible';
+      }
+      
+      // Configurar botón de compra
+      const comprarBtn = modal.querySelector('#comprarLibroBtn');
+      if (comprarBtn) {
+        console.log('🛒 Configurando botón de compra para libro ID:', libro.id);
+        comprarBtn.onclick = function() {
+          console.log('🛒 Botón de compra clickeado para libro ID:', libro.id);
+          comprarLibro(libro.id);
+        };
+      }
+      
+      // Mostrar modal
+      modal.style.display = 'block';
+      
+      // Configurar cierre del modal
+      const cerrarBtn = modal.querySelector('#cerrarDetalle');
+      if (cerrarBtn) {
+        cerrarBtn.onclick = function() {
+          modal.style.display = 'none';
+        };
+      }
+      
+      // Cerrar al hacer clic fuera del modal
+      window.onclick = function(event) {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      };
+      
+      console.log('✅ Modal del libro mostrado correctamente');
+    }
+
+    // Comprar libro
+    function comprarLibro(libroId) {
+      console.log('🛒 Comprando libro ID:', libroId);
+      // Redirigir a la página de pago con el libro seleccionado
+      window.location.href = `pago.html?libro=${libroId}`;
+    }
+
+    // Salir de la tienda (ir al index)
+    function salirTienda() {
+      console.log('🏠 Saliendo de la tienda hacia el index...');
+      window.location.href = 'index.html';
+    }
+
+    // Cerrar sesión
+    function logout() {
+      localStorage.removeItem('session_token');
+      localStorage.removeItem('user_data');
+      sessionStorage.removeItem('current_user_id');
+      window.location.href = 'login.html';
+    }
+
+    // Funciones de utilidad
+    function showLoading(show) {
+      const loading = document.getElementById('loading');
+      const error = document.getElementById('error');
+      
+      if (show) {
+        loading.style.display = 'block';
+        error.style.display = 'none';
+      } else {
+        loading.style.display = 'none';
+      }
+    }
+
+    function showError(message) {
+      const error = document.getElementById('error');
+      error.textContent = message;
+      error.style.display = 'block';
+      showLoading(false);
+    }
+  </script>
+</body>
+</html> 

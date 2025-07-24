@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cmp_002",
+    "nombre": "Completa tu segundo nivel",
+    "descripcion": "Afíliate y completa tu segundo nivel con 4 afiliados activos en tu red del libro XYZ entre el 1 y el 8 de junio de 2025. Gana un bono de $100.000.",
+    "libro": "XYZ",
+    "fecha_inicio": "2025-06-01",
+    "fecha_fin": "2025-06-08",
+    "condicion": "Completar el segundo nivel con 4 afiliados activos",
+    "bono": 100000,
+    "aporte_autor": "20%",
+    "estado": "activa",
+    "portada": "libro_xyz.png",
+    "material": "https://tusitio.com/material/xyz_bono.zip"
+  }
+]

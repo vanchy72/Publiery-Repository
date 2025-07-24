@@ -1,0 +1,101 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6fa;
+  color: #333;
+}
+
+.pago-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #4f46e5;
+  color: white;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+main.pago-main {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.libro-info {
+  display: flex;
+  gap: 1.5rem;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 65%;
+}
+
+.libro-info img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.detalles-libro h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.detalles-libro p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.resumen-pago {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 30%;
+}
+
+.resumen-pago h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #4f46e5;
+}
+
+.resumen-pago p {
+  margin: 0.8rem 0;
+}
+
+#btnPagar {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+#btnPagar:hover {
+  background-color: #059669;
+}
+
+footer {
+  background-color: #f3f4f6;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}

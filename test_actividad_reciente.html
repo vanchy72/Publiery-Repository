@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Actividad Reciente</title>
+    <link rel="stylesheet" href="css/dashboard-escritor-mejorado.css">
+    <style>
+        body {
+            padding: 2rem;
+            background: #f4f4f9;
+        }
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .test-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #5a67d8;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 class="test-title">🧪 Test Actividad Reciente Mejorada</h1>
+        
+        <div class="card">
+            <h3>🔄 Actividad Reciente</h3>
+            <div id="actividadReciente" class="actividad-list">
+                <p>Cargando actividad...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Datos de prueba
+        const testData = {
+            ventas_recientes: [
+                {
+                    id: 1,
+                    libro_titulo: "NUEVO INTENTO",
+                    ganancia: 105000,
+                    fecha_venta: "2025-07-19 14:30:00"
+                },
+                {
+                    id: 2,
+                    libro_titulo: "NUEVA PRUEBA",
+                    ganancia: 35000,
+                    fecha_venta: "2025-07-19 10:15:00"
+                },
+                {
+                    id: 3,
+                    libro_titulo: "DIOS CONMIGO",
+                    ganancia: 35000,
+                    fecha_venta: "2025-07-18 16:45:00"
+                },
+                {
+                    id: 4,
+                    libro_titulo: "NUEVO INTENTO",
+                    ganancia: 105000,
+                    fecha_venta: "2025-07-18 09:20:00"
+                },
+                {
+                    id: 5,
+                    libro_titulo: "NUEVA PRUEBA",
+                    ganancia: 35000,
+                    fecha_venta: "2025-07-17 20:10:00"
+                }
+            ]
+        };
+
+        // Función de formateo de moneda
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('es-CO', {
+                style: 'currency',
+                currency: 'COP',
+                minimumFractionDigits: 0
+            }).format(amount);
+        }
+
+        // Función de actividad reciente - tabla dinámica
+        function updateActividadReciente() {
+            const container = document.getElementById('actividadReciente');
+            const ventas = testData.ventas_recientes;
+            
+            if (ventas.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-activity">
+                        <div class="empty-icon">📊</div>
+                        <h4>Sin actividad reciente</h4>
+                        <p>Cuando tengas nuevas ventas, aparecerán aquí</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            const html = `
+                <div class="actividad-table-container">
+                    <table class="actividad-table">
+                        <thead>
+                            <tr>
+                                <th class="th-fecha">Fecha</th>
+                                <th class="th-libro">Libro</th>
+                                <th class="th-ganancia">Ganancia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${ventas.map(venta => `
+                                <tr class="actividad-row" data-venta-id="${venta.id}">
+                                    <td class="actividad-fecha-cell">
+                                        <div class="fecha-compacta">
+                                            <span class="fecha-dia">${new Date(venta.fecha_venta).toLocaleDateString('es-CO', { day: 'numeric' })}</span>
+                                            <span class="fecha-mes">${new Date(venta.fecha_venta).toLocaleDateString('es-CO', { month: 'short' })}</span>
+                                        </div>
+                                    </td>
+                                    <td class="actividad-libro">
+                                        <span class="libro-titulo">${venta.libro_titulo}</span>
+                                    </td>
+                                    <td class="actividad-ganancia">
+                                        <span class="ganancia-monto">${formatCurrency(venta.ganancia)}</span>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+            
+            container.innerHTML = html;
+            
+            // Agregar animación de entrada
+            setTimeout(() => {
+                const rows = container.querySelectorAll('.actividad-row');
+                rows.forEach((row, index) => {
+                    row.style.animationDelay = `${index * 0.05}s`;
+                    row.classList.add('animate-in');
+                });
+            }, 100);
+        }
+
+        // Cargar la actividad al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            updateActividadReciente();
+        });
+    </script>
+</body>
+</html> 

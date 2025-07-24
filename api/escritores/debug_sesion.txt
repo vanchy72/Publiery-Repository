@@ -1,0 +1,3442 @@
+PHPSESSID: opcfeufusrgc9ll1339bfo57ng
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: opcfeufusrgc9ll1339bfo57ng
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: opcfeufusrgc9ll1339bfo57ng
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: b1klg5dfg3eodorsdjk51qu63v
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: b1klg5dfg3eodorsdjk51qu63v
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: b1klg5dfg3eodorsdjk51qu63v
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: opcfeufusrgc9ll1339bfo57ng
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: opcfeufusrgc9ll1339bfo57ng
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: opcfeufusrgc9ll1339bfo57ng
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: b1klg5dfg3eodorsdjk51qu63v
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: b1klg5dfg3eodorsdjk51qu63v
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: b1klg5dfg3eodorsdjk51qu63v
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: NO COOKIE
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: hckhcn4r9afcfikfgf64v7l0jl
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: hckhcn4r9afcfikfgf64v7l0jl
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: hckhcn4r9afcfikfgf64v7l0jl
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2009@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: NO COOKIE
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0h6fb5upu7ld5gbqmk72i3oq5i
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: NO COOKIE
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: m5b9d49c2ec12u0s4au48t8ifj
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: m5b9d49c2ec12u0s4au48t8ifj
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: m5b9d49c2ec12u0s4au48t8ifj
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: m5b9d49c2ec12u0s4au48t8ifj
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: m5b9d49c2ec12u0s4au48t8ifj
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: m5b9d49c2ec12u0s4au48t8ifj
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: m5b9d49c2ec12u0s4au48t8ifj
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: m5b9d49c2ec12u0s4au48t8ifj
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: m5b9d49c2ec12u0s4au48t8ifj
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: m5b9d49c2ec12u0s4au48t8ifj
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: m5b9d49c2ec12u0s4au48t8ifj
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: m5b9d49c2ec12u0s4au48t8ifj
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0posi0ndpiq227bhck6n5flsfe
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0posi0ndpiq227bhck6n5flsfe
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0posi0ndpiq227bhck6n5flsfe
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0posi0ndpiq227bhck6n5flsfe
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0posi0ndpiq227bhck6n5flsfe
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 0posi0ndpiq227bhck6n5flsfe
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: br1herjagh1ml50if9vt9r1i07
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: NO COOKIE
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: kt9fkk4qr21i6ceiitr5q5uhsq
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: h6h0c3530ftgcapqqmknhjlg3q
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: NO COOKIE
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: lts7j8irrdkfo9231pevp83jup
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: lts7j8irrdkfo9231pevp83jup
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: test_session
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: lts7j8irrdkfo9231pevp83jup
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: odrecuoqantv0r4v8dpr6eik42
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 36c7i9n68vo7mp5t8vj8kpu1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: odrecuoqantv0r4v8dpr6eik42
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: odrecuoqantv0r4v8dpr6eik42
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: odrecuoqantv0r4v8dpr6eik42
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: odrecuoqantv0r4v8dpr6eik42
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: odrecuoqantv0r4v8dpr6eik42
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: odrecuoqantv0r4v8dpr6eik42
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: nr3kqqk7130de0t852vgk9jri2
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: 6pmme57mgcpjmuglgk7loj6gqp
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: odlllaret36g4dqvhiadd2hv2e
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: j9t6g6cs1jgh0gu09vumsgpg6l
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: odrecuoqantv0r4v8dpr6eik42
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: NO COOKIE
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: m1oovt5c7vc9af0a1njjmc6isc
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: m1oovt5c7vc9af0a1njjmc6isc
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: m1oovt5c7vc9af0a1njjmc6isc
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: m1oovt5c7vc9af0a1njjmc6isc
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: irh907f6f24k59tn5fi53hmb52
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 43
+    [nombre] => DORA RAMIREZ
+    [email] => doral_23@hotmail.com
+    [password] => $2y$10$0nNXtz.AmoaAZAKd0a2KEOLpdt9kefcZHuQt8lcDOrQb42jyI2mFi
+    [documento] => 32831318
+    [rol] => afiliado
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:24:48
+    [fecha_ultimo_login] => 
+    [token_activacion] => b9a74ec1dab5f9d26ff059d1d5fae0c0e447dab2e6ed1955f89f4abb024ee76b
+    [fecha_expiracion_token] => 2025-07-13 23:24:48
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: qc7oqmnn13n41a1n1ptjjt6is4
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: bt7cgnhpgdnl0m8m326vsaf8n2
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 43
+    [nombre] => DORA RAMIREZ
+    [email] => doral_23@hotmail.com
+    [password] => $2y$10$0nNXtz.AmoaAZAKd0a2KEOLpdt9kefcZHuQt8lcDOrQb42jyI2mFi
+    [documento] => 32831318
+    [rol] => afiliado
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:24:48
+    [fecha_ultimo_login] => 
+    [token_activacion] => b9a74ec1dab5f9d26ff059d1d5fae0c0e447dab2e6ed1955f89f4abb024ee76b
+    [fecha_expiracion_token] => 2025-07-13 23:24:48
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 9d71j53nsscr1gemg8sdet88sv
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 48
+    [nombre] => Administrador
+    [email] => admin@publiery.com
+    [password] => $2y$10$.RMZUV3c02ufg69BGpBArumcH16F6kjPPLOI6zgOcezztKFU7Tqiy
+    [documento] => 99999999
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 20:42:44
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+

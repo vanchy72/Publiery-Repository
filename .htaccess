@@ -1,0 +1,100 @@
+﻿# Configuración básica
+RewriteEngine On
+
+# ========================================
+# CONFIGURACIÓN DE CACHÉ PARA DESARROLLO
+# ========================================
+
+# Desactivar caché para archivos de desarrollo
+<IfModule mod_headers.c>
+    # Desactivar caché para archivos HTML
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </FilesMatch>
+    
+    # Desactivar caché para archivos PHP
+    <FilesMatch "\.php$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </FilesMatch>
+    
+    # Desactivar caché para archivos JavaScript
+    <FilesMatch "\.js$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </FilesMatch>
+    
+    # Desactivar caché para archivos CSS
+    <FilesMatch "\.css$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </FilesMatch>
+    
+    # Permitir caché para imágenes (para mejor rendimiento)
+    <FilesMatch "\.(jpg|jpeg|png|gif|ico|svg)$">
+        Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
+    
+    # Permitir caché para archivos PDF y otros documentos
+    <FilesMatch "\.(pdf|doc|docx|xls|xlsx|txt)$">
+        Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
+</IfModule>
+
+# ========================================
+# CONFIGURACIÓN DE SEGURIDAD
+# ========================================
+
+# Proteger archivos sensibles
+<FilesMatch "\.(env|config|ini|log|sql)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Proteger directorios sensibles
+<IfModule mod_rewrite.c>
+    RewriteRule ^(config|database|vendor)/ - [F,L]
+</IfModule>
+
+# ========================================
+# CONFIGURACIÓN DE COMPRESIÓN
+# ========================================
+
+# Comprimir archivos para mejor rendimiento
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# ========================================
+# CONFIGURACIÓN DE MIME TYPES
+# ========================================
+
+# Configurar tipos MIME para archivos JSON
+<IfModule mod_mime.c>
+    AddType application/json .json
+</IfModule>
+
+# ========================================
+# CONFIGURACIÓN DE ERRORES
+# ========================================
+
+# Página de error personalizada (opcional)
+# ErrorDocument 404 /404.html
+# ErrorDocument 500 /500.html
+
+# Configuración de tipos MIME para archivos JavaScript
+AddType application/javascript .js
+AddType text/javascript .js

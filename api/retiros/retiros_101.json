@@ -1,0 +1,14 @@
+[
+  {
+    "monto": 50000,
+    "metodo": "nequi",
+    "estado": "pendiente",
+    "fecha": "2025-06-10"
+  },
+  {
+    "monto": 70000,
+    "metodo": "bancolombia",
+    "estado": "pagado",
+    "fecha": "2025-05-25"
+  }
+]

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro | TuPlataforma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/registro.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>TuPlataforma</h1>
+      <nav>
+        <a href="index.html" class="btn-outline">Inicio</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="registro-section">
+    <!-- Imagen izquierda -->
+    <div class="registro-imagen">
+      <img src="images/joven-senalando.png" alt="Persona señalando el formulario">
+    </div>
+
+    <!-- Formulario derecha -->
+    <div class="registro-formulario">
+      <form id="formularioRegistro">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="documento">Documento (ID):</label>
+        <input type="text" id="documento" name="documento" required>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$" title="La contraseña debe tener al menos 8 caracteres, incluyendo una letra mayúscula, una minúscula y un número">
+               
+        <input type="hidden" id="id_campaña" name="id_campaña" value="">
+        <label for="rol">Registrarme como:</label>
+        <select id="rol" name="rol" required>
+          <option value="">Selecciona una opción</option>
+          <option value="afiliado">Afiliado</option>
+          <option value="autor">Escritor</option>
+          <option value="lector">Lector</option>
+        </select>
+        
+        <div id="mensajeRef" style="display:none; color: #2563eb; font-size: 0.97em; margin-bottom: 8px;">
+          Has sido invitado por un afiliado. Solo puedes registrarte como afiliado y tu patrocinador ya está asignado.
+        </div>
+        
+        <div id="campoCodigoAfiliado" style="display: none;">
+          <label for="codigo_afiliado">Código de quien te afilió (opcional):</label>
+          <input type="text" id="codigo_afiliado" name="codigo_afiliado" placeholder="Si tienes un código de afiliado, escríbelo aquí" />
+        </div>               
+        <button type="submit" id="btnRegistro" class="btn-registro">Registrarme</button>
+      </form>
+
+      <p class="login-link">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 TuPlataforma. Todos los derechos reservados. <a href="politica-privacidad.html">Política de Privacidad</a> | <a href="terminos.html">Términos de Uso</a></p>
+    </div>
+  </footer>
+
+  <div id="mensajeActivacion" style="display:none; background:#fff3cd; color:#856404; padding:12px; border-radius:6px; margin-bottom:16px;">
+    Tu cuenta está pendiente de activación. Realiza tu primera compra para activarte y acceder a todos los beneficios.
+  </div>
+
+  <script src="js/registro.js?v=1.1"></script>
+  
+</body>
+</html>
+

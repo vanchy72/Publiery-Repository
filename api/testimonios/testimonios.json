@@ -1,0 +1,14 @@
+{
+    "testimonios": [
+        {
+            "id": 1,
+            "nombre": "SANTIAGO JOSÉ ORTEGA RAMIREZ",
+            "rol": "Escritor",
+            "texto": "KJHKJH  cxksbdkjksn c xbksbkjbx x jkwbkjabkjbkjbx wdkwdkbkjbkjds kjwhkhkjhds wdkjbnkshkj ssjhgjhgs",
+            "imagen": "uploads\/testimonios\/testimonio_46_1752876475.jpg",
+            "activo": true,
+            "fecha_creacion": "2025-07-19 00:07:55",
+            "usuario_id": 46
+        }
+    ]
+}

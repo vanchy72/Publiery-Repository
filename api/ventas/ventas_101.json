@@ -1,0 +1,11 @@
+[
+  {
+    "venta_id": "v001",
+    "afiliado_id": 101,
+    "libro_id": "libro_001",
+    "fecha": "2025-01-20",
+    "tipo": "campaña",
+    "cantidad": 1,
+    "total": 25000
+  }
+]

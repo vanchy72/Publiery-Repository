@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Administrador | Publiery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/login.css" />
+  <style>
+    .admin-login-wrapper {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .admin-login-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      padding: 3rem;
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+    }
+    .admin-logo {
+      margin-bottom: 2rem;
+    }
+    .admin-logo h1 {
+      color: #4f46e5;
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .admin-logo .subtitle {
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+    .admin-form input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.2s;
+    }
+    .admin-form input:focus {
+      outline: none;
+      border-color: #4f46e5;
+    }
+    .admin-btn {
+      width: 100%;
+      background: #4f46e5;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .admin-btn:hover {
+      background: #4338ca;
+    }
+    .admin-btn:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+    }
+    .error-message {
+      color: #dc2626;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      display: none;
+    }
+    .success-message {
+      color: #059669;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      display: none;
+    }
+    .back-link {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .back-link a {
+      color: #6b7280;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .back-link a:hover {
+      color: #4f46e5;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-login-wrapper">
+    <div class="admin-login-card">
+      <div class="admin-logo">
+        <h1>Publiery</h1>
+        <div class="subtitle">Panel de Administración</div>
+      </div>
+      
+      <div id="errorMessage" class="error-message"></div>
+      <div id="successMessage" class="success-message"></div>
+      
+      <form id="adminLoginForm" class="admin-form">
+        <input 
+          type="email" 
+          id="adminEmail" 
+          name="email" 
+          placeholder="Email de administrador" 
+          required 
+        />
+        <input 
+          type="password" 
+          id="adminPassword" 
+          name="password" 
+          placeholder="Contraseña" 
+          required 
+        />
+        <button type="submit" id="adminLoginBtn" class="admin-btn">
+          Iniciar Sesión como Administrador
+        </button>
+      </form>
+      
+      <div class="back-link">
+        <a href="index.html">← Volver al sitio principal</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('adminLoginForm');
+      const emailInput = document.getElementById('adminEmail');
+      const passwordInput = document.getElementById('adminPassword');
+      const loginBtn = document.getElementById('adminLoginBtn');
+      const errorDiv = document.getElementById('errorMessage');
+      const successDiv = document.getElementById('successMessage');
+
+      function showMessage(message, type) {
+        errorDiv.style.display = 'none';
+        successDiv.style.display = 'none';
+        
+        if (type === 'error') {
+          errorDiv.textContent = message;
+          errorDiv.style.display = 'block';
+        } else if (type === 'success') {
+          successDiv.textContent = message;
+          successDiv.style.display = 'block';
+        }
+      }
+
+      function setLoading(loading) {
+        loginBtn.disabled = loading;
+        loginBtn.textContent = loading ? 'Iniciando sesión...' : 'Iniciar Sesión como Administrador';
+      }
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+
+        if (!email || !password) {
+          showMessage('Por favor completa todos los campos', 'error');
+          return;
+        }
+
+        setLoading(true);
+        showMessage('', 'error');
+
+        try {
+          const response = await fetch('api/auth/login.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              email: email,
+              password: password
+            })
+          });
+
+          const data = await response.json();
+
+          if (data.success) {
+            // Verificar que el usuario es admin
+            if (data.user.rol === 'admin') {
+              showMessage('Inicio de sesión exitoso. Redirigiendo...', 'success');
+              
+              // Guardar datos de sesión
+              localStorage.setItem('admin_data', JSON.stringify(data.user));
+              sessionStorage.setItem('admin_user_id', data.user.id.toString());
+              
+              // Redirigir al panel de administración
+              setTimeout(() => {
+                window.location.href = 'admin-panel.html';
+              }, 1000);
+            } else {
+              showMessage('Acceso denegado. Solo administradores pueden acceder a este panel.', 'error');
+            }
+          } else {
+            showMessage(data.error || 'Credenciales incorrectas', 'error');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          showMessage('Error de conexión. Intenta nuevamente.', 'error');
+        } finally {
+          setLoading(false);
+        }
+      });
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,26 @@
+.container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: sans-serif;
+}
+.contrato {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-left: 4px solid #5a67d8;
+  margin: 1rem 0;
+}
+.oculto {
+  display: none;
+}
+.libro-item {
+  margin: 0.5rem 0;
+}
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #5a67d8;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Confirmar Compra - Publiery</title>
+  <link rel="stylesheet" href="css/pago.css" />
+</head>
+<body>
+  <div class="pago-container">
+    <header>
+      <h1>Confirmar Compra</h1>
+    </header>
+
+    <main class="pago-main">
+      <div class="libro-info">
+        <img id="libroPortada" src="" alt="Portada del libro" />
+        <div class="detalles-libro">
+          <h2 id="libroTitulo">Título del Libro</h2>
+          <p id="libroDescripcion">Descripción del libro...</p>
+          <p class="precio"><strong>Precio:</strong> <span id="libroPrecio"></span></p>
+        </div>
+      </div>
+
+      <div class="resumen-pago">
+        <h3>Resumen</h3>
+        <p>Producto: <span id="resumenTitulo">---</span></p>
+        <p>Total a pagar: <strong id="resumenPrecio">---</strong></p>
+        <button id="btnPagar">Pagar ahora</button>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Publiery - Todos los derechos reservados</p>
+    </footer>
+  </div>
+
+  <script src="js/pago.js"></script>
+</body>
+</html>

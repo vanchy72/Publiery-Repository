@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Afiliado</title>
+  <link rel="stylesheet" href="css/dashboard-afiliado-consolidado.css" />
+  
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/tienda.css">
+</head>
+<script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="logo">Publiery</div>
+      <nav>
+        <ul>
+          <li class="active" data-tab="inicio">Inicio</li>
+          <li data-tab="analytics">Analytics</li>
+          <li data-tab="mi-red">Mi Red</li>
+          <li data-tab="comisiones">Comisiones</li>
+          <li data-tab="retiros">Retiros</li>
+          <li data-tab="campanas">Campañas</li>
+          <li data-tab="material">Material</li>
+          <li data-tab="tienda">Tienda</li>
+          <li data-tab="notificaciones">Notificaciones</li>
+          <li data-tab="mi-testimonio">Mi Testimonio</li>
+          <li data-tab="configuracion">Configuración</li>
+          <li><a href="index.html" class="logout">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="tab active" id="inicio">
+        <h1>Bienvenido, Afiliado</h1>
+        
+        <!-- Información de activación -->
+        <div id="activacionInfo">
+          <!-- Se llena dinámicamente -->
+        </div>
+        
+        <!-- Estadísticas principales -->
+        <div class="stats-grid">
+          <div class="card">
+            <h3>Afiliados</h3>
+            <p id="totalAfiliados">0</p>
+            <small id="crecimientoAfiliados">+0%</small>
+          </div>
+          <div class="card">
+            <h3>Ventas</h3>
+            <p id="totalVentas">0</p>
+            <small id="crecimientoVentas">+0%</small>
+          </div>
+          <div class="card">
+            <h3>Comisiones</h3>
+            <p id="totalComisiones">$0</p>
+            <small id="crecimientoComisiones">+0%</small>
+          </div>
+          <div class="card">
+            <h3>Saldo</h3>
+            <p id="saldoDisponible">$0</p>
+            <small>Disponible para retiro</small>
+          </div>
+        </div>
+        
+        <!-- Información del afiliado -->
+        <section class="datos-afiliado">
+          <h2>Tu Información de Afiliación</h2>
+          <div class="afiliado-grid">
+            <div class="info-box">
+              <h4>Información Básica</h4>
+              <p><strong>ID de Afiliado:</strong> <span id="afiliadoId"></span></p>
+              <p><strong>Nombre:</strong> <span id="afiliadoNombre"></span></p>
+              <p><strong>Email:</strong> <span id="emailAfiliado"></span></p>
+              <p><strong>Fecha de Registro:</strong> <span id="fechaRegistro">...</span></p>
+              <p><strong>Nivel:</strong> <span id="nivelAfiliado">...</span></p>
+            </div>
+            <div class="info-box">
+              <h4>Estado de Activación</h4>
+              <p><strong>Estado:</strong> <span id="estadoActivacion" class="estado-badge">...</span></p>
+              <p><strong>Frontal Asignado:</strong> <span id="frontalAsignado">...</span></p>
+              <p><strong>Patrocinador:</strong> <span id="nombrePatrocinador">...</span></p>
+            </div>
+            <div class="info-box">
+              <h4>Enlace de Afiliado</h4>
+              <p><strong>Tu Enlace:</strong></p>
+              <a id="enlaceAfiliado" href="#" target="_blank" class="enlace-afiliado">...</a>
+              <button onclick="copiarEnlace('enlaceAfiliado')" class="btn-copiar">📋 Copiar</button>
+            </div>
+            <div class="info-box">
+              <h4>Código QR</h4>
+              <img id="codigoQR" src="" alt="Código QR de tu enlace de afiliado" style="max-width:120px; display: none;">
+              <button onclick="descargarQR()" class="btn-descargar">📥 Descargar QR</button>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Actividad reciente -->
+        <section class="actividad-reciente">
+          <h3>Actividad Reciente</h3>
+          <div id="actividadReciente">
+            <!-- Se llena dinámicamente -->
+          </div>
+        </section>
+        
+        <!-- Gráfico de tendencias -->
+        <!-- ELIMINADO: Tendencias de Ventas en INICIO -->
+        <!-- <div class="grafico">
+          <h3>Tendencias de Ventas</h3>
+          <canvas id="chartTendencias"></canvas>
+        </div> -->
+      </section>
+      <section class="tab" id="mi-red">
+        <h2>Mi Red Multinivel (vista por niveles)</h2>
+        <div class="accordion-container" id="accordionRed">
+          <p>Cargando red...</p>
+        </div>
+        <!-- 🔘 Botón de prueba (comentado - función no implementada) -->
+        <!-- <button onclick="agregarAfiliadoDePrueba()">➕ Simular nuevo afiliado</button> -->
+      </section>
+      <section class="tab" id="comisiones">
+        <h2>Resumen de Comisiones</h2>
+
+        <div class="comisiones-cards">
+          <div class="card"><h4>Total Ganado</h4><p id="totalComisiones">$0</p></div>
+          <div class="card"><h4>Pagadas</h4><p id="comisionesPagadas">$0</p></div>
+          <div class="card"><h4>Pendientes</h4><p id="comisionesPendientes">$0</p></div>
+        </div>
+        <div class="grafico">
+          <canvas id="graficoComisionesPorNivel"></canvas>
+        </div>
+
+        <table class="tabla-comisiones">
+          <thead>
+            <tr><th>Nivel</th><th>Monto</th><th>Estado</th><th>Fecha</th></tr>
+          </thead>
+          <tbody id="tablaComisionesBody">
+            <!-- Filas dinámicas -->
+          </tbody>
+        </table>
+        <div class="filtros">
+          <label>Nivel:
+            <select id="filtroNivel">
+              <option value="">Todos</option>
+              <option value="0">Nivel 0</option>
+              <option value="1">Nivel 1</option>
+              <option value="2">Nivel 2</option>
+              <option value="3">Nivel 3</option>
+              <option value="4">Nivel 4</option>
+              <option value="5">Nivel 5</option>
+              <option value="6">Nivel 6</option>
+            </select>
+          </label>
+          <button id="descargarBtn" class="btn">Descargar Reporte</button>
+        </div>
+        <div class="filtros-comisiones">
+          <label for="filtro-estado">Estado:</label>
+          <select id="filtro-estado">
+            <option value="todos">Todos</option>
+            <option value="pagada">Pagada</option>
+            <option value="pendiente">Pendiente</option>
+          </select>
+        </div>     
+      </section>
+
+      <section class="tab" id="retiros">
+        <h2>Solicitar Retiro</h2>
+
+        <div class="retiro-info">
+          <p><strong>Saldo disponible:</strong> <span id="saldoDisponible">$0</span></p>
+        </div>
+
+        <form id="formRetiro">
+          <label for="montoRetiro">Monto a retirar:</label>
+          <input type="number" id="montoRetiro" placeholder="$0" min="10000" required>
+
+          <label for="metodoRetiro">Método:</label>
+          <select id="metodoRetiro">
+            <option value="nequi">Nequi</option>
+            <option value="bancolombia">Bancolombia</option>
+            <option value="daviplata">Daviplata</option>
+          </select>
+
+          <button type="submit" class="btn">Solicitar Retiro</button>
+        </form>
+
+        <h3>Historial de Retiros</h3>
+        <table class="tabla-retiros">
+          <thead>
+            <tr><th>Monto</th><th>Método</th><th>Estado</th><th>Fecha</th></tr>
+          </thead>
+          <tbody id="tablaRetirosBody">
+            <tr><td colspan="4">Cargando historial...</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="tab" id="material">
+        <h2>Material Promocional</h2>
+
+        <div class="material-grid">
+          <div class="material-card">
+            <h4>Enlace de Afiliado</h4>
+            <input type="text" id="linkAfiliado" readonly />
+            <button id="copiarEnlaceBtn">Copiar Enlace</button>
+          </div>
+
+          <div class="material-card">
+            <h4>Mi Código QR</h4>
+            <img id="qrAfiliadoMaterial" src="" alt="Código QR" />
+            <a id="descargarQRMaterial" class="btn" download>Descargar QR</a>
+          </div>
+
+          <div class="material-card">
+            <h4>Banners oficiales</h4>
+            <ul>
+              <li><a href="images/banner_horizontal.jpg" download>Banner Horizontal</a></li>
+              <li><a href="images/banner_vertical.jpg" download>Banner Vertical</a></li>
+              <li><a href="images/logo_afiliado.png" download>Logo Oficial</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab" id="analytics">
+        <h2>Analytics Avanzados</h2>
+        
+        <!-- Filtros de período -->
+        <div class="analytics-filters">
+          <label for="periodoAnalytics">Período de análisis:</label>
+          <select id="periodoAnalytics">
+            <option value="7">Últimos 7 días</option>
+            <option value="30" selected>Últimos 30 días</option>
+            <option value="90">Últimos 90 días</option>
+            <option value="180">Últimos 6 meses</option>
+          </select>
+          <button id="actualizarAnalytics" class="btn">Actualizar</button>
+        </div>
+
+        <!-- Métricas principales -->
+        <div class="analytics-metrics">
+          <div class="metric-card">
+            <h3>Ventas</h3>
+            <div class="metric-value" id="totalVentasAnalytics">0</div>
+            <div class="metric-change" id="crecimientoVentas">+0%</div>
+          </div>
+          <div class="metric-card">
+            <h3>Volumen</h3>
+            <div class="metric-value" id="volumenVentasAnalytics">$0</div>
+            <div class="metric-change" id="crecimientoVolumen">+0%</div>
+          </div>
+          <div class="metric-card">
+            <h3>Comisiones</h3>
+            <div class="metric-value" id="comisionesAnalytics">$0</div>
+            <div class="metric-change" id="crecimientoComisiones">+0%</div>
+          </div>
+          <div class="metric-card">
+            <h3>Conversión</h3>
+            <div class="metric-value" id="tasaConversion">0%</div>
+            <div class="metric-subtitle">Tasa de conversión</div>
+          </div>
+        </div>
+
+        <!-- Gráficos -->
+        <div class="analytics-charts">
+          <div class="chart-container">
+            <h3>Tendencias de Ventas</h3>
+            <canvas id="chartTendencias"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>Productos Más Vendidos</h3>
+            <canvas id="chartProductos"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>Análisis de Horarios</h3>
+            <canvas id="chartHorarios"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>Rendimiento por Nivel</h3>
+            <canvas id="chartNiveles"></canvas>
+          </div>
+        </div>
+
+        <!-- Tabla de productos top -->
+        <div class="productos-top">
+          <h3>Top 10 Productos</h3>
+          <table class="tabla-productos">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Ventas</th>
+                <th>Volumen</th>
+                <th>Comisiones</th>
+                <th>Precio Promedio</th>
+              </tr>
+            </thead>
+            <tbody id="tablaProductosTop">
+              <!-- Datos dinámicos -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="tab" id="campanas">
+        <h2>Gestión de Campañas</h2>
+        
+        <!-- Botón para crear nueva campaña -->
+        <div class="campanas-header">
+          <button id="btnNuevaCampana" class="btn btn-primary">➕ Nueva Campaña</button>
+        </div>
+
+        <!-- Lista de campañas -->
+        <div class="campanas-grid" id="campanasGrid">
+          <p>Cargando campañas...</p>
+        </div>
+
+        <!-- Modal para crear/editar campaña -->
+        <div id="modalCampana" class="modal">
+          <div class="modal-contenido">
+            <button id="cerrarModalCampana" class="btn-cerrar">&times;</button>
+            <h3 id="tituloModalCampana">Nueva Campaña</h3>
+            
+            <form id="formCampana">
+              <div class="form-group">
+                <label for="nombreCampana">Nombre de la campaña:</label>
+                <input type="text" id="nombreCampana" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="descripcionCampana">Descripción:</label>
+                <textarea id="descripcionCampana" rows="3" required></textarea>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="objetivoVentas">Objetivo de ventas:</label>
+                  <input type="number" id="objetivoVentas" min="0">
+                </div>
+                
+                <div class="form-group">
+                  <label for="fechaInicio">Fecha de inicio:</label>
+                  <input type="date" id="fechaInicio">
+                </div>
+                
+                <div class="form-group">
+                  <label for="fechaFin">Fecha de fin:</label>
+                  <input type="date" id="fechaFin">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="enlacePersonalizado">Enlace personalizado:</label>
+                <input type="text" id="enlacePersonalizado" placeholder="opcional">
+              </div>
+              
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Guardar Campaña</button>
+                <button type="button" id="cancelarCampana" class="btn btn-secondary">Cancelar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab" id="tienda">
+        <h2>Tienda de Libros</h2>
+        <div id="contenedorLibros" class="libros-grid"></div>
+      
+        <!-- Modal Detalle Libro -->
+        <div id="detalleLibro" class="modal">
+          <div class="modal-contenido">
+            <button id="cerrarDetalle" class="btn-cerrar">&times;</button>
+
+            <div class="modal-grid">
+              <!-- Columna 1: Portada, Precio, Comprar -->
+              <div class="modal-col columna-libro">
+                <img class="modal-portada" src="" alt="Portada del libro" />
+                <p class="modal-precio">$00.000</p>
+                <button id="comprarLibroDashboardBtn">Comprar</button>
+              </div>
+
+              <!-- Columna 2: Título y Descripción -->
+              <div class="modal-col columna-info">
+                <h2 class="modal-titulo">Título del libro</h2>
+                <p class="modal-descripcion">Descripción detallada del libro...</p>
+              </div>
+
+              <!-- Columna 3: Autor -->
+              <div class="modal-col columna-autor">
+                <img class="modal-autor-foto" src="" alt="Foto del autor" />
+                <p class="modal-autor-nombre"><strong>Nombre del autor</strong></p>
+                <p class="modal-autor-bio">Biografía del autor...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="tab" id="notificaciones">
+        <h2>Centro de Notificaciones</h2>
+        
+        <!-- Header con contador y acciones -->
+        <div class="notificaciones-header">
+          <div class="notificaciones-info">
+            <span id="contadorNotificaciones">0</span> notificaciones no leídas
+          </div>
+          <div class="notificaciones-actions">
+            <button id="marcarTodasLeidas" class="btn btn-secondary">Marcar todas como leídas</button>
+            <button id="actualizarNotificaciones" class="btn">🔄 Actualizar</button>
+          </div>
+        </div>
+
+        <!-- Lista de notificaciones -->
+        <div class="notificaciones-list" id="notificacionesList">
+          <p>Cargando notificaciones...</p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="notificaciones-filters">
+          <label>
+            <input type="checkbox" id="filtroNoLeidas" checked> Solo no leídas
+          </label>
+        </div>
+      </section>
+
+      <section class="tab" id="mi-testimonio">
+        <h2>Mi Testimonio</h2>
+        
+        <div class="testimonio-container">
+          <div class="testimonio-info">
+            <h3>Comparte tu experiencia</h3>
+            <p>Ayuda a otros afiliados compartiendo tu experiencia con Publiery. Tu testimonio puede inspirar a nuevos afiliados a unirse a nuestra comunidad.</p>
+          </div>
+          
+          <form id="formTestimonio" class="testimonio-form">
+            <div class="form-group">
+              <label for="testimonioTexto">Tu testimonio:</label>
+              <textarea 
+                id="testimonioTexto" 
+                name="testimonio" 
+                rows="6" 
+                placeholder="Cuéntanos tu experiencia con Publiery, cómo te ha ayudado, qué has logrado, etc. (Mínimo 50 caracteres)"
+                required
+                minlength="50"
+                maxlength="500"
+              ></textarea>
+              <small class="char-count">0/500 caracteres</small>
+            </div>
+            
+            <div class="form-group">
+              <label for="testimonioImagen">Foto de perfil (opcional):</label>
+              <input 
+                type="file" 
+                id="testimonioImagen" 
+                name="imagen" 
+                accept="image/*"
+              >
+              <small>Formatos: JPG, PNG. Máximo 2MB.</small>
+            </div>
+            
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="aceptarPublicacion" required>
+                Acepto que mi testimonio sea publicado en la página principal de Publiery
+              </label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" id="btnEnviarTestimonio">
+              Enviar Testimonio
+            </button>
+          </form>
+          
+          <div id="mensajeTestimonio" class="mensaje" style="display: none;"></div>
+        </div>
+      </section>
+
+      <section class="tab" id="configuracion">
+        <h2>Configuración de Cuenta</h2>
+        
+        <div class="configuracion-grid">
+          <!-- Configuración de perfil -->
+          <div class="configuracion-section">
+            <h3>Perfil de Afiliado</h3>
+            <form id="formPerfil">
+              <div class="form-group">
+                <label for="nombrePerfil">Nombre completo:</label>
+                <input type="text" id="nombrePerfil" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="emailPerfil">Email:</label>
+                <input type="email" id="emailPerfil" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="telefonoPerfil">Teléfono:</label>
+                <input type="tel" id="telefonoPerfil">
+              </div>
+              
+              <div class="form-group">
+                <label for="paisPerfil">País:</label>
+                <select id="paisPerfil">
+                  <option value="CO">Colombia</option>
+                  <option value="MX">México</option>
+                  <option value="AR">Argentina</option>
+                  <option value="ES">España</option>
+                  <option value="US">Estados Unidos</option>
+                </select>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Actualizar Perfil</button>
+            </form>
+          </div>
+
+          <!-- Configuración de notificaciones -->
+          <div class="configuracion-section">
+            <h3>Preferencias de Notificaciones</h3>
+            <form id="formNotificaciones">
+              <div class="notificacion-preference">
+                <label>
+                  <input type="checkbox" id="emailVentas" checked>
+                  Notificaciones por email - Nuevas ventas
+                </label>
+              </div>
+              
+              <div class="notificacion-preference">
+                <label>
+                  <input type="checkbox" id="emailComisiones" checked>
+                  Notificaciones por email - Comisiones generadas
+                </label>
+              </div>
+              
+              <div class="notificacion-preference">
+                <label>
+                  <input type="checkbox" id="emailRetiros" checked>
+                  Notificaciones por email - Retiros procesados
+                </label>
+              </div>
+              
+              <div class="notificacion-preference">
+                <label>
+                  <input type="checkbox" id="emailNuevosAfiliados" checked>
+                  Notificaciones por email - Nuevos afiliados
+                </label>
+              </div>
+              
+              <div class="notificacion-preference">
+                <label>
+                  <input type="checkbox" id="pushVentas" checked>
+                  Notificaciones push - Nuevas ventas
+                </label>
+              </div>
+              
+              <div class="notificacion-preference">
+                <label>
+                  <input type="checkbox" id="pushComisiones" checked>
+                  Notificaciones push - Comisiones generadas
+                </label>
+              </div>
+              
+              <div class="notificacion-preference">
+                <label>
+                  <input type="checkbox" id="pushRetiros" checked>
+                  Notificaciones push - Retiros procesados
+                </label>
+              </div>
+              
+              <div class="notificacion-preference">
+                <label>
+                  <input type="checkbox" id="pushNuevosAfiliados" checked>
+                  Notificaciones push - Nuevos afiliados
+                </label>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Guardar Preferencias</button>
+            </form>
+          </div>
+
+          <!-- Configuración de seguridad -->
+          <div class="configuracion-section">
+            <h3>Seguridad</h3>
+            <form id="formSeguridad">
+              <div class="form-group">
+                <label for="passwordActual">Contraseña actual:</label>
+                <input type="password" id="passwordActual">
+              </div>
+              
+              <div class="form-group">
+                <label for="passwordNueva">Nueva contraseña:</label>
+                <input type="password" id="passwordNueva">
+              </div>
+              
+              <div class="form-group">
+                <label for="passwordConfirmar">Confirmar nueva contraseña:</label>
+                <input type="password" id="passwordConfirmar">
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Cambiar Contraseña</button>
+            </form>
+          </div>
+
+          <!-- Configuración de pagos -->
+          <div class="configuracion-section">
+            <h3>Información de Pago</h3>
+            <form id="formPagos">
+              <div class="form-group">
+                <label for="metodoPago">Método de pago preferido:</label>
+                <select id="metodoPago">
+                  <option value="nequi">Nequi</option>
+                  <option value="bancolombia">Bancolombia</option>
+                  <option value="daviplata">Daviplata</option>
+                  <option value="paypal">PayPal</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="numeroCuenta">Número de cuenta:</label>
+                <input type="text" id="numeroCuenta">
+              </div>
+              
+              <div class="form-group">
+                <label for="titularCuenta">Titular de la cuenta:</label>
+                <input type="text" id="titularCuenta">
+              </div>
+              
+              <div class="form-group">
+                <label for="montoMinimoRetiro">Monto mínimo para retiro:</label>
+                <input type="number" id="montoMinimoRetiro" min="10000" value="50000">
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Guardar Configuración</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/dashboard-afiliado-unificado.js?v=2.6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <!-- <script src="js/tienda.js"></script> -->
+  <!-- <script src="js/red_utils.js"></script> -->
+  <!-- <script src="js/simulador_red.js"></script> -->
+</body>
+</html>

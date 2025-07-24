@@ -1,0 +1,299 @@
+2025-07-21 21:41:02 - SESSION: Array
+(
+    [user_id] => 43
+)
+
+2025-07-21 21:41:02 - Usuario detectado: Array
+(
+    [id] => 43
+    [nombre] => DORA RAMIREZ
+    [email] => doral_23@hotmail.com
+    [password] => $2y$10$0nNXtz.AmoaAZAKd0a2KEOLpdt9kefcZHuQt8lcDOrQb42jyI2mFi
+    [documento] => 32831318
+    [rol] => afiliado
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:24:48
+    [fecha_ultimo_login] => 
+    [token_activacion] => b9a74ec1dab5f9d26ff059d1d5fae0c0e447dab2e6ed1955f89f4abb024ee76b
+    [fecha_expiracion_token] => 2025-07-13 23:24:48
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+2025-07-21 21:44:06 - SESSION: Array
+(
+    [user_id] => 43
+)
+
+2025-07-21 21:44:06 - Usuario detectado: Array
+(
+    [id] => 43
+    [nombre] => DORA RAMIREZ
+    [email] => doral_23@hotmail.com
+    [password] => $2y$10$0nNXtz.AmoaAZAKd0a2KEOLpdt9kefcZHuQt8lcDOrQb42jyI2mFi
+    [documento] => 32831318
+    [rol] => afiliado
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:24:48
+    [fecha_ultimo_login] => 
+    [token_activacion] => b9a74ec1dab5f9d26ff059d1d5fae0c0e447dab2e6ed1955f89f4abb024ee76b
+    [fecha_expiracion_token] => 2025-07-13 23:24:48
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+2025-07-21 21:44:23 - SESSION: Array
+(
+    [user_id] => 43
+)
+
+2025-07-21 21:44:23 - Usuario detectado: Array
+(
+    [id] => 43
+    [nombre] => DORA RAMIREZ
+    [email] => doral_23@hotmail.com
+    [password] => $2y$10$0nNXtz.AmoaAZAKd0a2KEOLpdt9kefcZHuQt8lcDOrQb42jyI2mFi
+    [documento] => 32831318
+    [rol] => afiliado
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:24:48
+    [fecha_ultimo_login] => 
+    [token_activacion] => b9a74ec1dab5f9d26ff059d1d5fae0c0e447dab2e6ed1955f89f4abb024ee76b
+    [fecha_expiracion_token] => 2025-07-13 23:24:48
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+2025-07-21 21:46:15 - SESSION: Array
+(
+    [user_id] => 43
+)
+
+2025-07-21 21:46:15 - Usuario detectado: Array
+(
+    [id] => 43
+    [nombre] => DORA RAMIREZ
+    [email] => doral_23@hotmail.com
+    [password] => $2y$10$0nNXtz.AmoaAZAKd0a2KEOLpdt9kefcZHuQt8lcDOrQb42jyI2mFi
+    [documento] => 32831318
+    [rol] => afiliado
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:24:48
+    [fecha_ultimo_login] => 
+    [token_activacion] => b9a74ec1dab5f9d26ff059d1d5fae0c0e447dab2e6ed1955f89f4abb024ee76b
+    [fecha_expiracion_token] => 2025-07-13 23:24:48
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+2025-07-21 21:47:17 - SESSION: Array
+(
+    [user_id] => 43
+)
+
+2025-07-21 21:47:17 - Usuario detectado: Array
+(
+    [id] => 43
+    [nombre] => DORA RAMIREZ
+    [email] => doral_23@hotmail.com
+    [password] => $2y$10$0nNXtz.AmoaAZAKd0a2KEOLpdt9kefcZHuQt8lcDOrQb42jyI2mFi
+    [documento] => 32831318
+    [rol] => afiliado
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:24:48
+    [fecha_ultimo_login] => 
+    [token_activacion] => b9a74ec1dab5f9d26ff059d1d5fae0c0e447dab2e6ed1955f89f4abb024ee76b
+    [fecha_expiracion_token] => 2025-07-13 23:24:48
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+2025-07-21 22:03:55 - SESSION: Array
+(
+    [user_id] => 43
+)
+
+2025-07-21 22:03:55 - Usuario detectado: Array
+(
+    [id] => 43
+    [nombre] => DORA RAMIREZ
+    [email] => doral_23@hotmail.com
+    [password] => $2y$10$0nNXtz.AmoaAZAKd0a2KEOLpdt9kefcZHuQt8lcDOrQb42jyI2mFi
+    [documento] => 32831318
+    [rol] => afiliado
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:24:48
+    [fecha_ultimo_login] => 
+    [token_activacion] => b9a74ec1dab5f9d26ff059d1d5fae0c0e447dab2e6ed1955f89f4abb024ee76b
+    [fecha_expiracion_token] => 2025-07-13 23:24:48
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+2025-07-21 22:03:58 - SESSION: Array
+(
+    [user_id] => 43
+)
+
+2025-07-21 22:03:58 - Usuario detectado: Array
+(
+    [id] => 43
+    [nombre] => DORA RAMIREZ
+    [email] => doral_23@hotmail.com
+    [password] => $2y$10$0nNXtz.AmoaAZAKd0a2KEOLpdt9kefcZHuQt8lcDOrQb42jyI2mFi
+    [documento] => 32831318
+    [rol] => afiliado
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:24:48
+    [fecha_ultimo_login] => 
+    [token_activacion] => b9a74ec1dab5f9d26ff059d1d5fae0c0e447dab2e6ed1955f89f4abb024ee76b
+    [fecha_expiracion_token] => 2025-07-13 23:24:48
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+2025-07-21 22:07:32 - SESSION: Array
+(
+    [user_id] => 43
+)
+
+2025-07-21 22:07:32 - Usuario detectado: Array
+(
+    [id] => 43
+    [nombre] => DORA RAMIREZ
+    [email] => doral_23@hotmail.com
+    [password] => $2y$10$0nNXtz.AmoaAZAKd0a2KEOLpdt9kefcZHuQt8lcDOrQb42jyI2mFi
+    [documento] => 32831318
+    [rol] => afiliado
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:24:48
+    [fecha_ultimo_login] => 
+    [token_activacion] => b9a74ec1dab5f9d26ff059d1d5fae0c0e447dab2e6ed1955f89f4abb024ee76b
+    [fecha_expiracion_token] => 2025-07-13 23:24:48
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+2025-07-21 22:10:56 - SESSION: Array
+(
+    [user_id] => 43
+)
+
+2025-07-21 22:10:56 - Usuario detectado: Array
+(
+    [id] => 43
+    [nombre] => DORA RAMIREZ
+    [email] => doral_23@hotmail.com
+    [password] => $2y$10$0nNXtz.AmoaAZAKd0a2KEOLpdt9kefcZHuQt8lcDOrQb42jyI2mFi
+    [documento] => 32831318
+    [rol] => afiliado
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:24:48
+    [fecha_ultimo_login] => 
+    [token_activacion] => b9a74ec1dab5f9d26ff059d1d5fae0c0e447dab2e6ed1955f89f4abb024ee76b
+    [fecha_expiracion_token] => 2025-07-13 23:24:48
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+2025-07-21 22:12:03 - SESSION: Array
+(
+    [user_id] => 43
+)
+
+2025-07-21 22:12:03 - Usuario detectado: Array
+(
+    [id] => 43
+    [nombre] => DORA RAMIREZ
+    [email] => doral_23@hotmail.com
+    [password] => $2y$10$0nNXtz.AmoaAZAKd0a2KEOLpdt9kefcZHuQt8lcDOrQb42jyI2mFi
+    [documento] => 32831318
+    [rol] => afiliado
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:24:48
+    [fecha_ultimo_login] => 
+    [token_activacion] => b9a74ec1dab5f9d26ff059d1d5fae0c0e447dab2e6ed1955f89f4abb024ee76b
+    [fecha_expiracion_token] => 2025-07-13 23:24:48
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+2025-07-21 22:17:07 - SESSION: Array
+(
+    [user_id] => 43
+)
+
+2025-07-21 22:17:07 - Usuario detectado: Array
+(
+    [id] => 43
+    [nombre] => DORA RAMIREZ
+    [email] => doral_23@hotmail.com
+    [password] => $2y$10$0nNXtz.AmoaAZAKd0a2KEOLpdt9kefcZHuQt8lcDOrQb42jyI2mFi
+    [documento] => 32831318
+    [rol] => afiliado
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:24:48
+    [fecha_ultimo_login] => 
+    [token_activacion] => b9a74ec1dab5f9d26ff059d1d5fae0c0e447dab2e6ed1955f89f4abb024ee76b
+    [fecha_expiracion_token] => 2025-07-13 23:24:48
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+2025-07-21 22:38:51 - SESSION: Array
+(
+    [user_id] => 43
+)
+
+2025-07-21 22:38:51 - Usuario detectado: Array
+(
+    [id] => 43
+    [nombre] => DORA RAMIREZ
+    [email] => doral_23@hotmail.com
+    [password] => $2y$10$0nNXtz.AmoaAZAKd0a2KEOLpdt9kefcZHuQt8lcDOrQb42jyI2mFi
+    [documento] => 32831318
+    [rol] => afiliado
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:24:48
+    [fecha_ultimo_login] => 
+    [token_activacion] => b9a74ec1dab5f9d26ff059d1d5fae0c0e447dab2e6ed1955f89f4abb024ee76b
+    [fecha_expiracion_token] => 2025-07-13 23:24:48
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+2025-07-21 22:49:58 - SESSION: Array
+(
+    [user_id] => 43
+)
+
+2025-07-21 22:49:58 - Usuario detectado: Array
+(
+    [id] => 43
+    [nombre] => DORA RAMIREZ
+    [email] => doral_23@hotmail.com
+    [password] => $2y$10$0nNXtz.AmoaAZAKd0a2KEOLpdt9kefcZHuQt8lcDOrQb42jyI2mFi
+    [documento] => 32831318
+    [rol] => afiliado
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:24:48
+    [fecha_ultimo_login] => 
+    [token_activacion] => b9a74ec1dab5f9d26ff059d1d5fae0c0e447dab2e6ed1955f89f4abb024ee76b
+    [fecha_expiracion_token] => 2025-07-13 23:24:48
+    [cuenta_payu] => 
+    [foto] => 
+)
+

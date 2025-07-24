@@ -1,0 +1,39 @@
+[
+    {
+      "id": "libro001",
+      "titulo": "El Camino del Líder",
+      "descripcion": "Una guía práctica para desarrollar liderazgo personal y profesional en el entorno actual.",
+      "precio": 59000,
+      "portada": "camino_lider.jpg",
+      "autor": {
+        "nombre": "Ana Torres",
+        "foto": "ana_torres.jpg",
+        "bio": "Autora y conferencista internacional en temas de liderazgo. Más de 15 años formando líderes en América Latina."
+      }
+    },
+    {
+      "id": "libro002",
+      "titulo": "Ventas Sin Miedo",
+      "descripcion": "Descubre técnicas modernas para vender desde la confianza, sin necesidad de presión o manipulación.",
+      "precio": 42000,
+      "portada": "ventas_sin_miedo.jpg",
+      "autor": {
+        "nombre": "Carlos Márquez",
+        "foto": "carlos_marquez.jpg",
+        "bio": "Especialista en ventas con más de 20 años de experiencia en formación de equipos de alto rendimiento."
+      }
+    },
+    {
+      "id": "libro003",
+      "titulo": "Mentalidad Emprendedora",
+      "descripcion": "Aprende cómo piensan los emprendedores exitosos y cómo construir un negocio con propósito.",
+      "precio": 49000,
+      "portada": "mentalidad_emprendedora.jpg",
+      "autor": {
+        "nombre": "Lucía Rivera",
+        "foto": "lucia_rivera.jpg",
+        "bio": "Coach de negocios y autora bestseller en desarrollo personal y emprendimiento consciente."
+      }
+    }
+  ]
+  

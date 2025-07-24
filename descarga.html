@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descarga de Libro - Publiery</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .download-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .download-icon {
+            font-size: 4rem;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        
+        .download-title {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .download-message {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .download-button {
+            background: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+        
+        .download-button:hover {
+            background: #0056b3;
+        }
+        
+        .back-button {
+            background: #6c757d;
+        }
+        
+        .back-button:hover {
+            background: #545b62;
+        }
+        
+        .error-message {
+            color: #dc3545;
+            background: #f8d7da;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .success-message {
+            color: #155724;
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="download-container">
+        <div class="download-icon">📚</div>
+        <h1 class="download-title">Descarga de Libro</h1>
+        <p class="download-message">
+            Tu descarga comenzará automáticamente. Si no se inicia, haz clic en el botón de descarga.
+        </p>
+        
+        <div id="downloadStatus">
+            <p>Verificando descarga...</p>
+        </div>
+        
+        <div id="downloadActions" style="display: none;">
+            <a href="#" id="downloadLink" class="download-button">📥 Descargar Libro</a>
+            <a href="tienda.html" class="download-button back-button">← Volver a la Tienda</a>
+        </div>
+        
+        <div id="errorActions" style="display: none;">
+            <div class="error-message">
+                <p>No se pudo procesar la descarga. Verifica que tengas permisos válidos.</p>
+            </div>
+            <a href="tienda.html" class="download-button back-button">← Volver a la Tienda</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const libroId = urlParams.get('libro');
+            const ventaId = urlParams.get('venta');
+            
+            if (!libroId || !ventaId) {
+                showError('Parámetros de descarga inválidos');
+                return;
+            }
+            
+            // Verificar permisos de descarga
+            verificarDescarga(libroId, ventaId);
+        });
+        
+        async function verificarDescarga(libroId, ventaId) {
+            try {
+                const response = await fetch('api/ventas/descargar_libro.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        libro_id: libroId,
+                        venta_id: ventaId
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showSuccess(data.message);
+                    
+                    // Crear enlace de descarga
+                    const downloadLink = document.getElementById('downloadLink');
+                    downloadLink.href = data.download_url;
+                    downloadLink.download = data.filename;
+                    
+                    // Mostrar acciones de descarga
+                    document.getElementById('downloadStatus').style.display = 'none';
+                    document.getElementById('downloadActions').style.display = 'block';
+                    
+                    // Iniciar descarga automática después de 2 segundos
+                    setTimeout(() => {
+                        window.location.href = data.download_url;
+                    }, 2000);
+                    
+                } else {
+                    showError(data.error || 'Error al procesar la descarga');
+                }
+                
+            } catch (error) {
+                showError('Error de conexión: ' + error.message);
+            }
+        }
+        
+        function showSuccess(message) {
+            const statusDiv = document.getElementById('downloadStatus');
+            statusDiv.innerHTML = `<div class="success-message">${message}</div>`;
+        }
+        
+        function showError(message) {
+            const statusDiv = document.getElementById('downloadStatus');
+            statusDiv.innerHTML = `<div class="error-message">${message}</div>`;
+            
+            document.getElementById('downloadActions').style.display = 'none';
+            document.getElementById('errorActions').style.display = 'block';
+        }
+    </script>
+</body>
+</html> 

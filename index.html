@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TuPlataforma - Conecta Lectores y Escritores</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e1e2f;
+      color: #fff;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn {
+      background: #5a67d8;
+      color: white;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #5a67d8;
+      color: #5a67d8;
+    }
+
+    .btn:hover, .btn-outline:hover {
+      background: #434190;
+      color: white;
+    }
+    .btn {
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .hero-banner {
+      position: relative;
+      background: url('images/banner-reading.jpg') no-repeat center/cover;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: #f59e0b;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      margin-top: 1rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: #d97706;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    h3 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: space-around;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .testimonials .testimonial {
+      background: #f3f4f6;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-left: 5px solid #5a67d8;
+      overflow: hidden;
+    }
+
+    .testimonials .testimonial img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+      float: left;
+      border: 3px solid #5a67d8;
+    }
+
+    .testimonials .testimonial p {
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+
+    .testimonials .testimonial span {
+      font-weight: 600;
+      color: #5a67d8;
+    }
+
+    .how-it-works ol {
+      list-style: none;
+      counter-reset: step;
+    }
+
+    .how-it-works li {
+      counter-increment: step;
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      position: relative;
+    }
+
+    .how-it-works li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      background: #5a67d8;
+      color: white;
+      border-radius: 50%;
+      width: 1.5rem;
+      height: 1.5rem;
+      text-align: center;
+      line-height: 1.5rem;
+    }
+
+    .stats-grid {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .stat {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .stat h4 {
+      font-size: 2.5rem;
+      color: #5a67d8;
+    }
+
+    .cta-final {
+      background: #1e1e2f;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+    }
+
+    .btn-cta {
+      background: #38bdf8;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .btn-cta:hover {
+      background: #0ea5e9;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>TuPlataforma</h1>
+      <nav>
+  <a href="registro.html" class="btn">Registrarse</a>
+  <a href="login.html" class="btn btn-outline">Iniciar Sesión</a>
+</nav>
+    </div>
+  </header>
+
+  <section class="hero-banner">
+    <div class="overlay"></div>
+    <div class="banner-content" data-aos="fade-right">
+      <h2>Conecta Lectores y Escritores</h2>
+      <p>Publica, promociona y descubre libros digitales desde un solo lugar.</p>
+      <a href="registro.html" class="btn-primary">Comenzar Ahora</a>
+    </div>
+  </section>
+
+  <section class="quienes-somos-btn">
+  <div class="container" style="text-align: center; margin-bottom: 3rem;">
+    <a href="quienes-somos.html" class="btn">Click Aquí y Conoce Quiénes Somos</a>
+  </div>
+</section>
+    
+      <h3 data-aos="fade-up">¿Por qué unirte?</h3>
+      <div class="cards">
+        <div class="card" data-aos="zoom-in">
+          <h4>Escritores</h4>
+          <p>Publica tus obras y alcanza una audiencia global.</p>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="100">
+          <h4>Afiliados</h4>
+          <p>Promociona libros y gana comisiones por cada venta.</p>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="200">
+          <h4>Lectores</h4>
+          <p>Descubre nuevas lecturas y apoya a autores independientes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h3 data-aos="fade-up">Testimonios</h3>
+      <!-- Los testimonios se cargarán dinámicamente aquí -->
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="container">
+      <h3 data-aos="fade-up">¿Cómo Funciona?</h3>
+      <ol>
+        <li data-aos="fade-up" data-aos-delay="100">Regístrate como escritor, afiliado o lector.</li>
+        <li data-aos="fade-up" data-aos-delay="200">Explora y publica libros en la plataforma.</li>
+        <li data-aos="fade-up" data-aos-delay="300">Promociona y adquiere libros fácilmente.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="stats" id="estadisticas">
+    <div class="container">
+      <h3 data-aos="fade-up">Nuestra Comunidad en Cifras</h3>
+      <div class="stats-grid">
+        <!-- Las estadísticas se cargarán dinámicamente aquí -->
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final" id="cta">
+    <div class="container" data-aos="fade-up">
+      <h2>¿Listo para transformar tu pasión en ingresos?</h2>
+      <p>Únete a cientos de escritores, afiliados y lectores que ya están cambiando sus vidas con TuPlataforma.</p>
+      <a href="registro.html" class="btn-cta">¡Empieza Ahora!</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Publiery. Todos los derechos reservados. | <a href="admin-login.html" style="color: #6b7280; text-decoration: none; font-size: 0.8rem;">Admin</a></p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

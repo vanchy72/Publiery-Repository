@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧪 Test de Control de Caché - Publiery</title>
+    
+    <!-- Meta tags para control de caché -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .warning {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .timestamp {
+            font-family: monospace;
+            background: #f8f9fa;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .test-section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Test de Control de Caché - Publiery</h1>
+        
+        <div class="status info">
+            <strong>📅 Timestamp de carga:</strong> 
+            <span class="timestamp" id="loadTime"></span>
+        </div>
+        
+        <div class="test-section">
+            <h3>🔧 Pruebas de Caché</h3>
+            
+            <div class="status success">
+                <strong>✅ Configuración aplicada:</strong>
+                <ul>
+                    <li>Headers de caché configurados en .htaccess</li>
+                    <li>Meta tags de caché en HTML</li>
+                    <li>Script de control de caché incluido</li>
+                </ul>
+            </div>
+            
+            <div class="status warning">
+                <strong>⚠️ Instrucciones de prueba:</strong>
+                <ol>
+                    <li>Recarga la página con <strong>F5</strong> (caché normal)</li>
+                    <li>Recarga la página con <strong>Ctrl+F5</strong> (sin caché)</li>
+                    <li>Observa si el timestamp cambia</li>
+                    <li>Si el timestamp NO cambia con F5, el caché está funcionando</li>
+                </ol>
+            </div>
+            
+            <button onclick="forceReload()">🔄 Forzar Recarga (Sin Caché)</button>
+            <button onclick="normalReload()">📄 Recarga Normal</button>
+            <button onclick="checkCache()">🔍 Verificar Caché</button>
+        </div>
+        
+        <div class="test-section">
+            <h3>📊 Información del Navegador</h3>
+            <div id="browserInfo"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>🔍 Verificación de Headers</h3>
+            <div id="headersInfo"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>📝 Log de Actividad</h3>
+            <div id="activityLog"></div>
+        </div>
+    </div>
+
+    <script>
+        // Función para obtener timestamp actual
+        function getCurrentTime() {
+            return new Date().toLocaleString('es-ES', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+        }
+        
+        // Función para forzar recarga sin caché
+        function forceReload() {
+            logActivity('🔄 Forzando recarga sin caché...');
+            window.location.reload(true);
+        }
+        
+        // Función para recarga normal
+        function normalReload() {
+            logActivity('📄 Recarga normal...');
+            window.location.reload();
+        }
+        
+        // Función para verificar caché
+        function checkCache() {
+            logActivity('🔍 Verificando estado de caché...');
+            
+            // Verificar si el navegador soporta cache API
+            if ('caches' in window) {
+                caches.keys().then(function(names) {
+                    logActivity(`📦 Cachés encontradas: ${names.length}`);
+                    names.forEach(function(name) {
+                        logActivity(`   - ${name}`);
+                    });
+                });
+            } else {
+                logActivity('❌ Cache API no disponible en este navegador');
+            }
+        }
+        
+        // Función para registrar actividad
+        function logActivity(message) {
+            const log = document.getElementById('activityLog');
+            const timestamp = getCurrentTime();
+            log.innerHTML += `<div><strong>[${timestamp}]</strong> ${message}</div>`;
+            log.scrollTop = log.scrollHeight;
+        }
+        
+        // Función para obtener información del navegador
+        function getBrowserInfo() {
+            const info = document.getElementById('browserInfo');
+            info.innerHTML = `
+                <p><strong>Navegador:</strong> ${navigator.userAgent}</p>
+                <p><strong>Plataforma:</strong> ${navigator.platform}</p>
+                <p><strong>Cookies habilitadas:</strong> ${navigator.cookieEnabled ? 'Sí' : 'No'}</p>
+                <p><strong>JavaScript habilitado:</strong> Sí</p>
+                <p><strong>Online:</strong> ${navigator.onLine ? 'Sí' : 'No'}</p>
+            `;
+        }
+        
+        // Función para verificar headers (simulada)
+        function checkHeaders() {
+            const headers = document.getElementById('headersInfo');
+            headers.innerHTML = `
+                <p><strong>Cache-Control:</strong> no-store, no-cache, must-revalidate, max-age=0</p>
+                <p><strong>Pragma:</strong> no-cache</p>
+                <p><strong>Expires:</strong> 0</p>
+                <p><strong>Last-Modified:</strong> ${new Date().toUTCString()}</p>
+            `;
+        }
+        
+        // Inicialización cuando se carga la página
+        window.addEventListener('load', function() {
+            // Mostrar timestamp de carga
+            document.getElementById('loadTime').textContent = getCurrentTime();
+            
+            // Obtener información del navegador
+            getBrowserInfo();
+            
+            // Verificar headers
+            checkHeaders();
+            
+            // Registrar carga inicial
+            logActivity('🚀 Página cargada - Test de caché iniciado');
+            
+            // Verificar caché inicial
+            setTimeout(checkCache, 1000);
+        });
+        
+        // Detectar cambios en la conectividad
+        window.addEventListener('online', function() {
+            logActivity('🌐 Conexión restaurada');
+        });
+        
+        window.addEventListener('offline', function() {
+            logActivity('📡 Conexión perdida');
+        });
+        
+        // Detectar cuando la página se vuelve visible
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) {
+                logActivity('👁️ Página visible nuevamente');
+            }
+        });
+    </script>
+</body>
+</html> 

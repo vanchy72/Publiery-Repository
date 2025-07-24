@@ -1,0 +1,530 @@
+/* ==== Estilos base ==== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9fb;
+    color: #333;
+  }
+  
+  header {
+    background-color: #4f46e5;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  header a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  header a:hover {
+    opacity: 0.8;
+  }
+  
+  /* ==== Grid de libros ==== */
+  main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .libros-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: flex-start;
+    margin-top: 20px;
+  }
+  
+  .libro-card {
+    width: 160px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 16px 10px 10px 10px;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .libro-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    transform: translateY(-4px) scale(1.03);
+  }
+  
+  .libro-portada {
+    width: 100px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+  
+  .libro-card h3 {
+    font-size: 1.05rem;
+    margin: 0 0 6px 0;
+    color: #222;
+    font-weight: 600;
+  }
+  
+  .libro-autor {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 4px;
+  }
+  
+  .libro-precio {
+    font-size: 1.1rem;
+    color: #27ae60;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .btn-comprar {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 16px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 6px;
+  }
+  
+  .btn-comprar:hover {
+    background: #217dbb;
+  }
+  
+  /* === MODAL BASE === */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  display: none; /* visible al activar */
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-contenido {
+  background-color: #fff;
+  width: 95%;
+  max-width: 1100px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* === BOTÓN CERRAR === */
+.btn-cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+}
+.btn-cerrar:hover {
+  color: #333;
+}
+
+/* === DISTRIBUCIÓN EN TRES COLUMNAS === */
+.modal-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.modal-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* === Columna: Libro === */
+.modal-portada {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.modal-precio {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #10b981;
+  margin: 1rem 0 0.5rem;
+}
+.btn-comprar {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.btn-comprar:hover {
+  background-color: #059669;
+}
+
+/* === Columna: Info del libro === */
+.columna-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.modal-titulo {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.modal-descripcion {
+  text-align: justify;
+  line-height: 1.5;
+  max-width: 90%;
+  margin-top: 1rem;
+}
+
+/* === Columna: Autor === */
+.columna-autor {
+  border-left: 2px solid #e0e0e0; /* línea tenue gris claro */
+  padding-left: 1.5rem; /* espacio para que el texto no toque la línea */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-autor-foto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 0.5rem;
+}
+.modal-autor-nombre {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+.modal-autor-bio {
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 1.4;
+  padding: 0 0.5rem;
+}
+
+/* Estilos para la tienda de Publiery */
+
+/* Layout principal */
+.tienda-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Sección de libros */
+.libros-section h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.libros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.libro-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.libro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.libro-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.libro-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    margin: 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.libro-card p {
+    padding: 0 1rem;
+    margin: 0.5rem 0;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.libro-card .btn-comprar {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 1rem 0 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 0 0 12px 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.libro-card .btn-comprar:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+/* Carrito de compras */
+.carrito-section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    height: fit-content;
+    position: sticky;
+    top: 2rem;
+}
+
+.carrito-container h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.carrito-item {
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+}
+
+.carrito-item:last-child {
+    border-bottom: none;
+}
+
+.carrito-item h4 {
+    color: #333;
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+.carrito-item p {
+    color: #666;
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.btn-remover {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.btn-remover:hover {
+    background: #ff3742;
+}
+
+.carrito-total {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid #eee;
+}
+
+.carrito-total h4 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.btn-procesar {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-procesar:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+/* Información del usuario */
+.user-info {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-info p {
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+/* Alertas */
+.alert-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    max-width: 400px;
+}
+
+.alert {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    animation: slideIn 0.3s ease;
+}
+
+.alert-success {
+    background: #2ed573;
+}
+
+.alert-error {
+    background: #ff4757;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Loading */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: #666;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tienda-layout {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .libros-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .carrito-section {
+        position: static;
+    }
+    
+    .alert-container {
+        left: 20px;
+        right: 20px;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .libros-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .libro-card {
+        margin: 0 1rem;
+    }
+}
+.libro-portada {
+  width: 80px !important;
+  height: 110px !important;
+  object-fit: cover !important;
+}
+img.libro-portada {
+  width: 140px !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  display: block;
+}

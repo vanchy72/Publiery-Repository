@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Escritor | TuPlataforma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+    }
+
+    header {
+      background-color: #1e1e2f;
+      color: #fff;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dashboard-header h1 {
+      font-size: 1.8rem;
+    }
+
+    .btn {
+      background: #5a67d8;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #434190;
+    }
+
+    .section {
+      margin-top: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+    }
+
+    .stat h3 {
+      font-size: 2rem;
+      color: #5a67d8;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    form button {
+      margin-top: 1.5rem;
+      background-color: #5a67d8;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    form button:hover {
+      background-color: #434190;
+    }
+
+    .book-list .book-item {
+      border-bottom: 1px solid #eee;
+      padding: 1rem 0;
+    }
+
+    .book-item:last-child {
+      border-bottom: none;
+    }
+
+    .book-item h4 {
+      color: #5a67d8;
+      margin: 0;
+    }
+
+    .info-libro h3 {
+      color: #5a67d8;
+      margin-top: 1rem;
+    }
+
+    .info-libro ul {
+      margin: 0.5rem 0 1.5rem 1.5rem;
+      padding-left: 1rem;
+      list-style: disc;
+      color: #333;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #1e1e2f;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container dashboard-header">
+      <h1>Bienvenido, Escritor</h1>
+      <button id="logoutBtn" class="btn">Cerrar Sesión</button>
+
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Estadísticas -->
+    <section class="section">
+      <div class="grid">
+        <div class="card stat">
+          <h3>12</h3>
+          <p>Libros Publicados</p>
+        </div>
+        <div class="card stat">
+          <h3>325</h3>
+          <p>Ventas Totales</p>
+        </div>
+        <div class="card stat">
+          <h3>$1.200.000</h3>
+          <p>Ganancias Acumuladas</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario y gráfico lado a lado -->
+    <section class="section grid">
+      <!-- Subir libro -->
+      <div class="card">
+        <h2 class="section-title">Subir Nuevo Libro</h2>
+        <form class="book-form">
+          <label for="titulo">Título del Libro</label>
+          <input type="text" id="titulo" name="titulo" required>
+
+          <label for="descripcion">Descripción</label>
+          <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+
+          <label for="precio">Precio (USD)</label>
+          <input type="number" id="precio" name="precio" step="0.01" min="0" required>
+
+          <label for="archivo_pdf">Archivo del Libro (PDF)</label>
+          <input type="file" id="archivo_pdf" name="archivo_pdf" accept=".pdf" required>
+
+          <label for="portada">Portada (opcional)</label>
+          <input type="file" id="portada" name="portada" accept=".jpg,.jpeg,.png">
+
+          <button type="submit">Subir Libro</button>
+        </form>
+      </div>
+
+      <!-- Gráfico de ventas -->
+      <div class="card">
+        <h2 class="section-title">Ventas por Libro</h2>
+        <canvas id="ventasChart" height="220"></canvas>
+      </div>
+    </section>
+
+    <!-- Lista de libros -->
+    <section class="section card book-list">
+      <h2 class="section-title">Mis Libros</h2>
+      <div class="book-item">
+        <h4>Mi Primer Ebook</h4>
+        <p>Descargas: 145 | Ventas: 32 | Estado: Aprobado</p>
+      </div>
+      <div class="book-item">
+        <h4>Consejos para Emprender</h4>
+        <p>Descargas: 98 | Ventas: 20 | Estado: Pendiente</p>
+      </div>
+    </section>
+
+    <!-- Información y requisitos -->
+    <section class="section card info-libro">
+      <h2 class="section-title">Requisitos para Subir un Libro</h2>
+
+      <h3>Características Técnicas</h3>
+      
+        <p>Formato: PDF (pronto EPUB, MOBI)</p>
+        <p>Peso máximo: 10 MB</p>
+        <p>Tamaño ideal: A4 o carta</p>
+      
+
+      <h3>Requisitos de Portada</h3>
+      
+        <p>Formato JPG o PNG</p>
+        <p>Resolución mínima: 800x1200 px</p>
+        <p>Peso máximo: 2 MB</p>
+      
+
+      <h3>Normatividad en Colombia</h3>
+      
+        <p>Registro gratuito en la <strong>DNDA</strong>: <a href="https://www.derechodeautor.gov.co/" target="_blank">derechodeautor.gov.co</a></p>
+        <p>ISBN no obligatorio, pero puedes agregarlo</p>
+      </ul>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section class="section card">
+      <h2 class="section-title">Mi Testimonio</h2>
+      
+      <div class="testimonio-info" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid #5a67d8;">
+        <h3 style="color: #1e1e2f; margin: 0 0 1rem 0; font-size: 1.2rem;">Comparte tu experiencia como escritor</h3>
+        <p style="color: #6b7280; margin: 0; line-height: 1.6;">Ayuda a otros escritores compartiendo tu experiencia con Publiery. Tu testimonio puede inspirar a nuevos autores a publicar sus obras en nuestra plataforma.</p>
+      </div>
+      
+      <form id="formTestimonio" class="book-form">
+        <label for="testimonioTexto">Tu testimonio:</label>
+        <textarea 
+          id="testimonioTexto" 
+          name="testimonio" 
+          rows="6" 
+          placeholder="Cuéntanos tu experiencia como escritor en Publiery, cómo te ha ayudado la plataforma, qué has logrado, etc. (Mínimo 50 caracteres)"
+          required
+          minlength="50"
+          maxlength="500"
+        ></textarea>
+        <small class="char-count" style="display: block; text-align: right; margin-top: 0.25rem; color: #6b7280; font-size: 0.875rem;">0/500 caracteres</small>
+        
+        <label for="testimonioImagen">Foto de perfil (opcional):</label>
+        <input 
+          type="file" 
+          id="testimonioImagen" 
+          name="imagen" 
+          accept="image/*"
+        >
+        <small style="display: block; margin-top: 0.25rem; color: #6b7280; font-size: 0.875rem;">Formatos: JPG, PNG. Máximo 2MB.</small>
+        
+        <div style="margin-top: 1rem;">
+          <label style="display: flex; align-items: center; font-weight: normal;">
+            <input type="checkbox" id="aceptarPublicacion" required style="margin-right: 0.5rem; width: auto;">
+            Acepto que mi testimonio sea publicado en la página principal de Publiery
+          </label>
+        </div>
+        
+        <button type="submit" id="btnEnviarTestimonio">Enviar Testimonio</button>
+      </form>
+      
+      <div id="mensajeTestimonio" class="mensaje" style="display: none; padding: 1rem; border-radius: 8px; margin-top: 1rem; font-weight: 500;"></div>
+    </section>
+  </main>
+
+  </main>
+
+  <!-- Chart.js + JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/dashboard-escritor.js"></script>
+
+<footer>
+    <div class="container">
+      <p>&copy; 2025 TuPlataforma. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

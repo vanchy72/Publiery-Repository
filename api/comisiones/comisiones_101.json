@@ -1,0 +1,10 @@
+[
+  { "nivel": 0, "monto": 10000, "estado": "pagada" },
+  { "nivel": 1, "monto": 6000, "estado": "pendiente" },
+  { "nivel": 2, "monto": 3000, "estado": "pendiente" },
+  { "nivel": 3, "monto": 2000, "estado": "pagada" },
+  { "nivel": 4, "monto": 1500, "estado": "pendiente" },
+  { "nivel": 5, "monto": 1300, "estado": "pagada" },
+  { "nivel": 6, "monto": 1000, "estado": "pendiente" }
+]
+

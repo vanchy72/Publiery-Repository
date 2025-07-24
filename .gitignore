@@ -1,0 +1,133 @@
+# =====================================================
+# GITIGNORE - PUBLIERY
+# =====================================================
+# Archivos y carpetas que NO deben subirse al repositorio
+
+# =====================================================
+# CONFIGURACIÓN SENSIBLE
+# =====================================================
+
+# Archivos de configuración con credenciales
+config/.env
+config/env.local
+config/env.production
+*.env
+
+# Credenciales y claves
+*.key
+*.pem
+*.p12
+*.pfx
+
+# =====================================================
+# ARCHIVOS TEMPORALES
+# =====================================================
+
+# Logs
+*.log
+logs/
+error_log
+access_log
+
+# Archivos temporales
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# =====================================================
+# ARCHIVOS DEL SISTEMA
+# =====================================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# =====================================================
+# ARCHIVOS DE DESARROLLO
+# =====================================================
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# =====================================================
+# ARCHIVOS DE UPLOAD
+# =====================================================
+
+# Archivos subidos por usuarios
+uploads/
+temp/
+cache/
+
+# =====================================================
+# ARCHIVOS DE BASE DE DATOS
+# =====================================================
+
+# Backups de base de datos
+*.sql
+*.sqlite
+*.db
+
+# =====================================================
+# ARCHIVOS DE COMPOSER
+# =====================================================
+
+# Dependencias (si usas Composer)
+vendor/
+composer.lock
+
+# =====================================================
+# ARCHIVOS DE NODE.JS (si usas)
+# =====================================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =====================================================
+# ARCHIVOS DE CONFIGURACIÓN LOCAL
+# =====================================================
+
+# Configuraciones específicas del entorno
+config/local.php
+config/production.php
+
+# =====================================================
+# ARCHIVOS DE PRUEBA
+# =====================================================
+
+# Archivos de prueba que no deben subirse
+test_*.php
+*_test.php
+*_test.html
+
+# =====================================================
+# ARCHIVOS DE SEGURIDAD
+# =====================================================
+
+# Archivos de configuración de servidor
+.htaccess.backup
+.htaccess.local
+
+# =====================================================
+# NOTA IMPORTANTE
+# =====================================================
+# 
+# NUNCA subas archivos con credenciales al repositorio
+# Siempre usa variables de entorno o archivos .env
+# 
+# ===================================================== 

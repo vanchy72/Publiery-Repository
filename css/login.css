@@ -1,0 +1,82 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f9f9f9, #e6e6f5);
+  padding: 2rem;
+}
+
+.login-card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1e1e2f;
+  font-size: 1.8rem;
+}
+
+.login-card label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1e1e2f;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.login-card input:focus {
+  border-color: #5a67d8;
+}
+
+.btn-login {
+  width: 100%;
+  background: #5a67d8;
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-login:hover {
+  background: #434190;
+}
+
+.registro-link {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.registro-link a {
+  color: #5a67d8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.logo-header h1 {
+  text-align: center;
+  color: #5a67d8;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,12 @@
+{
+  "id": 101,
+  "nombre": "Laura Gómez",
+  "estado": "activo",
+  "documento": "123456789",
+  "patrocinador_id": 0,
+  "patrocinador_nombre": "Carlos Mendoza",
+  "frontal": 1,
+  "fecha_registro": "2024-12-15",
+  "enlace_afiliado": "https://tusitio.com/?ref=101",
+  "qr": "qr_101.png"
+}

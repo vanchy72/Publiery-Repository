@@ -1,0 +1,346 @@
+<!-- Panel de Administración Integral -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Administración - Publiery</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body { display: flex; min-height: 100vh; margin: 0; }
+    .admin-sidebar {
+      width: 260px; background: #232946; color: #fff; padding: 0; display: flex; flex-direction: column; }
+    .admin-sidebar h2 { margin: 0; padding: 1.5rem 1rem; font-size: 1.3rem; background: #121629; }
+    .admin-sidebar nav { flex: 1; }
+    .admin-sidebar ul { list-style: none; padding: 0; margin: 0; }
+    .admin-sidebar li { border-bottom: 1px solid #2e3350; }
+    .admin-sidebar a { display: block; color: #fff; text-decoration: none; padding: 1rem 1.5rem; transition: background 0.2s; }
+    .admin-sidebar a:hover, .admin-sidebar a.active { background: #393e6e; }
+    .admin-content { flex: 1; padding: 2rem; background: #f4f6fb; overflow-y: auto; }
+    .admin-section { display: none; }
+    .admin-section.active { display: block; }
+    @media (max-width: 800px) {
+      .admin-sidebar { width: 100px; }
+      .admin-sidebar h2 { font-size: 1rem; padding: 1rem; }
+      .admin-sidebar a { padding: 0.7rem 1rem; font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+  <aside class="admin-sidebar">
+    <h2 id="adminName">Admin Publiery</h2>
+    <button id="logoutAdminBtn" style="margin: 1rem; padding: 0.5rem 1rem; background: #e74c3c; color: #fff; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">Cerrar Sesión</button>
+    <nav>
+      <ul>
+        <li><a href="#usuarios" class="active">Usuarios</a></li>
+        <li><a href="#afiliados">Afiliados</a></li>
+        <li><a href="#escritores">Escritores</a></li>
+        <li><a href="#libros">Libros</a></li>
+        <li><a href="#ventas">Ventas</a></li>
+        <li><a href="#pagos">Pagos y Comisiones</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#campanas">Campañas y Notificaciones</a></li>
+        <li><a href="#estadisticas">Estadísticas</a></li>
+        <li><a href="#configuracion">Configuración</a></li>
+        <li><a href="#soporte">Soporte y Diagnóstico</a></li>
+        <li><a href="#revision">Revisión Editorial</a></li>
+        <li><a href="#gestion-testimonios">Gestión de Testimonios</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <main class="admin-content">
+    <section id="usuarios" class="admin-section active">
+      <h1>Gestión de Usuarios</h1>
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+        <input type="text" id="buscarUsuario" placeholder="Buscar por nombre, email o rol..." style="padding:0.5rem 1rem; border-radius:6px; border:1px solid #ccc; width:300px;">
+        <button id="btnCrearUsuario" class="btn" style="background:#4f46e5;color:#fff;font-weight:600;">+ Crear usuario</button>
+      </div>
+      <div id="usuarios-content">
+        <table id="tablaUsuarios" style="width:100%; border-collapse:collapse;">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Rol</th>
+              <th>Estado</th>
+              <th>Fecha Registro</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Usuarios dinámicos -->
+          </tbody>
+        </table>
+        <div id="usuariosMensaje" style="margin-top:1rem;"></div>
+      </div>
+      <!-- Modal Crear/Editar Usuario -->
+      <div id="modalUsuario" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.35);z-index:1000;align-items:center;justify-content:center;">
+        <div style="background:#fff;padding:2rem 2.5rem;border-radius:12px;min-width:320px;max-width:95vw;box-shadow:0 4px 24px rgba(0,0,0,0.12);position:relative;">
+          <button id="cerrarModalUsuario" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;color:#888;cursor:pointer;">&times;</button>
+          <h2 id="modalUsuarioTitulo">Crear usuario</h2>
+          <form id="formUsuario">
+            <div style="margin-bottom:1rem;">
+              <label>Nombre:<br><input type="text" name="nombre" required style="width:100%;padding:0.5rem;"></label>
+            </div>
+            <div style="margin-bottom:1rem;">
+              <label>Email:<br><input type="email" name="email" required style="width:100%;padding:0.5rem;"></label>
+            </div>
+            <div style="margin-bottom:1rem;">
+              <label>Rol:<br>
+                <select name="rol" required style="width:100%;padding:0.5rem;">
+                  <option value="afiliado">Afiliado</option>
+                  <option value="escritor">Escritor</option>
+                  <option value="admin">Administrador</option>
+                  <option value="lector">Lector</option>
+                </select>
+              </label>
+            </div>
+            <div style="margin-bottom:1rem;">
+              <label>Contraseña:<br><input type="password" name="password" required minlength="6" style="width:100%;padding:0.5rem;"></label>
+            </div>
+            <div style="margin-bottom:1rem;">
+              <label>Estado:<br>
+                <select name="estado" required style="width:100%;padding:0.5rem;">
+                  <option value="activo">Activo</option>
+                  <option value="pendiente">Pendiente</option>
+                  <option value="inactivo">Inactivo</option>
+                </select>
+              </label>
+            </div>
+            <div style="text-align:right;">
+              <button type="submit" class="btn" style="background:#10b981;color:#fff;font-weight:600;">Guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section id="afiliados" class="admin-section">
+      <h1>Gestión de Afiliados</h1>
+      <div id="afiliados-content">[Aquí irá la tabla y controles de afiliados]</div>
+    </section>
+    <section id="escritores" class="admin-section">
+      <h1>Gestión de Escritores</h1>
+      <div id="escritores-content">[Aquí irá la tabla y controles de escritores]</div>
+    </section>
+    <section id="libros" class="admin-section">
+      <h1>Gestión de Libros</h1>
+      <div id="libros-content">[Aquí irá la tabla y controles de libros]</div>
+    </section>
+    <section id="ventas" class="admin-section">
+      <h1>Gestión de Ventas</h1>
+      <div id="ventas-content">[Aquí irá la tabla y controles de ventas]</div>
+    </section>
+    <section id="pagos" class="admin-section">
+      <h1>Pagos y Comisiones</h1>
+      <div id="pagos-content">[Aquí irá la gestión de pagos y comisiones]</div>
+    </section>
+    <section id="testimonios" class="admin-section">
+      <h1>Testimonios</h1>
+      <div id="testimonios-content">[Aquí irá la gestión de testimonios]</div>
+    </section>
+    <section id="campanas" class="admin-section">
+      <h1>Campañas y Notificaciones</h1>
+      <div id="campanas-content">[Aquí irá la gestión de campañas y notificaciones]</div>
+    </section>
+    <section id="estadisticas" class="admin-section">
+      <h1>Estadísticas Generales</h1>
+      <div id="estadisticas-content">[Aquí irán las gráficas y reportes]</div>
+    </section>
+    <section id="configuracion" class="admin-section">
+      <h1>Configuración</h1>
+      <div id="configuracion-content">[Aquí irán los ajustes generales]</div>
+    </section>
+    <section id="soporte" class="admin-section">
+      <h1>Soporte y Diagnóstico</h1>
+      <div id="soporte-content">[Aquí irán logs, herramientas de diagnóstico, etc.]</div>
+    </section>
+    <section id="revision" class="admin-section">
+      <h1>Revisión Editorial</h1>
+      <div id="revision-content">[Aquí irá la revisión editorial]</div>
+    </section>
+    <section id="gestion-testimonios" class="admin-section">
+      <h1>Gestión de Testimonios</h1>
+      <div id="gestion-testimonios-content">[Aquí irá la gestión de testimonios]</div>
+    </section>
+  </main>
+  <script>
+    // Validación de sesión admin al cargar el panel
+    (function() {
+      const adminData = localStorage.getItem('admin_data');
+      const adminUserId = sessionStorage.getItem('admin_user_id');
+      if (!adminData || !adminUserId) {
+        alert('Acceso denegado. Debes iniciar sesión como administrador.');
+        window.location.href = 'admin-login.html';
+        return;
+      }
+      try {
+        const admin = JSON.parse(adminData);
+        if (admin.rol !== 'admin') {
+          alert('Acceso denegado. Solo administradores pueden acceder a este panel.');
+          window.location.href = 'admin-login.html';
+          return;
+        }
+        // Mostrar nombre del administrador
+        document.getElementById('adminName').textContent = admin.nombre || 'Admin Publiery';
+      } catch (e) {
+        alert('Error en la sesión. Por favor inicia sesión nuevamente.');
+        window.location.href = 'admin-login.html';
+        return;
+      }
+    })();
+    // Navegación entre secciones del panel
+    const links = document.querySelectorAll('.admin-sidebar a');
+    const sections = document.querySelectorAll('.admin-section');
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        links.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        const id = this.getAttribute('href').replace('#', '');
+        sections.forEach(sec => sec.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+      });
+    });
+    // Cerrar sesión admin
+    document.getElementById('logoutAdminBtn').addEventListener('click', function() {
+      localStorage.removeItem('admin_data');
+      sessionStorage.removeItem('admin_user_id');
+      window.location.href = 'admin-login.html';
+    });
+
+    // --- Gestión de Usuarios ---
+    async function cargarUsuarios(filtro = "") {
+      const tabla = document.getElementById('tablaUsuarios').querySelector('tbody');
+      tabla.innerHTML = '<tr><td colspan="7">Cargando usuarios...</td></tr>';
+      try {
+        const res = await fetch('api/usuarios/listar.php');
+        const data = await res.json();
+        if (!data.success || !data.usuarios) throw new Error(data.error || 'Error al cargar usuarios');
+        let usuarios = data.usuarios;
+        if (filtro) {
+          const f = filtro.toLowerCase();
+          usuarios = usuarios.filter(u =>
+            (u.nombre && u.nombre.toLowerCase().includes(f)) ||
+            (u.email && u.email.toLowerCase().includes(f)) ||
+            (u.rol && u.rol.toLowerCase().includes(f))
+          );
+        }
+        if (usuarios.length === 0) {
+          tabla.innerHTML = '<tr><td colspan="7">No se encontraron usuarios.</td></tr>';
+          return;
+        }
+        tabla.innerHTML = '';
+        usuarios.forEach(usuario => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${usuario.id}</td>
+            <td>${usuario.nombre || ''}</td>
+            <td>${usuario.email || ''}</td>
+            <td>${usuario.rol || ''}</td>
+            <td>${usuario.estado || ''}</td>
+            <td>${usuario.fecha_registro || ''}</td>
+            <td style="display:flex;gap:0.3rem;flex-wrap:wrap;">
+              <button class="btn" style="background:#10b981;color:#fff;" onclick="verUsuario(${usuario.id})">Ver</button>
+              <button class="btn" style="background:#f59e42;color:#fff;" onclick="editarUsuario(${usuario.id})">Editar</button>
+              <button class="btn" style="background:#6366f1;color:#fff;" onclick="restablecerContrasena(${usuario.id})">Restablecer contraseña</button>
+              <button class="btn" style="background:${usuario.estado==='activo'?'#e74c3c':'#10b981'};color:#fff;" onclick="toggleEstadoUsuario(${usuario.id}, '${usuario.estado}')">${usuario.estado==='activo'?'Desactivar':'Activar'}</button>
+              <button class="btn" style="background:#b91c1c;color:#fff;" onclick="eliminarUsuario(${usuario.id})">Eliminar</button>
+            </td>
+          `;
+          tabla.appendChild(tr);
+        });
+      } catch (e) {
+        tabla.innerHTML = `<tr><td colspan="7">${e.message}</td></tr>`;
+      }
+    }
+    // Modal Crear/Editar Usuario
+    const modalUsuario = document.getElementById('modalUsuario');
+    const formUsuario = document.getElementById('formUsuario');
+    const cerrarModalUsuario = document.getElementById('cerrarModalUsuario');
+    document.getElementById('btnCrearUsuario').addEventListener('click', function() {
+      formUsuario.reset();
+      document.getElementById('modalUsuarioTitulo').textContent = 'Crear usuario';
+      modalUsuario.style.display = 'flex';
+    });
+    cerrarModalUsuario.addEventListener('click', function() {
+      modalUsuario.style.display = 'none';
+    });
+    window.addEventListener('click', function(e) {
+      if (e.target === modalUsuario) modalUsuario.style.display = 'none';
+    });
+    // Enviar formulario de usuario (crear)
+    formUsuario.onsubmit = async function(e) {
+      e.preventDefault();
+      const formData = Object.fromEntries(new FormData(formUsuario).entries());
+      try {
+        const res = await fetch('api/usuarios/crear.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('Usuario creado correctamente');
+          modalUsuario.style.display = 'none';
+          cargarUsuarios();
+        } else {
+          alert('Error: ' + (data.error || 'No se pudo crear el usuario'));
+        }
+      } catch (err) {
+        alert('Error de conexión');
+      }
+    };
+    // Funciones de acción (placeholders)
+    window.verUsuario = function(id) { alert('Ver usuario ' + id + ' (próximamente)'); };
+    window.editarUsuario = function(id) { alert('Editar usuario ' + id + ' (próximamente)'); };
+    window.restablecerContrasena = async function(id) {
+      if (!confirm('¿Seguro que deseas restablecer la contraseña de este usuario?')) return;
+      try {
+        const res = await fetch('api/usuarios/restablecer_contrasena.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('Contraseña restablecida. Nueva contraseña: ' + data.nueva);
+        } else {
+          alert('Error: ' + (data.error || 'No se pudo restablecer la contraseña'));
+        }
+      } catch (err) {
+        alert('Error de conexión');
+      }
+    };
+    window.toggleEstadoUsuario = function(id, estado) { alert((estado==='activo'?'Desactivar':'Activar') + ' usuario ' + id + ' (próximamente)'); };
+    window.eliminarUsuario = async function(id) {
+      if (!confirm('¿Seguro que deseas eliminar este usuario? Esta acción no se puede deshacer.')) return;
+      try {
+        const res = await fetch('api/usuarios/eliminar.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('Usuario eliminado correctamente');
+          cargarUsuarios();
+        } else {
+          alert('Error: ' + (data.error || 'No se pudo eliminar el usuario'));
+        }
+      } catch (err) {
+        alert('Error de conexión');
+      }
+    };
+    // Buscar usuarios en tiempo real
+    document.getElementById('buscarUsuario').addEventListener('input', function() {
+      cargarUsuarios(this.value);
+    });
+    // Cargar usuarios al mostrar la pestaña
+    document.querySelector('a[href="#usuarios"]').addEventListener('click', function() {
+      cargarUsuarios();
+    });
+    // Cargar usuarios al iniciar
+    cargarUsuarios();
+  </script>
+</body>
+</html> 
