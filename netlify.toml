@@ -1,0 +1,8 @@
+[build]
+  publish = "."
+  
+[build.environment]
+  PHP_VERSION = "8.1"
+
+[[plugins]]
+  package = "@netlify/plugin-functions-core"

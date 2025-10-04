@@ -1,0 +1,20 @@
+/*
+  Basic redirects for Netlify
+*/
+
+# Redirect main page
+/  /index.html  200
+
+# API routes 
+/api/*  /api/:splat  200
+
+# Static files
+/css/*  /css/:splat  200
+/js/*   /js/:splat   200
+/images/*  /images/:splat  200
+
+# HTML pages
+/admin    /admin-panel.html    200
+/login    /login.html          200  
+/tienda   /tienda-lectores.html 200
+/dashboard /dashboard-afiliado.html 200
