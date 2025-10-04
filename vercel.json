@@ -2,7 +2,7 @@
   "version": 2,
   "functions": {
     "api/**/*.php": {
-      "runtime": "vercel-php@0.7.0"
+      "runtime": "vercel-php@0.8.0"
     }
   },
   "routes": [
@@ -24,5 +24,10 @@
       "src": "/(.*)",
       "dest": "/$1"
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "VERCEL_FORCE_NO_BUILD_CACHE": "1"
+    }
+  }
 }
