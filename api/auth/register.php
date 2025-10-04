@@ -1,5 +1,5 @@
 <?php
-// Configurar manejo de errores para evitar que se muestren en la respuesta
+// Configurar manejo de errores para evitar HTML en respuesta JSON
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
 error_reporting(E_ALL);
@@ -9,7 +9,12 @@ register_shutdown_function(function() {
     $error = error_get_last();
     if ($error !== null && in_array($error['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR])) {
         error_log("Error fatal en register.php: " . print_r($error, true));
-        jsonResponse(['error' => 'Error interno del servidor'], 500);
+        jsonResponse([
+            'error' => 'Error fatal: ' . $error['message'],
+            'file' => basename($error['file']),
+            'line' => $error['line'],
+            'type' => $error['type']
+        ], 500);
     }
 });
 
@@ -23,12 +28,16 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
 
-require_once '../../config/database.php';
+require_once __DIR__ . '/../../config/database.php';
 require_once '../../config/email.php';
+require_once '../../config/auth_functions.php';
 
-// Solo permitir método POST
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    jsonResponse(['error' => 'Método no permitido'], 405);
+// Solo procesar si es una petición HTTP real (no si se incluye para test)
+if (isset($_SERVER['REQUEST_METHOD'])) {
+    // Solo permitir método POST
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        jsonResponse(['error' => 'Método no permitido'], 405);
+    }
 }
 
 // Envolver todo en try-catch global
@@ -211,7 +220,7 @@ try {
             $response['activation_token'] = $tokenActivacion;
             $response['activation_deadline'] = date('Y-m-d H:i:s', strtotime('+3 days'));
         } elseif ($rol === 'escritor') {
-            $response['redirect'] = 'dashboard-escritor.html';
+            $response['redirect'] = 'dashboard-escritor-mejorado.html';
             $response['activation_token'] = $tokenActivacion;
         } elseif ($rol === 'lector') {
             $response['redirect'] = 'tienda-lectores.html';
@@ -223,6 +232,13 @@ try {
     }
 } catch (Exception $e) {
     error_log("Error en registro: " . $e->getMessage());
-    jsonResponse(['error' => 'Error interno del servidor: ' . $e->getMessage()], 500);
+    // Debug completo del error
+    jsonResponse([
+        'error' => 'Error específico: ' . $e->getMessage(), 
+        'file' => basename($e->getFile()), 
+        'line' => $e->getLine(),
+        'input_received' => $input ?? 'NO_INPUT',
+        'debug_trace' => array_slice($e->getTrace(), 0, 3) // Solo primeros 3 niveles
+    ], 500);
 }
 ?> 

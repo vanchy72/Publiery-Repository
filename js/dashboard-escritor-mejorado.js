@@ -750,7 +750,15 @@ function renderLibros(libros) {
                 </div>
             </div>
             <div class="libro-actions">
-                <button onclick="editarLibro(${libro.id})" class="btn btn-secondary">Editar</button>
+                <button onclick="editarLibro(${libro.id})" class="btn btn-secondary">
+                    <i class="fas fa-edit"></i> Editar
+                </button>
+                <button onclick="eliminarLibro(${libro.id}, '${libro.titulo.replace(/'/g, "\\'")}')" class="btn btn-danger">
+                    <i class="fas fa-trash"></i> Eliminar
+                </button>
+                ${libro.archivo_original ? `<a href="uploads/libros/${libro.archivo_original}" target="_blank" class="btn btn-info">
+                    <i class="fas fa-download"></i> Descargar PDF
+                </a>` : ''}
             </div>
         </div>
     `).join('');
@@ -1419,7 +1427,53 @@ function editarLibro(libroId) {
     }
 }
 
-
+async function eliminarLibro(libroId, titulo) {
+    if (!confirm(`¿Estás seguro de que quieres eliminar el libro "${titulo}"?\n\nEsta acción no se puede deshacer.`)) {
+        return;
+    }
+    
+    // Confirmación adicional para libros publicados
+    const libro = dashboardData?.libros?.find(l => l.id == libroId);
+    if (libro && libro.estado === 'publicado') {
+        if (!confirm(`⚠️ ATENCIÓN: Este libro está PUBLICADO y puede tener ventas.\n\n¿Realmente quieres eliminarlo?\n\nSe perderán todos los datos de ventas asociados.`)) {
+            return;
+        }
+    }
+    
+    try {
+        showLoading('Eliminando libro...');
+        
+        const response = await fetch('api/escritores/eliminar_libro.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                libro_id: libroId
+            }),
+            credentials: 'include'
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            showSuccess(`Libro "${titulo}" eliminado exitosamente`);
+            
+            // Recargar datos del dashboard
+            await loadEscritorData();
+            
+            // Recargar la pestaña de libros
+            await loadLibrosTab();
+        } else {
+            showError(data.error || 'Error al eliminar el libro');
+        }
+    } catch (error) {
+        console.error('Error eliminando libro:', error);
+        showError('Error de conexión al eliminar el libro');
+    } finally {
+        hideLoading();
+    }
+}
 
 function cerrarModalEditar() {
     const modal = document.getElementById('modalEditarLibro');
@@ -1438,6 +1492,7 @@ window.loadNotificacionesTab = loadNotificacionesTab;
 window.marcarNotificacionLeida = marcarNotificacionLeida;
 window.marcarTodasNotificacionesLeidas = marcarTodasNotificacionesLeidas;
 window.editarLibro = editarLibro;
+window.eliminarLibro = eliminarLibro;
 window.cerrarModalEditar = cerrarModalEditar;
 window.logout = logout; 
 
@@ -1598,4 +1653,4 @@ async function handleSubmitEditarLibro(event) {
     submitBtn.disabled = false;
     submitBtn.textContent = '💾 Guardar Cambios';
   }
-} 
+}

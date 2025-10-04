@@ -5,7 +5,7 @@
  */
 
 require_once '../../config/payu.php';
-require_once '../../config/database.php';
+require_once __DIR__ . '/../../config/database.php';
 
 // Obtener datos de la confirmación de PayU
 $referenceCode = $_POST['referenceCode'] ?? '';

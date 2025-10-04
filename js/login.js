@@ -48,6 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 password: passwordInput.value
             };
 
+            console.log('🚀 Enviando login a: api/auth/login.php');
+            console.log('📊 Datos:', formData);
+            
             const response = await fetch('api/auth/login.php', {
                 method: 'POST',
                 headers: {
@@ -55,6 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 body: JSON.stringify(formData)
             });
+            
+            console.log('📨 Response status:', response.status);
 
             const data = await response.json();
 
@@ -72,15 +77,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 localStorage.removeItem('user_data');
                 sessionStorage.removeItem('current_user_id');
                 
+                console.log('💾 Guardando datos del usuario:', data.user);
+                
                 // Guardar session_token, user_data y current_user_id
                 if (data.session_token) {
                     localStorage.setItem('session_token', data.session_token);
+                    console.log('🔑 Token guardado:', data.session_token);
                 }
                 localStorage.setItem('user_data', JSON.stringify(data.user));
                 sessionStorage.setItem('current_user_id', data.user.id.toString());
                 // NUEVO: Guardar userId en localStorage para compatibilidad con compra
                 localStorage.setItem('userId', data.user.id.toString());
-
+                
+                // Verificar que se guardó correctamente
+                const savedData = localStorage.getItem('user_data');
+                console.log('✅ Datos verificados en localStorage:', savedData);
                 // Redirigir según el rol
                 switch (data.user.rol) {
                     case 'afiliado':
@@ -96,7 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         window.location.href = 'tienda-lectores.html';
                         break;
                 }
-
+                // Redirigir a la URL que nos da el servidor. ¡Esto es más seguro y correcto!
+                window.location.href = data.redirect;
             } else {
                 // Error en login
                 showError(data.error || 'Error en el inicio de sesión');

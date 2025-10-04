@@ -16,7 +16,17 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET');
 header('Access-Control-Allow-Headers: Content-Type');
 
-require_once '../../config/database.php';
+require_once __DIR__ . '/../../config/database.php';
+
+// Función jsonResponse necesaria
+if (!function_exists('jsonResponse')) {
+    function jsonResponse($data, $statusCode = 200) {
+        http_response_code($statusCode);
+        header('Content-Type: application/json');
+        echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        exit;
+    }
+}
 
 // Debug: Verificar si hay sesión
 if (session_status() === PHP_SESSION_NONE) {
@@ -33,8 +43,14 @@ function checkSessionAuth() {
         session_start();
     }
     
+    // Buscar user_id en cualquier variable de sesión posible
     if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
         return $_SESSION['user_id'];
+    }
+    
+    // Fallback: buscar en otras variables de sesión del login
+    if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+        return $_SESSION['id'];
     }
     
     return null;
@@ -146,21 +162,51 @@ try {
         $redAfiliados = [];
     } else {
         $stmt = $conn->prepare("
+            WITH RECURSIVE red_afiliados AS (
+                -- Miembros iniciales (directos del afiliado actual)
+                SELECT 
+                    a.id,
+                    a.usuario_id,
+                    a.patrocinador_id,
+                    a.codigo_afiliado,
+                    a.comision_total,
+                    a.ventas_totales,
+                    u.nombre,
+                    u.estado as estado_usuario,
+                    1 AS nivel
+                FROM afiliados a
+                JOIN usuarios u ON a.usuario_id = u.id
+                WHERE a.patrocinador_id = ?
+
+                UNION ALL
+
+                -- Miembros recursivos (afiliados de los afiliados)
+                SELECT 
+                    a.id,
+                    a.usuario_id,
+                    a.patrocinador_id,
+                    a.codigo_afiliado,
+                    a.comision_total,
+                    a.ventas_totales,
+                    u.nombre,
+                    u.estado as estado_usuario,
+                    ra.nivel + 1
+                FROM afiliados a
+                JOIN usuarios u ON a.usuario_id = u.id
+                JOIN red_afiliados ra ON a.patrocinador_id = ra.id
+                WHERE ra.nivel < 6 -- Limitar la profundidad a 6 niveles
+            )
             SELECT 
-                a.id,
-                a.codigo_afiliado,
-                a.nivel,
-                a.comision_total,
-                a.ventas_totales,
-                u.nombre,
-                u.estado as estado_usuario,
-                COUNT(DISTINCT h.id) as hijos_directos
-            FROM afiliados a
-            JOIN usuarios u ON a.usuario_id = u.id
-            LEFT JOIN afiliados h ON a.id = h.patrocinador_id
-            WHERE a.patrocinador_id = ?
-            GROUP BY a.id
-            ORDER BY a.nivel, a.fecha_activacion
+                ra.id,
+                ra.codigo_afiliado,
+                ra.nivel,
+                ra.comision_total,
+                ra.ventas_totales,
+                ra.nombre,
+                ra.estado_usuario,
+                (SELECT COUNT(*) FROM afiliados WHERE patrocinador_id = ra.id) as hijos_directos
+            FROM red_afiliados ra
+            ORDER BY ra.nivel, ra.nombre
         ");
         $stmt->execute([$afiliado['id']]);
         $redAfiliados = $stmt->fetchAll();
@@ -261,45 +307,51 @@ try {
     unset($nivel);
 
     // === CÁLCULO DE CRECIMIENTO ===
-    // Período actual: últimos 30 días
-    $fechaFin = date('Y-m-d');
-    $fechaInicio = date('Y-m-d', strtotime('-30 days'));
-    // Período anterior: 30 días antes del actual
-    $fechaFinAnterior = date('Y-m-d', strtotime('-31 days'));
-    $fechaInicioAnterior = date('Y-m-d', strtotime('-60 days'));
+    $crecimientoVentas = 0;
+    $crecimientoComisiones = 0;
+    $crecimientoAfiliados = 0;
 
-    // Ventas actuales
-    $stmt = $conn->prepare("SELECT COUNT(*) as total_ventas FROM ventas WHERE afiliado_id = ? AND fecha_venta BETWEEN ? AND ?");
-    $stmt->execute([$afiliado['id'], $fechaInicio, $fechaFin]);
-    $ventasActual = $stmt->fetchColumn();
-    // Ventas anteriores
-    $stmt = $conn->prepare("SELECT COUNT(*) as total_ventas FROM ventas WHERE afiliado_id = ? AND fecha_venta BETWEEN ? AND ?");
-    $stmt->execute([$afiliado['id'], $fechaInicioAnterior, $fechaFinAnterior]);
-    $ventasAnterior = $stmt->fetchColumn();
-    // Crecimiento ventas
-    $crecimientoVentas = ($ventasAnterior > 0) ? round((($ventasActual - $ventasAnterior) / $ventasAnterior) * 100, 2) : ($ventasActual > 0 ? 100 : 0);
+    if ($afiliado['id'] !== null) {
+        // Período actual: últimos 30 días
+        $fechaFin = date('Y-m-d');
+        $fechaInicio = date('Y-m-d', strtotime('-30 days'));
+        // Período anterior: 30 días antes del actual
+        $fechaFinAnterior = date('Y-m-d', strtotime('-31 days'));
+        $fechaInicioAnterior = date('Y-m-d', strtotime('-60 days'));
 
-    // Comisiones actuales
-    $stmt = $conn->prepare("SELECT SUM(monto) as total FROM comisiones WHERE afiliado_id = ? AND fecha_generacion BETWEEN ? AND ?");
-    $stmt->execute([$afiliado['id'], $fechaInicio, $fechaFin]);
-    $comisionesActual = $stmt->fetchColumn() ?: 0;
-    // Comisiones anteriores
-    $stmt = $conn->prepare("SELECT SUM(monto) as total FROM comisiones WHERE afiliado_id = ? AND fecha_generacion BETWEEN ? AND ?");
-    $stmt->execute([$afiliado['id'], $fechaInicioAnterior, $fechaFinAnterior]);
-    $comisionesAnterior = $stmt->fetchColumn() ?: 0;
-    // Crecimiento comisiones
-    $crecimientoComisiones = ($comisionesAnterior > 0) ? round((($comisionesActual - $comisionesAnterior) / $comisionesAnterior) * 100, 2) : ($comisionesActual > 0 ? 100 : 0);
+        // Ventas actuales
+        $stmt = $conn->prepare("SELECT COUNT(*) as total_ventas FROM ventas WHERE afiliado_id = ? AND fecha_venta BETWEEN ? AND ?");
+        $stmt->execute([$afiliado['id'], $fechaInicio, $fechaFin]);
+        $ventasActual = $stmt->fetchColumn();
+        // Ventas anteriores
+        $stmt = $conn->prepare("SELECT COUNT(*) as total_ventas FROM ventas WHERE afiliado_id = ? AND fecha_venta BETWEEN ? AND ?");
+        $stmt->execute([$afiliado['id'], $fechaInicioAnterior, $fechaFinAnterior]);
+        $ventasAnterior = $stmt->fetchColumn();
+        // Crecimiento ventas
+        $crecimientoVentas = ($ventasAnterior > 0) ? round((($ventasActual - $ventasAnterior) / $ventasAnterior) * 100, 2) : ($ventasActual > 0 ? 100 : 0);
 
-    // Afiliados actuales
-    $stmt = $conn->prepare("SELECT COUNT(*) FROM afiliados WHERE patrocinador_id = ? AND fecha_activacion BETWEEN ? AND ?");
-    $stmt->execute([$afiliado['id'], $fechaInicio, $fechaFin]);
-    $afiliadosActual = $stmt->fetchColumn();
-    // Afiliados anteriores
-    $stmt = $conn->prepare("SELECT COUNT(*) FROM afiliados WHERE patrocinador_id = ? AND fecha_activacion BETWEEN ? AND ?");
-    $stmt->execute([$afiliado['id'], $fechaInicioAnterior, $fechaFinAnterior]);
-    $afiliadosAnterior = $stmt->fetchColumn();
-    // Crecimiento afiliados
-    $crecimientoAfiliados = ($afiliadosAnterior > 0) ? round((($afiliadosActual - $afiliadosAnterior) / $afiliadosAnterior) * 100, 2) : ($afiliadosActual > 0 ? 100 : 0);
+        // Comisiones actuales
+        $stmt = $conn->prepare("SELECT SUM(monto) as total FROM comisiones WHERE afiliado_id = ? AND fecha_generacion BETWEEN ? AND ?");
+        $stmt->execute([$afiliado['id'], $fechaInicio, $fechaFin]);
+        $comisionesActual = $stmt->fetchColumn() ?: 0;
+        // Comisiones anteriores
+        $stmt = $conn->prepare("SELECT SUM(monto) as total FROM comisiones WHERE afiliado_id = ? AND fecha_generacion BETWEEN ? AND ?");
+        $stmt->execute([$afiliado['id'], $fechaInicioAnterior, $fechaFinAnterior]);
+        $comisionesAnterior = $stmt->fetchColumn() ?: 0;
+        // Crecimiento comisiones
+        $crecimientoComisiones = ($comisionesAnterior > 0) ? round((($comisionesActual - $comisionesAnterior) / $comisionesAnterior) * 100, 2) : ($comisionesActual > 0 ? 100 : 0);
+
+        // Afiliados actuales
+        $stmt = $conn->prepare("SELECT COUNT(*) FROM afiliados WHERE patrocinador_id = ? AND fecha_activacion BETWEEN ? AND ?");
+        $stmt->execute([$afiliado['id'], $fechaInicio, $fechaFin]);
+        $afiliadosActual = $stmt->fetchColumn();
+        // Afiliados anteriores
+        $stmt = $conn->prepare("SELECT COUNT(*) FROM afiliados WHERE patrocinador_id = ? AND fecha_activacion BETWEEN ? AND ?");
+        $stmt->execute([$afiliado['id'], $fechaInicioAnterior, $fechaFinAnterior]);
+        $afiliadosAnterior = $stmt->fetchColumn();
+        // Crecimiento afiliados
+        $crecimientoAfiliados = ($afiliadosAnterior > 0) ? round((($afiliadosActual - $afiliadosAnterior) / $afiliadosAnterior) * 100, 2) : ($afiliadosActual > 0 ? 100 : 0);
+    }
 
     // Preparar respuesta
     $response = [
@@ -336,7 +388,7 @@ try {
             'retiros' => $retirosRecientes,
             'red_afiliados' => $redAfiliados
         ],
-        'campanas_activas' => [] // Por ahora vacío hasta implementar campañas
+        'campanas_activas' => obtenerCampanasActivas($conn) // Cargar campañas reales
     ];
 
     jsonResponse($response, 200);
@@ -345,4 +397,39 @@ try {
     error_log("Error en dashboard afiliado: " . $e->getMessage());
     jsonResponse(['error' => 'Error interno del servidor'], 500);
 }
-?> 
+
+// Función para obtener campañas activas
+function obtenerCampanasActivas($conn) {
+    try {
+        // Buscar campañas con estados que representen "activas"
+        $stmt = $conn->prepare("
+            SELECT id, nombre, descripcion, tipo, estado, 
+                   fecha_inicio, fecha_fin, audiencia_tipo
+            FROM campanas 
+            WHERE estado IN ('enviando', 'programada') 
+            AND (fecha_fin IS NULL OR fecha_fin >= NOW())
+            ORDER BY fecha_inicio DESC 
+            LIMIT 10
+        ");
+        $stmt->execute();
+        $campanas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        return array_map(function($campana) {
+            return [
+                'id' => $campana['id'],
+                'nombre' => $campana['nombre'],
+                'descripcion' => $campana['descripcion'] ?: 'Campaña promocional',
+                'tipo' => $campana['tipo'],
+                'estado' => $campana['estado'],
+                'fecha_inicio' => $campana['fecha_inicio'],
+                'fecha_fin' => $campana['fecha_fin'],
+                'audiencia' => $campana['audiencia_tipo']
+            ];
+        }, $campanas);
+        
+    } catch (Exception $e) {
+        error_log("Error obteniendo campañas activas: " . $e->getMessage());
+        return [];
+    }
+}
+?>

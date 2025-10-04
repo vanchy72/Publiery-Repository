@@ -70,7 +70,8 @@ function createPayUPayment($orderData) {
         'responseUrl' => PAYU_RESPONSE_URL,
         'confirmationUrl' => PAYU_CONFIRMATION_URL,
         'test' => (PAYU_ENVIRONMENT === 'sandbox') ? 1 : 0,
-        'extra1' => $orderData['user_id'] . '-' . $orderData['libro_id'] . '-' . ($orderData['afiliado_id'] ?? '')
+        'extra1' => $orderData['user_id'] . '-' . $orderData['libro_id'] . '-' . ($orderData['afiliado_id'] ?? ''),
+        'extra2' => ($orderData['referidor_id'] ?? '') . '-' . ($orderData['campana_id'] ?? ''), // referidor-campaña
     ];
 
     return $payment;

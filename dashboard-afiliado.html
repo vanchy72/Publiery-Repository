@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard Afiliado</title>
   <link rel="stylesheet" href="css/dashboard-afiliado-consolidado.css" />
-  
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/tienda.css">
+  <link rel="stylesheet" href="css/sin-portada.css">
+  <link rel="stylesheet" href="css/campanas-mejoradas.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
 <body>
@@ -55,7 +57,7 @@
           </div>
           <div class="card">
             <h3>Comisiones</h3>
-            <p id="totalComisiones">$0</p>
+            <p id="inicioTotalComisiones">$0</p>
             <small id="crecimientoComisiones">+0%</small>
           </div>
           <div class="card">
@@ -124,7 +126,7 @@
         <h2>Resumen de Comisiones</h2>
 
         <div class="comisiones-cards">
-          <div class="card"><h4>Total Ganado</h4><p id="totalComisiones">$0</p></div>
+          <div class="card"><h4>Total Ganado</h4><p id="comisionesTotalGanado">$0</p></div>
           <div class="card"><h4>Pagadas</h4><p id="comisionesPagadas">$0</p></div>
           <div class="card"><h4>Pendientes</h4><p id="comisionesPendientes">$0</p></div>
         </div>
@@ -144,7 +146,6 @@
           <label>Nivel:
             <select id="filtroNivel">
               <option value="">Todos</option>
-              <option value="0">Nivel 0</option>
               <option value="1">Nivel 1</option>
               <option value="2">Nivel 2</option>
               <option value="3">Nivel 3</option>
@@ -304,63 +305,20 @@
       </section>
 
       <section class="tab" id="campanas">
-        <h2>Gestión de Campañas</h2>
-        
-        <!-- Botón para crear nueva campaña -->
-        <div class="campanas-header">
-          <button id="btnNuevaCampana" class="btn btn-primary">➕ Nueva Campaña</button>
-        </div>
-
-        <!-- Lista de campañas -->
-        <div class="campanas-grid" id="campanasGrid">
-          <p>Cargando campañas...</p>
-        </div>
-
-        <!-- Modal para crear/editar campaña -->
-        <div id="modalCampana" class="modal">
-          <div class="modal-contenido">
-            <button id="cerrarModalCampana" class="btn-cerrar">&times;</button>
-            <h3 id="tituloModalCampana">Nueva Campaña</h3>
-            
-            <form id="formCampana">
-              <div class="form-group">
-                <label for="nombreCampana">Nombre de la campaña:</label>
-                <input type="text" id="nombreCampana" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="descripcionCampana">Descripción:</label>
-                <textarea id="descripcionCampana" rows="3" required></textarea>
-              </div>
-              
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="objetivoVentas">Objetivo de ventas:</label>
-                  <input type="number" id="objetivoVentas" min="0">
-                </div>
-                
-                <div class="form-group">
-                  <label for="fechaInicio">Fecha de inicio:</label>
-                  <input type="date" id="fechaInicio">
-                </div>
-                
-                <div class="form-group">
-                  <label for="fechaFin">Fecha de fin:</label>
-                  <input type="date" id="fechaFin">
-                </div>
-              </div>
-              
-              <div class="form-group">
-                <label for="enlacePersonalizado">Enlace personalizado:</label>
-                <input type="text" id="enlacePersonalizado" placeholder="opcional">
-              </div>
-              
-              <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Guardar Campaña</button>
-                <button type="button" id="cancelarCampana" class="btn btn-secondary">Cancelar</button>
-              </div>
-            </form>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+          <h2>Campañas del Administrador</h2>
+          <div class="campanas-controls">
+            <label for="vista-campanas" style="margin-right: 10px; font-weight: 600;">Vista:</label>
+            <select id="vista-campanas" style="padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px; background: white;">
+              <option value="horizontal">Horizontal (Completa)</option>
+              <option value="vertical">Vertical (Tarjetas)</option>
+            </select>
           </div>
+        </div>
+        
+        <!-- Lista de campañas -->
+        <div class="campanas-grid horizontal" id="campanasGrid">
+          <p>Cargando campañas del administrador...</p>
         </div>
       </section>
 
@@ -639,7 +597,7 @@
     </main>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="js/dashboard-afiliado-unificado.js?v=2.6"></script>
+  <script src="js/dashboard-afiliado-unificado.js?v=2025-real-data"></script>
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
   <!-- <script src="js/tienda.js"></script> -->
   <!-- <script src="js/red_utils.js"></script> -->

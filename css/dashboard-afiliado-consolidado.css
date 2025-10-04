@@ -885,6 +885,35 @@ form#formRetiro select {
    CAMPAÑAS
    ======================================== */
 
+/* Estilos para el selector de vista */
+.campanas-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.campanas-controls label {
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.9rem;
+}
+
+.campanas-controls select {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: white;
+    font-size: 0.875rem;
+    color: #374151;
+    min-width: 160px;
+}
+
+.campanas-controls select:focus {
+    outline: none;
+    border-color: #5a67d8;
+    box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.1);
+}
+
 .campanas-header {
     margin-bottom: 2rem;
     display: flex;
@@ -893,6 +922,18 @@ form#formRetiro select {
 }
 
 .campanas-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.campanas-grid.horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.campanas-grid.vertical {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 1.5rem;
@@ -906,9 +947,244 @@ form#formRetiro select {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.campana-card.horizontal {
+    display: flex;
+    flex-direction: row;
+    min-height: 280px;
+    /* Eliminamos max-height para permitir expansión */
+}
+
+.campana-card.vertical {
+    display: flex;
+    flex-direction: column;
+}
+
 .campana-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* Estilos para layout horizontal de campañas - REDISEÑADO */
+.campana-card.horizontal .campana-header {
+    writing-mode: horizontal-tb;
+    min-width: 220px;
+    max-width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    position: relative;
+    padding: 1.5rem 1rem;
+}
+
+.campana-card.horizontal .campana-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    overflow: visible;
+}
+
+.campana-card.horizontal .campana-main-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.campana-card.horizontal .campana-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.campana-card.horizontal .campana-description {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #5a67d8;
+}
+
+.campana-card.horizontal .campana-description h4 {
+    margin: 0 0 0.5rem 0;
+    color: #374151;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.campana-card.horizontal .campana-description p {
+    margin: 0;
+    color: #6b7280;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.campana-card.horizontal .campana-stats {
+    background: #f1f5f9;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.campana-card.horizontal .campana-stats h4 {
+    margin: 0 0 0.75rem 0;
+    color: #374151;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.campana-card.horizontal .campana-stats .stat {
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+}
+
+.campana-card.horizontal .campana-stats .stat:last-child {
+    margin-bottom: 0;
+}
+
+.campana-card.horizontal .campana-stats .stat-label {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.campana-card.horizontal .campana-stats .stat-value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.campana-card.horizontal .campana-libros {
+    background: #f0f9ff;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #0ea5e9;
+    margin: 0;
+}
+
+.campana-card.horizontal .campana-libros h4 {
+    margin: 0 0 0.75rem 0;
+    color: #0c4a6e;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.campana-card.horizontal .libro-promocionado {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #bae6fd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.campana-card.horizontal .libro-promocionado:last-child {
+    margin-bottom: 0;
+}
+
+.campana-card.horizontal .libro-titulo {
+    flex: 1;
+    font-weight: 500;
+    color: #1f2937;
+    font-size: 0.85rem;
+}
+
+.campana-card.horizontal .libro-precio {
+    font-weight: 600;
+    color: #059669;
+    font-size: 0.85rem;
+}
+
+.campana-card.horizontal .campana-enlaces {
+    background: #f0f9ff;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #0ea5e9;
+    margin: 0;
+}
+
+.campana-card.horizontal .campana-enlaces h4 {
+    margin: 0 0 0.75rem 0;
+    color: #0c4a6e;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.campana-card.horizontal .campana-enlace {
+    margin-bottom: 0.75rem;
+    background: white;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #bae6fd;
+}
+
+.campana-card.horizontal .campana-enlace:last-child {
+    margin-bottom: 0;
+}
+
+.campana-card.horizontal .campana-enlace label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.campana-card.horizontal .campana-enlace > div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.campana-card.horizontal .campana-enlace input {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background: #f9fafb;
+}
+
+.campana-card.horizontal .campana-enlace button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.campana-card.horizontal .campana-footer {
+    background: #f9fafb;
+    padding: 0.75rem 1.5rem;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.campana-card.horizontal .share-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.campana-card.horizontal .share-buttons .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
 }
 
 .campana-header {
@@ -949,6 +1225,11 @@ form#formRetiro select {
     color: #6b7280;
 }
 
+.campana-status.admin {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    color: white;
+}
+
 .campana-content {
     padding: 1.5rem;
 }
@@ -957,6 +1238,168 @@ form#formRetiro select {
     margin: 0 0 1rem 0;
     color: #6b7280;
     line-height: 1.5;
+}
+
+/* Estilos específicos para campañas del admin */
+.campana-libros {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.campana-libros h4 {
+    margin: 0 0 0.5rem 0;
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.libro-promocionado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.libro-promocionado:last-child {
+    border-bottom: none;
+}
+
+.libro-titulo {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.libro-precio {
+    font-weight: 600;
+    color: #059669;
+}
+
+.campana-enlaces {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f0f9ff;
+    border-radius: 8px;
+    border: 1px solid #0ea5e9;
+}
+
+.campana-enlaces h4 {
+    margin: 0 0 0.75rem 0;
+    color: #0c4a6e;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.campana-enlace {
+    margin-bottom: 0.75rem;
+}
+
+.campana-enlace:last-child {
+    margin-bottom: 0;
+}
+
+.campana-enlace label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.campana-enlace input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    background: white;
+}
+
+.campana-enlace button {
+    padding: 0.5rem 0.75rem;
+    background: #0ea5e9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.campana-enlace button:hover {
+    background: #0284c7;
+}
+
+.btn-comprar {
+    background: #059669 !important;
+}
+
+.btn-comprar:hover {
+    background: #047857 !important;
+}
+
+.campana-sin-libros {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.campana-sin-libros p {
+    margin: 0 0 0.75rem 0;
+    color: #92400e;
+}
+
+.campana-share {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f3f4f6;
+    border-radius: 8px;
+}
+
+.campana-share h4 {
+    margin: 0 0 0.75rem 0;
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.share-grupo {
+    margin-bottom: 0.75rem;
+}
+
+.share-grupo:last-child {
+    margin-bottom: 0;
+}
+
+.share-grupo small {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.campana-footer {
+    padding: 1rem 1.5rem;
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    border-radius: 0 0 12px 12px;
+}
+
+.campana-footer small {
+    color: #6b7280;
+    font-size: 0.75rem;
 }
 
 .campana-stats {
@@ -982,6 +1425,52 @@ form#formRetiro select {
     font-size: 1.125rem;
     font-weight: 600;
     color: #1f2937;
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.campana-progress {
+    margin-bottom: 1rem;
+}
+
+.progress-bar-container {
+    background-color: #e5e7eb;
+    border-radius: 9999px;
+    height: 8px;
+    width: 100%;
+}
+
+.progress-bar {
+    background-color: #5a67d8;
+    border-radius: 9999px;
+    height: 100%;
+    transition: width 0.3s ease-in-out;
+}
+
+.campana-enlace {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.campana-enlace input {
+    flex: 1;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 0.5rem;
+    background-color: #f9fafb;
+}
+
+.campana-enlace button {
+    background-color: #5a67d8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
 }
 
 .campana-dates {
@@ -1579,3 +2068,427 @@ form#formRetiro select {
     color: #6b7280;
 } 
 
+/* Estados específicos para comisiones */
+.estado-badge.pagada {
+    background-color: #c6f6d5;
+    color: #22543d;
+}
+
+.estado-badge.pendiente {
+    background-color: #fef5e7;
+    color: #c05621;
+}
+
+/* ========================================
+   ESTILOS PROFESIONALES PARA CAMPAÑAS
+   ======================================== */
+
+/* Mejoras en la tarjeta de campaña */
+.campana-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    position: relative;
+}
+
+.campana-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #5a67d8, #7c3aed, #ec4899);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.campana-card:hover::before {
+    opacity: 1;
+}
+
+.campana-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Header de campaña mejorado */
+.campana-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.campana-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.campana-header h3 {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    font-size: 1.375rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    letter-spacing: -0.025em;
+}
+
+.campana-status {
+    position: relative;
+    z-index: 2;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.campana-status.activa {
+    background: rgba(34, 197, 94, 0.9);
+    color: white;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+/* Imagen promocional */
+.campana-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.campana-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+}
+
+.campana-image-placeholder {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Contenido mejorado */
+.campana-content {
+    padding: 2rem;
+}
+
+.campana-content p {
+    margin: 0 0 1.5rem 0;
+    color: #4b5563;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* Estadísticas mejoradas */
+.campana-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.campana-stats .stat {
+    text-align: center;
+    position: relative;
+}
+
+.campana-stats .stat::after {
+    content: '';
+    position: absolute;
+    bottom: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, #5a67d8, #7c3aed);
+    border-radius: 1px;
+}
+
+.stat-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #5a67d8, #7c3aed);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.campana-stats .stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.campana-stats .stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #1f2937, #4b5563);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Barra de progreso mejorada */
+.campana-progress {
+    margin-bottom: 2rem;
+}
+
+.progress-bar-container {
+    background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+    border-radius: 10px;
+    height: 12px;
+    width: 100%;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #5a67d8, #7c3aed, #ec4899);
+    border-radius: 10px;
+    height: 100%;
+    transition: width 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: progressShine 2s ease-in-out infinite;
+}
+
+@keyframes progressShine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Enlaces mejorados */
+.campana-enlace {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.campana-enlace input {
+    flex: 1;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.75rem;
+    background: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.campana-enlace input:focus {
+    outline: none;
+    border-color: #5a67d8;
+    box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.1);
+}
+
+.campana-enlace button {
+    background: linear-gradient(135deg, #5a67d8, #7c3aed);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(90, 103, 216, 0.3);
+}
+
+.campana-enlace button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(90, 103, 216, 0.4);
+}
+
+/* Botones de compartir */
+.campana-share {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #fefefe, #f8fafc);
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.share-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.share-facebook {
+    background: linear-gradient(135deg, #1877f2, #42a5f5);
+    color: white;
+}
+
+.share-twitter {
+    background: linear-gradient(135deg, #1da1f2, #64b5f6);
+    color: white;
+}
+
+.share-whatsapp {
+    background: linear-gradient(135deg, #25d366, #66bb6a);
+    color: white;
+}
+
+.share-linkedin {
+    background: linear-gradient(135deg, #0077b5, #42a5f5);
+    color: white;
+}
+
+.share-network {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+}
+
+.share-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Acciones mejoradas */
+.campana-actions {
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+    display: flex;
+    gap: 0.75rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.campana-actions .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.campana-actions .btn-secondary {
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    color: #475569;
+    border: 1px solid #cbd5e1;
+}
+
+.campana-actions .btn-danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+.campana-actions .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Estilos para imagen promocional en modal */
+.image-preview {
+    margin-top: 1rem;
+    position: relative;
+    display: inline-block;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+}
+
+.btn-eliminar-imagen {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(239, 68, 68, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-eliminar-imagen:hover {
+    background: rgba(239, 68, 68, 1);
+    transform: scale(1.1);
+}
+
+.form-help {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #6b7280;
+    font-style: italic;
+}

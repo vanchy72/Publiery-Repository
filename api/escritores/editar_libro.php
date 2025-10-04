@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit(0);
 }
 
-require_once '../../config/database.php';
+require_once __DIR__ . '/../../config/database.php';
 
 // Verificar que sea una petición POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -54,7 +54,6 @@ try {
     ");
     
     // Obtener el usuario_id de la sesión
-    session_start();
     if (!isset($_SESSION['user_id'])) {
         throw new Exception('Sesión no válida');
     }

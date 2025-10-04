@@ -4,18 +4,24 @@
  * Retorna todos los libros publicados con información del autor
  */
 
+// Habilitar errores para debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET');
 header('Access-Control-Allow-Headers: Content-Type');
 
-require_once '../../config/database.php';
-
-if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
-    jsonResponse(['error' => 'Método no permitido'], 405);
-}
-
 try {
+    require_once __DIR__ . '/../../config/database.php';
+    require_once __DIR__ . '/../../config/auth_functions.php';
+    
+    if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+        jsonResponse(['error' => 'Método no permitido'], 405);
+        exit;
+    }
+
     $conn = getDBConnection();
     
     // Obtener libros publicados con información del autor
@@ -45,14 +51,17 @@ try {
     foreach ($libros as &$libro) {
         $libro['precio'] = floatval($libro['precio']);
         $libro['autor_id'] = intval($libro['autor_id']);
+        
         // Si no hay imagen de portada, usar una por defecto
         if (empty($libro['imagen_portada'])) {
             $libro['imagen_portada'] = 'default-book.jpg';
         }
+        
         // Si no hay foto de autor, usar una por defecto
         if (empty($libro['autor_foto'])) {
             $libro['autor_foto'] = 'default-author.jpg';
         }
+        
         // Si no hay biografía, poner texto vacío
         if (empty($libro['autor_bio'])) {
             $libro['autor_bio'] = '';
@@ -67,6 +76,16 @@ try {
     
 } catch (Exception $e) {
     error_log('Error obteniendo libros disponibles: ' . $e->getMessage());
-    jsonResponse(['error' => 'Error interno del servidor'], 500);
+    
+    // Respuesta de error más detallada
+    $errorResponse = [
+        'success' => false,
+        'error' => 'Error interno del servidor',
+        'details' => $e->getMessage(),
+        'file' => basename($e->getFile()),
+        'line' => $e->getLine()
+    ];
+    
+    jsonResponse($errorResponse, 500);
 }
 ?> 

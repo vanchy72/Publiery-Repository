@@ -107,13 +107,29 @@ config/local.php
 config/production.php
 
 # =====================================================
-# ARCHIVOS DE PRUEBA
+# ARCHIVOS DE MIGRACIÓN Y DESARROLLO
 # =====================================================
 
-# Archivos de prueba que no deben subirse
+# Archivos de migración ya completada
+migracion_*.php
+migrar_*.php
+csv_*.php
+sql_*.php
+analisis_*.php
+diagnostico_*.php
+debug_*.php
 test_*.php
 *_test.php
 *_test.html
+verificar_*.php
+corregir_*.php
+backup_*.json
+*.sql
+*.csv
+*.html
+
+# Archivos de documentación temporal
+*.md
 
 # =====================================================
 # ARCHIVOS DE SEGURIDAD

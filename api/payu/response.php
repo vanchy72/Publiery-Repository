@@ -3,7 +3,7 @@
  * API para manejar la respuesta de PayU
  */
 
-require_once '../../config/database.php';
+require_once __DIR__ . '/../../config/database.php';
 require_once '../../config/payu.php';
 
 // Log de la respuesta
@@ -97,9 +97,11 @@ try {
     
     // Redirigir según el estado
     if ($estadoTransaccion === 'APPROVED') {
-        $redirectUrl = APP_URL . "/descarga.html?venta={$venta['id']}";
+        // Redirigir a una página de éxito que luego manejará la descarga
+        $redirectUrl = APP_URL . "/pago-exitoso.html?ref=" . $referenciaPago;
     } else {
-        $redirectUrl = APP_URL . "/pago.html?libro={$venta['libro_id']}&error=1";
+        // Redirigir a una página de fallo con el código de estado
+        $redirectUrl = APP_URL . "/pago-fallido.html?estado=" . $estadoTransaccion;
     }
     
     header("Location: $redirectUrl");

@@ -3440,3 +3440,862 @@ getCurrentUser: Array
     [foto] => 
 )
 
+PHPSESSID: u4iqdf3h41276rqcdf8h729mc3
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 7d61euicur0ali89273cf7diad
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: 7d61euicur0ali89273cf7diad
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: 7d61euicur0ali89273cf7diad
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: crnrnp90kti5c2a5n6a2btm1b8
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: 3tl34kd4j5f9e1nbgm703tddjn
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: 3tl34kd4j5f9e1nbgm703tddjn
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: i8n8dd9m3m9labgkv36nvqk8gb
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: 95sqqfkhms5j10aefvccr33e43
+session_id(): 95sqqfkhms5j10aefvccr33e43
+user_id: 46
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: bg7tv6ktcj4j95p678pva1d071
+session_id(): bg7tv6ktcj4j95p678pva1d071
+user_id: 46
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: qpo9egoilsnpl22pqfqog9ij85
+session_id(): qpo9egoilsnpl22pqfqog9ij85
+user_id: 46
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: oeebmmi5ogdqe4brjkdtpev4td
+session_id(): oeebmmi5ogdqe4brjkdtpev4td
+user_id: 46
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: r7p0okl4qbpnl6ld0e72i72ion
+session_id(): r7p0okl4qbpnl6ld0e72i72ion
+user_id: 55
+getCurrentUser: Array
+(
+    [id] => 55
+    [nombre] => Juan Pérez Escritor
+    [email] => juan.escritor@prueba.com
+    [password] => $2y$10$AcM89Tte3Aj8CLwjaa7x..oGCTglHd4WC6PUl2lMoh6B14chFKZ72
+    [documento] => 
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-08 00:36:36
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: m8s9qbaec49r6loetin9df6q5e
+session_id(): m8s9qbaec49r6loetin9df6q5e
+user_id: 55
+getCurrentUser: Array
+(
+    [id] => 55
+    [nombre] => Juan Pérez Escritor
+    [email] => juan.escritor@prueba.com
+    [password] => $2y$10$AcM89Tte3Aj8CLwjaa7x..oGCTglHd4WC6PUl2lMoh6B14chFKZ72
+    [documento] => 
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-08 00:36:36
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: a593gi5gvcihmenafftf3oafhd
+session_id(): a593gi5gvcihmenafftf3oafhd
+user_id: 46
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: s1paof9kjbaoc9a9fnrkclup6p
+session_id(): s1paof9kjbaoc9a9fnrkclup6p
+user_id: 46
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: s1paof9kjbaoc9a9fnrkclup6p
+session_id(): s1paof9kjbaoc9a9fnrkclup6p
+user_id: 46
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: s1paof9kjbaoc9a9fnrkclup6p
+session_id(): s1paof9kjbaoc9a9fnrkclup6p
+user_id: 46
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: s1paof9kjbaoc9a9fnrkclup6p
+session_id(): s1paof9kjbaoc9a9fnrkclup6p
+user_id: 46
+getCurrentUser: Array
+(
+    [id] => 46
+    [nombre] => SANTIAGO JOSÉ ORTEGA RAMIREZ
+    [email] => santior2008@gmail.com
+    [password] => $2y$10$1nWXr6jwSjvVGc0jVUEW9u.9dpn.QGN7XImVC6DvfcUkVLq30ZKda
+    [documento] => 1139429044
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => Estudiante de segundo semestre de Ingeniería Mecánica en la Universidad del Norte. Destacado por su rendimiento académico gracias a su paso por el Instituto Experimental del Atlántico, donde se preparó como bachiller.
+    [fecha_registro] => 2025-07-12 16:53:19
+    [fecha_ultimo_login] => 
+    [token_activacion] => 641418e1000a5b017b4ff1faaffd09c32fcdd3d9956a78d2fe08dc13828d0d72
+    [fecha_expiracion_token] => 2025-07-13 23:53:19
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: gk6iik32jhg2i04i6mq320cdfh
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: gk6iik32jhg2i04i6mq320cdfh
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: uqirumanj83s7otqb2ju2fg3a2
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: l691ld1heq3ac05qstdim6seku
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: l691ld1heq3ac05qstdim6seku
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: ka1d3rsreus03c4efv05qi0ls0
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: l691ld1heq3ac05qstdim6seku
+session_id(): l691ld1heq3ac05qstdim6seku
+user_id: 79
+getCurrentUser: Array
+(
+    [id] => 79
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$7Pi6GbGBK29Z7NdOUCPuSuByBy04h3e0HLEuHtKt1OiPkiNJ.ZaGa
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => pendiente
+    [biografia] => 
+    [fecha_registro] => 2025-09-18 18:46:27
+    [fecha_ultimo_login] => 
+    [token_activacion] => 97fc604422c16e132c9e5db49cf0234a43089692268b65f61eeaa0e0ebf857ad
+    [fecha_expiracion_token] => 2025-09-20 01:46:27
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: cskdamog8e6hab24dug1cu5qnm
+session_id(): 
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: cskdamog8e6hab24dug1cu5qnm
+session_id(): cskdamog8e6hab24dug1cu5qnm
+user_id: 79
+getCurrentUser: Array
+(
+    [id] => 79
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$7Pi6GbGBK29Z7NdOUCPuSuByBy04h3e0HLEuHtKt1OiPkiNJ.ZaGa
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => pendiente
+    [biografia] => 
+    [fecha_registro] => 2025-09-18 18:46:27
+    [fecha_ultimo_login] => 
+    [token_activacion] => 97fc604422c16e132c9e5db49cf0234a43089692268b65f61eeaa0e0ebf857ad
+    [fecha_expiracion_token] => 2025-09-20 01:46:27
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: prcj4ijfv7qcso3nppf8ill7ri
+session_id(): prcj4ijfv7qcso3nppf8ill7ri
+user_id: 79
+getCurrentUser: Array
+(
+    [id] => 79
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$7Pi6GbGBK29Z7NdOUCPuSuByBy04h3e0HLEuHtKt1OiPkiNJ.ZaGa
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => pendiente
+    [biografia] => 
+    [fecha_registro] => 2025-09-18 18:46:27
+    [fecha_ultimo_login] => 
+    [token_activacion] => 97fc604422c16e132c9e5db49cf0234a43089692268b65f61eeaa0e0ebf857ad
+    [fecha_expiracion_token] => 2025-09-20 01:46:27
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 2o4sedm7nd52pcbgmin1onnc4b
+session_id(): 2o4sedm7nd52pcbgmin1onnc4b
+user_id: 83
+getCurrentUser: Array
+(
+    [id] => 83
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$/aFhSsRsbLe3PhNU2GL/TuuiXFa8NR8e/Rr5MzCY5vPGHsjni37Yy
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => pendiente
+    [biografia] => 
+    [fecha_registro] => 2025-09-20 10:52:33
+    [fecha_ultimo_login] => 
+    [token_activacion] => 7f83cb92858f8d6d2d25134ca7ef9438946cfbf453ba42039c986dd16373e492
+    [fecha_expiracion_token] => 2025-09-21 17:52:33
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 7uj07odag4bpece3ioksp240s5
+session_id(): 7uj07odag4bpece3ioksp240s5
+user_id: 81
+getCurrentUser: Array
+(
+    [id] => 81
+    [nombre] => Administrador Publiery
+    [email] => publierycompany@gmail.com
+    [password] => $2y$10$hi.0Pgg/2cPeUw.0Y00vQu0Hp2j9xMxOJ3LBVNUDVJdC9kRxqJBJ.
+    [documento] => ADMIN_PUBLIERY_001
+    [rol] => admin
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-20 10:03:26
+    [fecha_ultimo_login] => 
+    [token_activacion] => 
+    [fecha_expiracion_token] => 
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: b5o8esc6ispjmkpkpjvkq39cpn
+session_id(): b5o8esc6ispjmkpkpjvkq39cpn
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: vceoafru527qsev772a9cubqc1
+session_id(): vceoafru527qsev772a9cubqc1
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: nmmi42959jme3uveuoi8bqai8q
+session_id(): nmmi42959jme3uveuoi8bqai8q
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: NO COOKIE
+session_id(): 6rttdqsdgggnbgq04n48giaau0
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): i0scbpun49in3vjvolls7j2gur
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): edhav1lnabkfnvlb21rn41eupl
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): 0mlv0mfqi5rinu293rgsl9biui
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): qa6la7ui94v08gbb49g208vnkh
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): psmc7u1ks60vi1qdp4go52i298
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): rnjmfujrdlilrjfg56ostentgj
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): 1qeig3abtrf71km09224b7rdum
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): 4f4p3j3mtmb9fqp6fh90lrqr1n
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): kkp6q4b4o9err6l2em8rjpul8f
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): jr9hct516dnhmsj0utp1u0h42f
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): o3319baqu2rvh4c3mhiimb89sq
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): mase7m90l9dus39mkvimjsqbcr
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): vvferfvn07gdea4072eke8mdd9
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): 9m77vdbj5h20oumk94gua081qv
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): ab36leco24ugtqt3l1surpi0jn
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: NO COOKIE
+session_id(): fct94k2m0edumqb2i1cd5m7ovv
+user_id: NO SESSION
+getCurrentUser: 
+PHPSESSID: fno96ruv8b0ab7dhhnefuref5o
+session_id(): fno96ruv8b0ab7dhhnefuref5o
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 3sgvlecjrpk8s7pbr5rkt3k5m3
+session_id(): 3sgvlecjrpk8s7pbr5rkt3k5m3
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 3sgvlecjrpk8s7pbr5rkt3k5m3
+session_id(): 3sgvlecjrpk8s7pbr5rkt3k5m3
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: jns0c9ohrujmkdpapqo36l9po4
+session_id(): jns0c9ohrujmkdpapqo36l9po4
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: 002drm322cqut44ds90p9vek6a
+session_id(): 002drm322cqut44ds90p9vek6a
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: i341popjs7iuofaegjsi70nkla
+session_id(): i341popjs7iuofaegjsi70nkla
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: i341popjs7iuofaegjsi70nkla
+session_id(): i341popjs7iuofaegjsi70nkla
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: i341popjs7iuofaegjsi70nkla
+session_id(): i341popjs7iuofaegjsi70nkla
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: i341popjs7iuofaegjsi70nkla
+session_id(): i341popjs7iuofaegjsi70nkla
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: i341popjs7iuofaegjsi70nkla
+session_id(): i341popjs7iuofaegjsi70nkla
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: i341popjs7iuofaegjsi70nkla
+session_id(): i341popjs7iuofaegjsi70nkla
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: i341popjs7iuofaegjsi70nkla
+session_id(): i341popjs7iuofaegjsi70nkla
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: i341popjs7iuofaegjsi70nkla
+session_id(): i341popjs7iuofaegjsi70nkla
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: i341popjs7iuofaegjsi70nkla
+session_id(): i341popjs7iuofaegjsi70nkla
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+PHPSESSID: i341popjs7iuofaegjsi70nkla
+session_id(): i341popjs7iuofaegjsi70nkla
+user_id: 84
+getCurrentUser: Array
+(
+    [id] => 84
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$B0GYgO6v8q4gJXJ7lAgN1OYmG03SQzZx8OzLUAbxJ5bHZyFe7JRxe
+    [documento] => 8639546
+    [rol] => escritor
+    [estado] => activo
+    [biografia] => 
+    [fecha_registro] => 2025-09-24 09:59:28
+    [fecha_ultimo_login] => 
+    [token_activacion] => a4d903b003d6b510463f0c842a99e7ea4965b03b4cbaa16bbb7653cb9fa0c8b8
+    [fecha_expiracion_token] => 2025-09-25 16:59:28
+    [cuenta_payu] => 
+    [foto] => 
+)
+

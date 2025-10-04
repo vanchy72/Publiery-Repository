@@ -1,0 +1,268 @@
+<?php
+/**
+ * API Analytics Avanzados para Afiliados
+ * Proporciona métricas detalladas de rendimiento y análisis
+ */
+
+header('Content-Type: application/json; charset=utf-8');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET');
+header('Access-Control-Allow-Headers: Content-Type');
+
+require_once __DIR__ . '/../../config/database.php';
+
+// Iniciar sesión si no está iniciada
+if (session_status() === PHP_SESSION_NONE) {
+}
+
+// Verificar autenticación
+if (!isAuthenticated()) {
+    jsonResponse(['error' => 'No autorizado'], 401);
+}
+
+$user = getCurrentUser();
+if ($user['rol'] !== 'afiliado' && $user['rol'] !== 'admin') {
+    jsonResponse(['error' => 'Acceso denegado'], 403);
+}
+
+try {
+    $conn = getDBConnection();
+    $userId = $user['id'];
+    $afiliadoId = null;
+
+    // Obtener ID del afiliado
+    $stmt = $conn->prepare("SELECT id FROM afiliados WHERE usuario_id = ?");
+    $stmt->execute([$userId]);
+    $afiliado = $stmt->fetch();
+    
+    if (!$afiliado) {
+        jsonResponse(['success' => true, 'metricas_generales' => ['ventas' => ['total' => 0]], 'tendencias' => ['diarias' => []]]);
+    }
+
+    $afiliadoId = $afiliado['id'];
+    $periodo = isset($_GET['periodo']) ? (int)$_GET['periodo'] : 30;
+    $fechaInicio = date('Y-m-d', strtotime("-{$periodo} days"));
+    $fechaFin = date('Y-m-d');
+
+    // 1. MÉTRICAS DE RENDIMIENTO GENERAL
+    try {
+        $stmt = $conn->prepare("
+            SELECT 
+                COUNT(DISTINCT c.venta_id) as total_ventas, 
+                SUM(v.total) as volumen_ventas, 
+                AVG(v.total) as ticket_promedio, 
+                COUNT(DISTINCT v.comprador_id) as clientes_unicos, 
+                SUM(c.monto) as comisiones_generadas, 
+                COUNT(c.id) as transacciones_con_comision 
+            FROM comisiones c
+            JOIN ventas v ON c.venta_id = v.id
+            WHERE c.afiliado_id = ? AND v.fecha_venta BETWEEN ? AND ?
+        ");
+        $stmt->execute([$afiliadoId, $fechaInicio, $fechaFin]);
+        $metricasGenerales = $stmt->fetch();
+    } catch (Exception $e) {
+        jsonResponse(['success' => false, 'error' => 'Excepción en Métricas Generales: ' . $e->getMessage()], 500);
+    }
+
+    // 2. ANÁLISIS DE TENDENCIAS DIARIAS
+    try {
+        $stmt = $conn->prepare("
+            SELECT 
+                DATE(v.fecha_venta) as fecha, 
+                COUNT(DISTINCT v.id) as ventas, 
+                SUM(v.total) as volumen, 
+                SUM(c.monto) as comisiones 
+            FROM comisiones c
+            JOIN ventas v ON c.venta_id = v.id
+            WHERE c.afiliado_id = ? AND v.fecha_venta BETWEEN ? AND ?
+            GROUP BY DATE(v.fecha_venta) 
+            ORDER BY fecha
+        ");
+        $stmt->execute([$afiliadoId, $fechaInicio, $fechaFin]);
+        $tendenciasDiarias = $stmt->fetchAll();
+    } catch (Exception $e) {
+        jsonResponse(['success' => false, 'error' => 'Excepción en Tendencias Diarias: ' . $e->getMessage()], 500);
+    }
+
+    // 3. ANÁLISIS DE PRODUCTOS MÁS VENDIDOS (CORREGIDO: Filtrado por afiliado_id)
+    try {
+        $stmt = $conn->prepare("
+            SELECT 
+                l.id, 
+                l.titulo, 
+                l.imagen_portada,
+                u.nombre as autor,
+                COUNT(v.id) as veces_vendido, 
+                SUM(v.total) as volumen_generado, 
+                SUM(c.monto) as comisiones_generadas, 
+                AVG(v.total) as precio_promedio 
+            FROM ventas v 
+            JOIN libros l ON v.libro_id = l.id 
+            LEFT JOIN comisiones c ON v.id = c.venta_id 
+            LEFT JOIN usuarios u ON l.autor_id = u.id
+            WHERE c.afiliado_id = ? AND v.fecha_venta BETWEEN ? AND ? 
+            GROUP BY l.id, l.titulo, l.imagen_portada, u.nombre
+            ORDER BY veces_vendido DESC 
+            LIMIT 10
+        ");
+        $stmt->execute([$afiliadoId, $fechaInicio, $fechaFin]);
+        $productosTop = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+        jsonResponse(['success' => false, 'error' => 'Excepción en Productos Top: ' . $e->getMessage()], 500);
+    }
+
+    // 4. ANÁLISIS DE RED MULTINIVEL (SIN CAMBIOS POR AHORA)
+    try {
+        $stmt = $conn->prepare("
+            SELECT 
+                a.nivel, 
+                COUNT(a.id) as total_afiliados, 
+                SUM(a.comision_total) as comision_total_nivel, 
+                AVG(a.comision_total) as comision_promedio, 
+                COUNT(CASE WHEN u.estado = 'activo' THEN 1 END) as afiliados_activos, 
+                COUNT(CASE WHEN u.estado = 'pendiente' THEN 1 END) as afiliados_pendientes 
+            FROM afiliados a
+            JOIN usuarios u ON a.usuario_id = u.id
+            WHERE a.patrocinador_id = ? 
+            GROUP BY a.nivel 
+            ORDER BY a.nivel
+        ");
+        $stmt->execute([$afiliadoId]);
+        $analisisRed = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+        jsonResponse(['success' => false, 'error' => 'Excepción en Análisis de Red: ' . $e->getMessage()], 500);
+    }
+
+    // 5. MÉTRICAS DE CONVERSIÓN (CORREGIDO: Lógica de conteo)
+    try {
+        $stmt = $conn->prepare("
+            SELECT 
+                COUNT(DISTINCT u.id) as total_registros,
+                COUNT(DISTINCT a.id) as registros_convertidos,
+                COUNT(DISTINCT v.comprador_id) as registros_con_ventas
+            FROM usuarios u
+            LEFT JOIN afiliados a ON u.id = a.usuario_id AND a.patrocinador_id = ?
+            LEFT JOIN ventas v ON u.id = v.comprador_id AND v.afiliado_id = ?
+            WHERE u.fecha_registro BETWEEN ? AND ?
+        ");
+        $stmt->execute([$afiliadoId, $afiliadoId, $fechaInicio, $fechaFin]);
+        $metricasConversion = $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+        jsonResponse(['success' => false, 'error' => 'Excepción en Métricas de Conversión: ' . $e->getMessage()], 500);
+    }
+
+    // 6. ANÁLISIS DE HORARIOS DE VENTA
+    try {
+        $stmt = $conn->prepare("
+            SELECT 
+                HOUR(v.fecha_venta) as hora, 
+                COUNT(DISTINCT v.id) as ventas, 
+                SUM(v.total) as volumen 
+            FROM comisiones c
+            JOIN ventas v ON c.venta_id = v.id
+            WHERE c.afiliado_id = ? AND v.fecha_venta BETWEEN ? AND ? 
+            GROUP BY HOUR(v.fecha_venta) 
+            ORDER BY hora
+        ");
+        $stmt->execute([$afiliadoId, $fechaInicio, $fechaFin]);
+        $analisisHorarios = $stmt->fetchAll();
+    } catch (Exception $e) {
+        $analisisHorarios = [];
+    }
+
+    // 7. COMPARACIÓN CON PERÍODOS ANTERIORES
+    $periodoAnterior = $periodo * 2;
+    $fechaInicioAnterior = date('Y-m-d', strtotime("-{$periodoAnterior} days"));
+    $fechaFinAnterior = date('Y-m-d', strtotime("-{$periodo} days"));
+    try {
+        $stmt = $conn->prepare("
+            SELECT 
+                COUNT(DISTINCT c.venta_id) as ventas_anterior, 
+                SUM(v.total) as volumen_anterior, 
+                SUM(c.monto) as comisiones_anterior 
+            FROM comisiones c
+            JOIN ventas v ON c.venta_id = v.id
+            WHERE c.afiliado_id = ? AND v.fecha_venta BETWEEN ? AND ?
+        ");
+        $stmt->execute([$afiliadoId, $fechaInicioAnterior, $fechaFinAnterior]);
+        $comparacionAnterior = $stmt->fetch();
+    } catch (Exception $e) {
+        $comparacionAnterior = ['ventas_anterior' => 0, 'volumen_anterior' => 0, 'comisiones_anterior' => 0];
+    }
+
+    // Calcular porcentajes de crecimiento
+    $crecimientoVentas = ($metricasGenerales['total_ventas'] > 0 && !empty($comparacionAnterior['ventas_anterior']) && $comparacionAnterior['ventas_anterior'] > 0)
+        ? (($metricasGenerales['total_ventas'] - $comparacionAnterior['ventas_anterior']) / $comparacionAnterior['ventas_anterior']) * 100 
+        : 0;
+    
+    $crecimientoVolumen = ($metricasGenerales['volumen_ventas'] > 0 && !empty($comparacionAnterior['volumen_anterior']) && $comparacionAnterior['volumen_anterior'] > 0)
+        ? (($metricasGenerales['volumen_ventas'] - $comparacionAnterior['volumen_anterior']) / $comparacionAnterior['volumen_anterior']) * 100 
+        : 0;
+
+    // Normalizar tendencias diarias
+    $dias = $periodo;
+    $tendenciasPorFecha = [];
+    foreach ($tendenciasDiarias as $t) {
+        $tendenciasPorFecha[$t['fecha']] = [
+            'fecha' => $t['fecha'],
+            'ventas' => (int)$t['ventas'],
+            'volumen' => (float)($t['volumen'] ?? 0),
+            'comisiones' => (float)($t['comisiones'] ?? 0)
+        ];
+    }
+    $tendenciasCompletas = [];
+    for ($i = $dias - 1; $i >= 0; $i--) {
+        $fecha = date('Y-m-d', strtotime("-$i days"));
+        $tendenciasCompletas[] = $tendenciasPorFecha[$fecha] ?? ['fecha' => $fecha, 'ventas' => 0, 'volumen' => 0, 'comisiones' => 0];
+    }
+
+    // Preparar respuesta
+    $response = [
+        'success' => true,
+        'periodo_analisis' => ['inicio' => $fechaInicio, 'fin' => $fechaFin, 'dias' => $periodo],
+        'metricas_generales' => [
+            'ventas' => [
+                'total' => (int)($metricasGenerales['total_ventas'] ?? 0),
+                'volumen' => (float)($metricasGenerales['volumen_ventas'] ?? 0),
+                'ticket_promedio' => (float)($metricasGenerales['ticket_promedio'] ?? 0),
+                'clientes_unicos' => (int)($metricasGenerales['clientes_unicos'] ?? 0)
+            ],
+            'comisiones' => [
+                'total_generadas' => (float)($metricasGenerales['comisiones_generadas'] ?? 0),
+                'transacciones_con_comision' => (int)($metricasGenerales['transacciones_con_comision'] ?? 0)
+            ]
+        ],
+        'tendencias' => [
+            'diarias' => $tendenciasCompletas,
+            'crecimiento' => ['ventas' => round($crecimientoVentas, 2), 'volumen' => round($crecimientoVolumen, 2)]
+        ],
+        'productos_top' => $productosTop,
+        'analisis_red' => $analisisRed,
+        'metricas_conversion' => [
+            'total_registros' => (int)($metricasConversion['total_registros'] ?? 0),
+            'registros_convertidos' => (int)($metricasConversion['registros_convertidos'] ?? 0),
+            'registros_con_ventas' => (int)($metricasConversion['registros_con_ventas'] ?? 0),
+            'tasa_conversion' => ($metricasConversion['total_registros'] > 0) ? round((($metricasConversion['registros_convertidos'] ?? 0) / $metricasConversion['total_registros']) * 100, 2) : 0
+        ],
+        'analisis_horarios' => $analisisHorarios,
+        'comparacion_periodos' => [
+            'actual' => [
+                'ventas' => (int)($metricasGenerales['total_ventas'] ?? 0),
+                'volumen' => (float)($metricasGenerales['volumen_ventas'] ?? 0),
+                'comisiones' => (float)($metricasGenerales['comisiones_generadas'] ?? 0)
+            ],
+            'anterior' => [
+                'ventas' => (int)($comparacionAnterior['ventas_anterior'] ?? 0),
+                'volumen' => (float)($comparacionAnterior['volumen_anterior'] ?? 0),
+                'comisiones' => (float)($comparacionAnterior['comisiones_anterior'] ?? 0)
+            ]
+        ]
+    ];
+
+    jsonResponse($response, 200);
+
+} catch (Exception $e) {
+    error_log("Error fatal en analytics afiliado: " . $e->getMessage());
+    jsonResponse(['success' => false, 'error' => 'Error interno del servidor: ' . $e->getMessage()], 500);
+}
+?>

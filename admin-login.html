@@ -140,8 +140,15 @@
     </div>
   </div>
 
+  <script src="js/auth.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Limpiar cualquier token obsoleto para evitar bucles de redirección
+      Auth.clearTokens();
+      
+      // NO verificar sesión automáticamente para evitar bucles
+      // El usuario debe hacer login manualmente
+
       const form = document.getElementById('adminLoginForm');
       const emailInput = document.getElementById('adminEmail');
       const passwordInput = document.getElementById('adminPassword');
@@ -182,31 +189,26 @@
         showMessage('', 'error');
 
         try {
-          const response = await fetch('api/auth/login.php', {
+          const response = await fetch('api/auth/login_simple.php', {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json',
+              'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-              email: email,
-              password: password
-            })
+            body: JSON.stringify({ email, password })
           });
 
           const data = await response.json();
 
           if (data.success) {
             // Verificar que el usuario es admin
-            if (data.user.rol === 'admin') {
+            if (data.redirect === 'admin-panel.html') {
+              // Guardar tokens y datos del usuario
+              Auth.setTokens(data);
+              
               showMessage('Inicio de sesión exitoso. Redirigiendo...', 'success');
-              
-              // Guardar datos de sesión
-              localStorage.setItem('admin_data', JSON.stringify(data.user));
-              sessionStorage.setItem('admin_user_id', data.user.id.toString());
-              
               // Redirigir al panel de administración
               setTimeout(() => {
-                window.location.href = 'admin-panel.html';
+                window.location.href = data.redirect;
               }, 1000);
             } else {
               showMessage('Acceso denegado. Solo administradores pueden acceder a este panel.', 'error');

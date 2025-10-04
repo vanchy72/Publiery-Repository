@@ -16,6 +16,14 @@ let analyticsData = null;
 let notificacionesData = null;
 let campanasData = null;
 let charts = {};
+let comisionesDetalladas = []; // Variable para almacenar comisiones detalladas
+let librosDisponibles = []; // Variable para almacenar los libros de la tienda
+
+// ========================================
+// DATOS SIMULADOS PARA FALLBACK - REMOVIDOS
+// ========================================
+
+// NOTA: Ya no se usan datos simulados. Todo debe venir de la base de datos real.
 
 // ========================================
 // INICIALIZACIÓN PRINCIPAL
@@ -32,8 +40,19 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 
     // Cargar datos iniciales (esto ya incluye loadDashboardData)
-    await loadUserData();
+    const dataLoaded = await loadUserData();
+    if (!dataLoaded) {
+        // Si no se cargaron los datos (porque se está redirigiendo),
+        // detener la ejecución para evitar errores.
+        return;
+    }
     
+    // FORZAR CARGA DE DATOS DEL DASHBOARD SI NO ESTÁN DISPONIBLES
+    if (!dashboardData) {
+        console.log('🔄 Forzando carga automática de datos del dashboard...');
+        await loadDashboardDataDirectly();
+    }
+
     // Verificar estado de activación
     checkActivationStatus();
     
@@ -102,52 +121,123 @@ function checkAuthentication() {
     }
 }
 
+// NUEVA FUNCIÓN: Cargar datos del dashboard automáticamente
+async function loadDashboardDataDirectly() {
+    console.log('📊 Cargando datos del dashboard automáticamente...');
+    
+    try {
+        const response = await fetch('api/afiliados/dashboard.php', {
+            method: 'GET',
+            credentials: 'include'
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            dashboardData = data;
+            console.log('✅ Datos del dashboard cargados automáticamente');
+            
+            // Actualizar interfaz automáticamente
+            updateDashboardStats();
+            updateUserInfoComplete();
+            
+            return true;
+        } else {
+            console.error('❌ Error en API dashboard:', data.error);
+            return false;
+        }
+    } catch (error) {
+        console.error('❌ Error cargando dashboard:', error);
+        return false;
+    }
+}
+
+// NUEVA FUNCIÓN: Actualizar información completa del usuario
+function updateUserInfoComplete() {
+    console.log('🔄 Actualizando información completa del usuario...');
+    
+    if (!dashboardData || !dashboardData.afiliado) {
+        console.log('❌ No hay datos del dashboard disponibles');
+        return;
+    }
+    
+    const afiliado = dashboardData.afiliado;
+    
+    // Función helper para actualizar elementos
+    function updateElementSafe(id, value) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.textContent = value || 'N/A';
+            return true;
+        }
+        return false;
+    }
+    
+    // Actualizar todos los campos automáticamente
+    updateElementSafe('afiliadoId', afiliado.codigo_afiliado);
+    updateElementSafe('afiliadoNombre', afiliado.nombre);
+    updateElementSafe('emailAfiliado', afiliado.email);
+    updateElementSafe('nivelAfiliado', `Nivel ${afiliado.nivel}`);
+    updateElementSafe('estadoActivacion', afiliado.estado);
+    updateElementSafe('fechaRegistro', afiliado.fecha_registro ? new Date(afiliado.fecha_registro).toLocaleDateString() : 'N/A');
+    updateElementSafe('nombrePatrocinador', afiliado.nombre_patrocinador);
+    
+    // Actualizar enlace de afiliado
+    const enlaceElement = document.getElementById('enlaceAfiliado');
+    if (enlaceElement) {
+        enlaceElement.value = afiliado.enlace_afiliado;
+    }
+    
+    // Actualizar QR code
+    const qrElement = document.getElementById('codigoQR');
+    if (qrElement && afiliado.qr_code) {
+        qrElement.src = afiliado.qr_code;
+    }
+    
+    // Actualizar saludo principal
+    const saludoElement = document.querySelector('h1');
+    if (saludoElement) {
+        saludoElement.textContent = `Bienvenido, ${afiliado.nombre}`;
+    }
+    
+    console.log('✅ Información completa del usuario actualizada automáticamente');
+}
+
 async function loadUserData() {
     console.log('🚀 loadUserData() INICIADA');
     try {
         console.log('🔄 Cargando datos del usuario...');
         
-        // PRIMERO: Intentar cargar datos simulados si existen
-        const simulatedData = localStorage.getItem('dashboard_data');
-        if (simulatedData) {
-            try {
-                const data = JSON.parse(simulatedData);
-                if (data.success) {
-                    dashboardData = data;
-                    userData = data.afiliado;
-                    console.log('✅ Usando datos simulados del dashboard');
-                    
-                    // Actualizar la información del usuario
-                    setTimeout(() => {
-                        updateUserInfo();
-                        updateDashboardStats();
-                        console.log('✅ Información del usuario y estadísticas actualizadas con datos simulados');
-                    }, 100);
-                    
-                    return; // Salir aquí si usamos datos simulados
-                }
-            } catch (e) {
-                console.log('Error parseando datos simulados:', e);
-            }
-        }
+        // PRIMERO: USAR DATOS REALES DEL USUARIO LOGUEADO
+        console.log('🔄 Forzando uso de datos reales, no simulados...');
         
         // SEGUNDO: Si no hay datos simulados, cargar del backend
         console.log('📡 No hay datos simulados, cargando del backend...');
         
-        // Obtener datos del localStorage primero
+        // Obtener datos REALES del usuario logueado
         const userDataStr = localStorage.getItem('user_data');
         console.log('📋 user_data raw:', userDataStr);
         
         if (userDataStr) {
             try {
                 userData = JSON.parse(userDataStr);
-                console.log('👤 Datos del usuario parseados desde localStorage:', userData);
+                console.log('👤 ✅ USUARIO REAL ENCONTRADO:', userData);
+                
+                // Usar estos datos reales directamente
+                console.log('🎯 Usando datos del usuario real:', userData.nombre);
+                
+                // Actualizar interfaz con datos reales
+                updateUserInfo();
+                
+                // No usar fallback de datos simulados
+                return true;
+                
             } catch (parseError) {
                 console.error('❌ Error parseando user_data:', parseError);
                 userData = null;
             }
         } else {
-            console.log('❌ No hay user_data en localStorage');
+            console.log('❌ No hay user_data en localStorage - usuario no logueado');
         }
         
         // Verificar sesión primero
@@ -161,9 +251,8 @@ async function loadUserData() {
         console.log('📋 Datos de sesión:', sessionData);
         
         if (!sessionData.authenticated) {
-            console.error('❌ No hay sesión activa');
-            showError('No hay sesión activa. Por favor inicia sesión nuevamente.');
-            return;
+            console.error('❌ No hay sesión activa. Redirigiendo a login...');
+            throw new Error('Sesión no autenticada');
         }
         
         console.log('✅ Sesión verificada correctamente');
@@ -191,13 +280,10 @@ async function loadUserData() {
             }
             
             // AHORA actualizar la información del usuario con todos los datos disponibles
-            // Pequeño retraso para asegurar que el DOM esté listo
-            setTimeout(() => {
-                updateUserInfo();
-                updateDashboardStats();
-                console.log('✅ Información del usuario y estadísticas actualizadas');
-            }, 100);
-            
+            updateUserInfo();
+            updateDashboardStats();
+            console.log('✅ Información del usuario y estadísticas actualizadas');
+            return true;
         } else {
             console.error('❌ Error en la respuesta del dashboard:', data);
             if (data.error === 'No autorizado') {
@@ -205,62 +291,33 @@ async function loadUserData() {
                 localStorage.removeItem('session_token');
                 localStorage.removeItem('user_data');
                 window.location.href = 'login.html';
-            } else {
-                showError('Error al cargar datos del dashboard. Usa debug-dashboard-simple.html para crear datos de prueba.');
             }
+            // Si la API devuelve un error controlado, forzamos el fallback.
+            throw new Error(data.error || 'La API del dashboard devolvió un error');
         }
     } catch (error) {
-        console.error('❌ Error cargando datos del usuario:', error);
-        showError('Error de conexión. Usa debug-dashboard-simple.html para crear datos de prueba.');
+        // Si el error es de autenticación, la única solución es redirigir.
+        if (error.message === 'Sesión no autenticada') {
+            window.location.href = 'login.html';
+            return false; // Detener la ejecución para que la redirección ocurra.
+        }
+
+        console.error('❌ Error crítico cargando datos del usuario:', error);
+        showAppNotification('Error de conexión. Usando datos de prueba.', 'error');
+        
+        // --- SIN FALLBACK - REDIRIGIR AL LOGIN ---
+        console.error('❌ No se pudieron cargar datos del usuario. Redirigiendo al login.');
+        showAppNotification('Error de conexión. Redirigiendo al login...', 'error');
+        
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 3000);
+        return false;
+        updateUserInfo();
+        updateDashboardStats();
+        return true;
     }
     console.log('🏁 loadUserData() TERMINADA');
-}
-
-async function loadDashboardData() {
-    try {
-        console.log('📊 Cargando datos del dashboard...');
-        
-        // Verificar si la sesión existe
-        const sessionCheck = await fetch('api/auth/check-session.php', {
-            method: 'GET',
-            credentials: 'same-origin'
-        });
-        
-        const sessionData = await sessionCheck.json();
-        console.log('🔒 Estado de la sesión:', sessionData);
-        
-        if (!sessionData.success) {
-            console.error('❌ Sesión no válida:', sessionData.error);
-            showError('Por favor, inicia sesión nuevamente');
-            return;
-        }
-        
-        // Hacer la petición al dashboard
-        const response = await fetch('api/afiliados/dashboard.php', {
-            method: 'GET',
-            credentials: 'same-origin'
-        });
-        
-        const data = await response.json();
-        console.log('📊 Datos del dashboard recibidos:', data);
-        
-        if (data.success) {
-            dashboardData = data;
-            console.log('✅ Datos del dashboard cargados:', data);
-            
-            // Actualizar estadísticas del dashboard
-            updateDashboardStats();
-            
-            // Actualizar información del usuario con los datos completos del dashboard
-            updateUserInfo();
-        } else {
-            console.error('❌ Error en la respuesta del dashboard:', data.error);
-            showError('Error al cargar los datos del dashboard');
-        }
-    } catch (error) {
-        console.error('❌ Error en la petición:', error);
-        showError('Error de conexión');
-    }
 }
 
 // ========================================
@@ -477,11 +534,14 @@ async function loadAnalyticsTab() {
         showLoading('Cargando analytics...');
         
         const periodo = document.getElementById('periodoAnalytics').value;
-        const response = await fetch(`api/afiliados/analytics.php?periodo=${periodo}`, {
+        const cacheBuster = new Date().getTime();
+        const response = await fetch(`api/afiliados/analytics.php?periodo=${periodo}&v=${cacheBuster}`, {
             credentials: 'include'
         });
         const data = await response.json();
         
+        console.log('📊 Datos de Analytics recibidos:', JSON.stringify(data, null, 2));
+
         if (data.success) {
             analyticsData = data;
             updateAnalyticsMetrics();
@@ -767,21 +827,48 @@ function updateProductosTop() {
 async function loadCampanasTab() {
     try {
         showLoading('Cargando campañas...');
+
+        // Asegurarse de que los libros estén disponibles para el modal
+        if (librosDisponibles.length === 0) {
+            // No es necesario esperar (await), puede cargar en segundo plano
+            loadTiendaTab(); 
+        }
         
         const response = await fetch('api/afiliados/campanas.php', {
             credentials: 'include'
         });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
         const data = await response.json();
         
         if (data.success) {
             campanasData = data.campanas;
-            renderCampanas();
+            console.log(`✅ Campañas cargadas: ${data.campanas.length} encontradas`);
         } else {
-            showError('Error al cargar campañas');
+            console.error('❌ Error de API:', data.error);
+            throw new Error(data.error || 'Error desconocido');
         }
+        
+        renderCampanas();
     } catch (error) {
-        console.error('Error cargando campañas:', error);
-        showError('Error de conexión');
+        console.error('❌ Error al cargar campañas:', error);
+        showAppNotification('Error al cargar campañas: ' + error.message, 'error');
+        
+        // Mostrar estado de error en lugar de datos simulados
+        const container = document.getElementById('campanasGrid');
+        if (container) {
+            container.innerHTML = `
+                <div class="campana-empty">
+                    <h3>Error al cargar campañas</h3>
+                    <p>No se pudieron cargar las campañas desde el servidor.</p>
+                    <p><small>Error: ${error.message}</small></p>
+                    <button onclick="loadCampanasTab()" class="btn btn-primary">Reintentar</button>
+                </div>
+            `;
+        }
     } finally {
         hideLoading();
     }
@@ -790,55 +877,169 @@ async function loadCampanasTab() {
 function renderCampanas() {
     const container = document.getElementById('campanasGrid');
     if (!container) return;
-    
-    if (!campanasData || campanasData.length === 0) {
+
+    // Verificar que tenemos código de afiliado disponible
+    let codigoAfiliado = null;
+    if (userData && userData.codigo_afiliado) {
+        codigoAfiliado = userData.codigo_afiliado;
+    } else if (dashboardData && dashboardData.afiliado && dashboardData.afiliado.codigo_afiliado) {
+        codigoAfiliado = dashboardData.afiliado.codigo_afiliado;
+    } else {
+        console.error("❌ No se puede generar enlaces de campaña: código de afiliado no disponible");
         container.innerHTML = `
             <div class="campana-empty">
-                <h3>No tienes campañas creadas</h3>
-                <p>Crea tu primera campaña para empezar a promocionar productos específicos.</p>
-                <button onclick="showModalCampana()" class="btn btn-primary">Crear Primera Campaña</button>
+                <h3>Error de Configuración</h3>
+                <p>No se pudo obtener el código de afiliado. Por favor, contacte al administrador.</p>
             </div>
         `;
         return;
     }
-    
-    container.innerHTML = campanasData.map(campana => `
-        <div class="campana-card">
-            <div class="campana-header">
-                <h3>${campana.nombre}</h3>
-                <span class="campana-status ${campana.estado}">${campana.estado}</span>
+
+    if (!campanasData || campanasData.length === 0) {
+        container.innerHTML = `
+            <div class="campana-empty">
+                <h3>No hay campañas disponibles</h3>
+                <p>Las campañas creadas por el administrador aparecerán aquí.</p>
             </div>
-            
-            <div class="campana-content">
-                <p>${campana.descripcion}</p>
-                
-                <div class="campana-stats">
-                    <div class="stat">
-                        <span class="stat-label">Ventas</span>
-                        <span class="stat-value">${campana.ventas_generadas || 0}</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">Volumen</span>
-                        <span class="stat-value">${formatCurrency(campana.volumen_generado || 0)}</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-label">Comisiones</span>
-                        <span class="stat-value">${formatCurrency(campana.comisiones_generadas || 0)}</span>
+        `;
+        return;
+    }
+
+    container.innerHTML = campanasData.map(campana => {
+        // Generar enlace de compra inteligente
+        let enlaceCompra = campana.enlace_compra || 'tienda-lectores.html';
+        if (!enlaceCompra.includes('ref=')) {
+            const separator = enlaceCompra.includes('?') ? '&' : '?';
+            enlaceCompra += `${separator}ref=${codigoAfiliado}&campaign=${campana.enlace_personalizado}`;
+        }
+        
+        // Información de libros
+        const tieneLibros = campana.libros_detalle && campana.libros_detalle.length > 0;
+        const primerLibro = tieneLibros ? campana.libros_detalle[0] : null;
+        
+        // Información de precios y descuentos
+        const tieneDescuento = campana.descuento_porcentaje > 0;
+        
+        // Formatear fechas
+        const fechaCreacion = new Date(campana.fecha_creacion).toLocaleDateString('es-ES');
+        const fechaProgramada = campana.fecha_programada ? 
+            new Date(campana.fecha_programada).toLocaleDateString('es-ES') : null;
+        
+        // Imagen promocional
+        const imagenPromo = campana.imagen_url ? 
+            `<img src="${campana.imagen_url}" alt="${campana.nombre}" class="campana-imagen">` :
+            '<div class="campana-imagen-placeholder"><i class="fas fa-image fa-3x"></i></div>';
+
+        return `
+            <div class="campana-card-mejorada">
+                <!-- Imagen promocional prominente -->
+                <div class="campana-imagen-container">
+                    ${imagenPromo}
+                    <div class="campana-overlay">
+                        <span class="campana-tipo badge-${campana.tipo}">${campana.tipo.toUpperCase()}</span>
+                        <span class="campana-estado badge-${campana.estado}">${campana.estado.toUpperCase()}</span>
                     </div>
                 </div>
                 
-                <div class="campana-dates">
-                    <small>Inicio: ${formatDate(campana.fecha_inicio)}</small>
-                    ${campana.fecha_fin ? `<small>Fin: ${formatDate(campana.fecha_fin)}</small>` : ''}
+                <!-- Contenido principal -->
+                <div class="campana-contenido">
+                    <div class="campana-header-mejorada">
+                        <h3 class="campana-titulo">${campana.nombre}</h3>
+                        <span class="campana-audiencia">${campana.audiencia_tipo}</span>
+                    </div>
+                    
+                    <p class="campana-descripcion">${campana.descripcion}</p>
+                    
+                    <!-- Información de libros incluidos -->
+                    ${tieneLibros ? `
+                        <div class="campana-libros">
+                            <h5><i class="fas fa-book"></i> Libros incluidos (${campana.total_libros}):</h5>
+                            <div class="libros-lista">
+                                ${campana.libros_detalle.map(libro => `
+                                    <div class="libro-item">
+                                        <strong>${libro.titulo}</strong>
+                                        ${tieneDescuento ? `
+                                            <span class="precios">
+                                                <span class="precio-original">$${libro.precio}</span>
+                                                <span class="precio-afiliado">$${libro.precio_afiliado}</span>
+                                                <span class="descuento">-${campana.descuento_porcentaje}%</span>
+                                            </span>
+                                        ` : `
+                                            <span class="precio-normal">$${libro.precio_afiliado}</span>
+                                        `}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : `
+                        <div class="campana-sin-libros">
+                            <i class="fas fa-store"></i> Campaña general - Dirije a toda la tienda
+                        </div>
+                    `}
+                    
+                    <!-- Información administrativa -->
+                    <div class="campana-info-admin">
+                        <div class="info-item">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Creada por: ${campana.admin_creador}</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Fecha: ${fechaCreacion}</span>
+                        </div>
+                        ${fechaProgramada ? `
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Programada: ${fechaProgramada}</span>
+                            </div>
+                        ` : ''}
+                    </div>
+                    
+                    <!-- Estadísticas de rendimiento -->
+                    <div class="campana-stats-mejoradas">
+                        <div class="stat-item">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="stat-label">Ventas</span>
+                            <span class="stat-value">${campana.ventas_generadas || 0}</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span class="stat-label">Comisiones</span>
+                            <span class="stat-value">${formatCurrency(campana.comisiones_generadas || 0)}</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span class="stat-label">Volumen</span>
+                            <span class="stat-value">${formatCurrency(campana.volumen_generado || 0)}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Botones de acción principales -->
+                <div class="campana-acciones-principales">
+                    <button 
+                        onclick="window.open('${enlaceCompra}', '_blank')" 
+                        class="btn-compra-principal">
+                        <i class="fas fa-shopping-cart"></i>
+                        ${tieneLibros && campana.total_libros === 1 ? 
+                            `Comprar "${primerLibro.titulo}"` : 
+                            'Ir a la Tienda'
+                        }
+                    </button>
+                    
+                    <div class="campana-enlace-compartir">
+                        <label>Enlace de afiliado:</label>
+                        <div class="input-group">
+                            <input type="text" value="${enlaceCompra}" readonly class="enlace-input">
+                            <button onclick="copiarEnlaceInput(this)" class="btn-copiar">
+                                <i class="fas fa-copy"></i> Copiar
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="campana-actions">
-                <button onclick="editarCampana(${campana.id})" class="btn btn-secondary">Editar</button>
-                <button onclick="eliminarCampana(${campana.id})" class="btn btn-danger">Eliminar</button>
-            </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 function showModalCampana(campanaId = null) {
@@ -846,6 +1047,20 @@ function showModalCampana(campanaId = null) {
     const titulo = document.getElementById('tituloModalCampana');
     const form = document.getElementById('formCampana');
     
+    // Poblar el selector de libros
+    const selectLibro = document.getElementById('libroCampana');
+    if (selectLibro) {
+        selectLibro.innerHTML = '<option value="">-- Enlace de registro general --</option>'; // Opción por defecto
+        librosDisponibles.forEach(libro => {
+            const option = document.createElement('option');
+            option.value = libro.id;
+            option.textContent = libro.titulo;
+            selectLibro.appendChild(option);
+        });
+    } else {
+        console.warn('Elemento #libroCampana no encontrado en el modal.');
+    }
+
     if (campanaId) {
         // Modo edición
         const campana = campanasData.find(c => c.id == campanaId);
@@ -859,6 +1074,9 @@ function showModalCampana(campanaId = null) {
             document.getElementById('fechaInicio').value = campana.fecha_inicio;
             document.getElementById('fechaFin').value = campana.fecha_fin || '';
             document.getElementById('enlacePersonalizado').value = campana.enlace_personalizado || '';
+            if (selectLibro) {
+                selectLibro.value = campana.libro_id || '';
+            }
         }
     } else {
         // Modo creación
@@ -885,7 +1103,8 @@ async function handleSubmitCampana(event) {
         objetivo_ventas: document.getElementById('objetivoVentas').value,
         fecha_inicio: document.getElementById('fechaInicio').value,
         fecha_fin: document.getElementById('fechaFin').value,
-        enlace_personalizado: document.getElementById('enlacePersonalizado').value
+        enlace_personalizado: document.getElementById('enlacePersonalizado').value,
+        libro_id: document.getElementById('libroCampana')?.value || null
     };
     
     const campanaId = event.target.dataset.campanaId;
@@ -1422,29 +1641,276 @@ function updateActividadReciente() {
 }
 
 async function loadRedTab() {
-    // Implementación original de la red
     const container = document.getElementById('accordionRed');
-    if (container) {
-        container.innerHTML = '<p>Cargando red multinivel...</p>';
-        // Aquí iría la lógica original de carga de red
+    if (!container) return;
+
+    if (!dashboardData || !dashboardData.datos_recientes || !dashboardData.datos_recientes.red_afiliados) {
+        container.innerHTML = '<p class="empty-state">No tienes afiliados en tu red aún.</p>';
+        return;
     }
+
+    const red = dashboardData.datos_recientes.red_afiliados;
+
+    if (red.length === 0) {
+        container.innerHTML = '<p class="empty-state">No tienes afiliados en tu red aún.</p>';
+        return;
+    }
+
+    container.innerHTML = red.map(afiliado => `
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="afiliado-nombre">${afiliado.nombre}</span>
+                <span class="afiliado-stats">
+                    <span>Nivel: ${afiliado.nivel}</span>
+                    <span>Ventas: ${afiliado.ventas_totales || 0}</span>
+                    <span>Comisiones: ${formatCurrency(afiliado.comision_total || 0)}</span>
+                </span>
+            </button>
+            <div class="accordion-content">
+                <p><strong>Código:</strong> ${afiliado.codigo_afiliado}</p>
+                <p><strong>Estado:</strong> <span class="estado-badge ${afiliado.estado_usuario}">${afiliado.estado_usuario}</span></p>
+                <p><strong>Afiliados directos:</strong> ${afiliado.hijos_directos || 0}</p>
+            </div>
+        </div>
+    `).join('');
+
+    // Añadir interactividad al acordeón
+    container.querySelectorAll('.accordion-header').forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            button.parentElement.classList.toggle('active');
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
 }
 
 async function loadComisionesTab() {
-    // Implementación original de comisiones
-    if (dashboardData && dashboardData.datos_recientes) {
-        const comisiones = dashboardData.datos_recientes.comisiones;
-        const tbody = document.getElementById('tablaComisionesBody');
-        if (tbody) {
-            tbody.innerHTML = comisiones.map(comision => `
-                <tr>
-                    <td>Nivel ${comision.nivel}</td>
-                    <td>${formatCurrency(comision.monto)}</td>
-                    <td>${comision.estado}</td>
-                    <td>${formatDate(comision.fecha_generacion)}</td>
-                </tr>
-            `).join('');
+    console.log('💰 Cargando pestaña de comisiones...');
+    console.log('🔍 Función loadComisionesTab() iniciada');
+    
+    try {
+        // 1. Actualizar tarjetas de comisiones con datos del dashboard
+        if (dashboardData && dashboardData.estadisticas && dashboardData.estadisticas.comisiones) {
+            const comisiones = dashboardData.estadisticas.comisiones;
+            
+            // Actualizar tarjetas principales
+            updateElement('comisionesTotalGanado', formatCurrency(comisiones.total_ganado || 0));
+            updateElement('comisionesPagadas', formatCurrency(comisiones.comisiones_pagadas || 0));
+            updateElement('comisionesPendientes', formatCurrency(comisiones.comisiones_pendientes || 0));
+            
+            console.log('✅ Tarjetas de comisiones actualizadas');
         }
+        
+        // 2. Cargar comisiones detalladas desde la API
+        const response = await fetch('api/afiliados/comisiones_simple.php', {
+            credentials: 'include'
+        });
+        
+        if (response.ok) {
+            const data = await response.json();
+            
+            console.log('📊 Datos recibidos del endpoint:', data);
+            
+            if (data.success) {
+                // Actualizar tarjetas con datos de la API
+                if (data.estadisticas) {
+                    console.log('💰 Estadísticas recibidas:', data.estadisticas);
+                    
+                    const totalGanado = data.estadisticas.total_ganado || 0;
+                    const comisionesPagadas = data.estadisticas.comisiones_pagadas || 0;
+                    const comisionesPendientes = data.estadisticas.comisiones_pendientes || 0;
+                    
+                    console.log('📈 Valores a actualizar:');
+                    console.log('- Total ganado:', totalGanado);
+                    console.log('- Comisiones pagadas:', comisionesPagadas);
+                    console.log('- Comisiones pendientes:', comisionesPendientes);
+                    
+                    updateElement('comisionesTotalGanado', formatCurrency(totalGanado));
+                    updateElement('comisionesPagadas', formatCurrency(comisionesPagadas));
+                    updateElement('comisionesPendientes', formatCurrency(comisionesPendientes));
+                    
+                    console.log('✅ Tarjetas actualizadas con datos de la API');
+                } else {
+                    console.error('❌ No se encontraron estadísticas en la respuesta');
+                }
+                
+                // Guardar comisiones detalladas y actualizar la tabla
+                comisionesDetalladas = data.comisiones || [];
+                renderComisionesTable(comisionesDetalladas);
+                
+                // Crear gráfico de comisiones por nivel
+                createComisionesChart(comisionesDetalladas);
+                
+                // Configurar filtros
+                setupComisionesFilters(comisionesDetalladas);
+                
+                console.log('✅ Comisiones cargadas correctamente');
+            } else {
+                console.error('❌ Error en respuesta de comisiones:', data.error);
+                showError('Error cargando comisiones');
+            }
+        } else {
+            console.error('❌ Error en petición de comisiones:', response.status);
+            showError('Error de conexión');
+        }
+        
+    } catch (error) {
+        console.error('❌ Error cargando comisiones:', error);
+        showError('Error de conexión');
+    }
+}
+
+function renderComisionesTable(comisiones) {
+    const tbody = document.getElementById('tablaComisionesBody');
+    if (!tbody) return;
+    
+    if (!comisiones || comisiones.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: #666;">No hay comisiones registradas</td></tr>';
+        return;
+    }
+    
+    tbody.innerHTML = comisiones.map(comision => `
+        <tr>
+            <td>Nivel ${comision.nivel || 1}</td>
+            <td>${formatCurrency(comision.monto)}</td>
+            <td><span class="estado-badge ${comision.estado}">${comision.estado}</span></td>
+            <td>${formatDate(comision.fecha_generacion)}</td>
+        </tr>
+    `).join('');
+}
+
+function createComisionesChart(comisiones) {
+    const ctx = document.getElementById('graficoComisionesPorNivel');
+    if (!ctx) return;
+    
+    // Destruir gráfico existente si hay uno
+    if (charts.comisionesPorNivel) {
+        charts.comisionesPorNivel.destroy();
+    }
+    
+    // Agrupar comisiones por nivel
+    const comisionesPorNivel = {};
+    comisiones.forEach(comision => {
+        const nivel = comision.nivel || 1;
+        if (!comisionesPorNivel[nivel]) {
+            comisionesPorNivel[nivel] = 0;
+        }
+        comisionesPorNivel[nivel] += parseFloat(comision.monto);
+    });
+    
+    const niveles = Object.keys(comisionesPorNivel).sort((a, b) => parseInt(a) - parseInt(b));
+    const montos = niveles.map(nivel => comisionesPorNivel[nivel]);
+    
+    charts.comisionesPorNivel = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: niveles.map(nivel => `Nivel ${nivel}`),
+            datasets: [{
+                label: 'Comisiones por Nivel',
+                data: montos,
+                backgroundColor: '#5a67d8',
+                borderColor: '#4c51bf',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value.toLocaleString();
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+function setupComisionesFilters(comisiones) {
+    // Configurar filtro por nivel
+    const filtroNivel = document.getElementById('filtroNivel');
+    if (filtroNivel) {
+        filtroNivel.addEventListener('change', function() {
+            filtrarComisiones();
+        });
+    }
+    
+    // Configurar filtro por estado
+    const filtroEstado = document.getElementById('filtro-estado');
+    if (filtroEstado) {
+        filtroEstado.addEventListener('change', function() {
+            filtrarComisiones();
+        });
+    }
+    
+    // Configurar botón de descarga
+    const descargarBtn = document.getElementById('descargarBtn');
+    if (descargarBtn) {
+        descargarBtn.addEventListener('click', function() {
+            descargarReporteComisiones(comisiones);
+        });
+    }
+}
+
+function filtrarComisiones() {
+    const filtroNivel = document.getElementById('filtroNivel');
+    const filtroEstado = document.getElementById('filtro-estado');
+    const tbody = document.getElementById('tablaComisionesBody');
+    
+    if (!filtroNivel || !filtroEstado || !tbody) return;
+    
+    const nivelSeleccionado = filtroNivel.value;
+    const estadoSeleccionado = filtroEstado.value;
+    
+    // Usar la lista completa de comisiones detalladas
+    const comisiones = comisionesDetalladas;
+    
+    // Filtrar comisiones
+    const comisionesFiltradas = comisiones.filter(comision => {
+        const cumpleNivel = !nivelSeleccionado || comision.nivel == nivelSeleccionado;
+        const cumpleEstado = estadoSeleccionado === 'todos' || comision.estado === estadoSeleccionado;
+        return cumpleNivel && cumpleEstado;
+    });
+    
+    // Renderizar tabla filtrada
+    renderComisionesTable(comisionesFiltradas);
+}
+
+function descargarReporteComisiones(comisiones) {
+    try {
+        // Crear datos para Excel
+        const datos = comisiones.map(comision => ({
+            'Nivel': comision.nivel || 1,
+            'Monto': comision.monto,
+            'Estado': comision.estado,
+            'Fecha': comision.fecha_generacion
+        }));
+        
+        // Crear workbook
+        const ws = XLSX.utils.json_to_sheet(datos);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "Comisiones");
+        
+        // Descargar archivo
+        const nombreArchivo = `comisiones_${new Date().toISOString().split('T')[0]}.xlsx`;
+        XLSX.writeFile(wb, nombreArchivo);
+        
+        showSuccess('Reporte descargado correctamente');
+    } catch (error) {
+        console.error('Error descargando reporte:', error);
+        showError('Error al descargar reporte');
     }
 }
 
@@ -1491,10 +1957,11 @@ async function loadTiendaTab() {
         const data = await response.json();
         
         if (data.success) {
+            librosDisponibles = data.libros; // Guardar libros en la variable global
             const contenedorLibros = document.getElementById('contenedorLibros');
             if (contenedorLibros) {
-                contenedorLibros.innerHTML = data.libros.map(libro => `
-                    <div class="libro-card" onclick="mostrarModalLibro(${JSON.stringify(libro).replace(/"/g, '&quot;')})">
+                contenedorLibros.innerHTML = librosDisponibles.map(libro => `
+                    <div class="libro-card" onclick="mostrarModalLibro(${libro.id})">
                         <img src="images/${libro.imagen_portada || 'default-book.jpg'}" alt="${libro.titulo}" onerror="this.src='images/default-book.jpg'">
                         <h4>${libro.titulo}</h4>
                         <p>${libro.descripcion}</p>
@@ -1516,7 +1983,13 @@ async function loadTiendaTab() {
     }
 }
 
-function mostrarModalLibro(libro) {
+function mostrarModalLibro(libroId) {
+    const libro = librosDisponibles.find(l => l.id == libroId);
+    if (!libro) {
+        console.error('❌ Libro no encontrado con ID:', libroId);
+        return;
+    }
+
     console.log('📖 Mostrando modal del libro:', libro.titulo);
     
     const modal = document.getElementById('detalleLibro');
@@ -1693,9 +2166,10 @@ function updateUserInfo() {
     if (enlaceElement) {
         let enlace = afiliadoData.enlace_afiliado;
         
-        // Si no hay enlace en los datos del dashboard, generarlo con el código de afiliado
+        // Si no hay enlace en los datos del dashboard, generarlo con el código de afiliado (ruta relativa)
         if (!enlace && afiliadoId && afiliadoId !== 'N/A') {
-            enlace = `http://localhost/publiery/registro.html?ref=${afiliadoId}`;
+            const baseUrl = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+            enlace = `${baseUrl}/registro.html?ref=${afiliadoId}`;
         } else if (!enlace) {
             enlace = 'N/A';
         }
@@ -1711,9 +2185,10 @@ function updateUserInfo() {
     if (qrElement) {
         let qrUrl = afiliadoData.qr_code;
         
-        // Si no hay QR en los datos del dashboard, generarlo con el enlace de afiliado
+        // Si no hay QR en los datos del dashboard, generarlo con el enlace de afiliado (ruta relativa)
         if (!qrUrl && afiliadoId && afiliadoId !== 'N/A') {
-            const enlaceQR = `http://localhost/publiery/registro.html?ref=${afiliadoId}`;
+            const baseUrl = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+            const enlaceQR = `${baseUrl}/registro.html?ref=${afiliadoId}`;
             qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(enlaceQR)}`;
         }
         
@@ -1738,7 +2213,7 @@ function updateDashboardStats() {
     // Actualizar estadísticas principales
     updateElement('totalAfiliados', stats.total_afiliados_red || 0);
     updateElement('totalVentas', dashboardData.datos_recientes.ventas?.length || 0);
-    updateElement('totalComisiones', formatCurrency(stats.comisiones.total_ganado || 0));
+    updateElement('inicioTotalComisiones', formatCurrency(stats.comisiones.total_ganado || 0));
     updateElement('saldoDisponible', formatCurrency(stats.comisiones.total_ganado - stats.comisiones.comisiones_pagadas || 0));
     
     // Actualizar indicadores de crecimiento (por ahora en 0%)
@@ -1759,23 +2234,9 @@ function updateCrecimientoElement(elementId, valor) {
 }
 
 function updateElement(id, value) {
-    console.log(`🔍 Buscando elemento con ID: ${id}`);
     const element = document.getElementById(id);
     if (element) {
         element.textContent = value;
-        console.log(`✅ Elemento ${id} actualizado con: ${value}`);
-    } else {
-        console.log(`❌ Elemento ${id} NO encontrado en el DOM`);
-        console.log(`🔍 Elementos disponibles en el DOM:`);
-        // Listar todos los elementos con ID para debug
-        const allElements = document.querySelectorAll('[id]');
-        allElements.forEach(el => {
-            if (el.id.includes('afiliado') || el.id.includes('email') || el.id.includes('fecha') || 
-                el.id.includes('nivel') || el.id.includes('estado') || el.id.includes('frontal') || 
-                el.id.includes('patrocinador') || el.id.includes('enlace') || el.id.includes('qr')) {
-                console.log(`  - ${el.id}: ${el.tagName}`);
-            }
-        });
     }
 }
 
@@ -1807,14 +2268,50 @@ function hideLoading() {
 
 function showError(message) {
     // Implementar notificación de error
-    console.error('Error:', message);
-    alert('Error: ' + message);
+    showAppNotification(message, 'error');
 }
 
 function showSuccess(message) {
     // Implementar notificación de éxito
-    console.log('Success:', message);
-    alert('Éxito: ' + message);
+    showAppNotification(message, 'success');
+}
+
+function showAppNotification(message, type = 'success') {
+    const container = document.getElementById('notification-container') || document.createElement('div');
+    if (!document.getElementById('notification-container')) {
+        container.id = 'notification-container';
+        container.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px;';
+        document.body.appendChild(container);
+    }
+
+    const notification = document.createElement('div');
+    notification.className = `app-notification ${type}`;
+    notification.textContent = message;
+
+    notification.style.cssText = `
+        background-color: ${type === 'success' ? '#28a745' : '#dc3545'};
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-size: 0.9rem;
+    `;
+
+    container.appendChild(notification);
+
+    setTimeout(() => {
+        notification.style.opacity = '1';
+        notification.style.transform = 'translateX(0)';
+    }, 10);
+
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => notification.remove(), 400);
+    }, 4000);
 }
 
 function startAutoRefresh() {
@@ -1872,6 +2369,24 @@ function copiarEnlace(elementId) {
             showError('Error al copiar el enlace');
         }
     }
+}
+
+function copiarEnlaceInput(button) {
+    const input = button.previousElementSibling;
+    input.select();
+    input.setSelectionRange(0, 99999); // Para dispositivos móviles
+    navigator.clipboard.writeText(input.value).then(() => {
+        const originalText = button.textContent;
+        button.textContent = '¡Copiado!';
+        button.style.backgroundColor = '#28a745';
+        setTimeout(() => {
+            button.textContent = originalText;
+            button.style.backgroundColor = ''; // Vuelve al color original
+        }, 2000);
+    }).catch(err => {
+        console.error('Error al copiar enlace del input:', err);
+        showError('No se pudo copiar el enlace');
+    });
 }
 
 function fallbackCopyTextToClipboard(text) {
@@ -2034,4 +2549,4 @@ window.fallbackCopyTextToClipboard = fallbackCopyTextToClipboard;
 console.log('🌐 Funciones exportadas globalmente:');
 console.log('  - copiarEnlace:', typeof window.copiarEnlace);
 console.log('  - descargarQR:', typeof window.descargarQR);
-console.log('  - logout:', typeof window.logout); 
+console.log('  - logout:', typeof window.logout);

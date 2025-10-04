@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const libroId = params.get("libro"); // Cambiado de "id" a "libro"
+  const referidoPor = params.get("ref"); // Código de afiliado referidor
+  const campanaId = params.get("campaign"); // ID de campaña si aplica
 
   console.log('🚀 Página de pago cargada');
   console.log('📦 Parámetros URL:', window.location.search);
   console.log('🔗 ID del libro:', libroId);
+  console.log('👥 Referido por:', referidoPor);
+  console.log('📢 Campaña:', campanaId);
   console.log('🔗 Tipo de ID:', typeof libroId);
 
   if (!libroId) {
@@ -109,6 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
                   libro_id: libroId,
                   user_id: userId,
                   afiliado_id: afiliadoId,
+                  referido_por: referidoPor, // Agregar código de referido
+                  campana_id: campanaId, // Agregar ID de campaña
                   cantidad: 1
                 })
               });

@@ -3,15 +3,13 @@
  * Endpoint para generar formulario de pago PayU
  * Recibe datos de la compra y genera el formulario que se envía a PayU
  */
-session_start();
-
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
 require_once '../../config/payu.php';
-require_once '../../config/database.php';
+require_once __DIR__ . '/../../config/database.php';
 
 // --- AUTENTICACIÓN POR TOKEN O SESIÓN ---
 function authenticateByToken() {
@@ -63,6 +61,8 @@ try {
     $userId = intval($input['user_id'] ?? 0);
     $afiliadoId = intval($input['afiliado_id'] ?? 0);
     $cantidad = intval($input['cantidad'] ?? 1);
+    $referidoPor = $input['referido_por'] ?? null; // Código de afiliado referidor
+    $campanaId = intval($input['campana_id'] ?? 0); // ID de campaña si aplica
     
     if (!$libroId || !$userId) {
         jsonResponse(['error' => 'Datos de compra incompletos'], 400);
@@ -101,14 +101,28 @@ try {
         jsonResponse(['error' => 'Comprador no encontrado'], 404);
     }
     
-    // Calcular total
-    $total = $libro['precio'] * $cantidad;
+    // Obtener ID del afiliado referidor si existe código
+    $referidorId = null;
+    if ($referidoPor) {
+        $stmt = $conn->prepare("SELECT id FROM afiliados WHERE codigo_afiliado = ?");
+        $stmt->execute([$referidoPor]);
+        $referidor = $stmt->fetch();
+        if ($referidor) {
+            $referidorId = $referidor['id'];
+        }
+    }
+    
+    // Calcular total (usar precio afiliado si es compra referida)
+    $precioUsar = ($referidorId || $afiliadoId) ? $libro['precio_afiliado'] : $libro['precio'];
+    $total = $precioUsar * $cantidad;
     
     // Crear datos de la orden
     $orderData = [
         'user_id' => $userId,
         'libro_id' => $libroId,
         'afiliado_id' => $afiliadoId ?: null,
+        'referidor_id' => $referidorId, // ID del afiliado que refirió
+        'campana_id' => $campanaId ?: null, // ID de campaña si aplica
         'total' => $total,
         'description' => "Compra: {$libro['titulo']} - {$libro['autor_nombre']}",
         'buyer_email' => $comprador['email'],

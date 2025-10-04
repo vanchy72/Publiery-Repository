@@ -8,7 +8,12 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 header('Access-Control-Allow-Headers: Content-Type');
 
-require_once '../../config/database.php';
+require_once __DIR__ . '/../../config/database.php';
+
+// Iniciar la sesión
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // DEBUG: Log de sesión y usuario
 file_put_contents(__DIR__.'/debug_sesion.txt',
@@ -81,8 +86,11 @@ try {
     $escritor_info = $stmt->fetch(PDO::FETCH_ASSOC);
     
     if (!$escritor_info) {
-        echo json_encode(['success' => false, 'error' => 'Escritor no encontrado']);
-        exit;
+        // Si no existe, crearlo sobre la marcha
+        $insert_stmt = $conn->prepare("INSERT INTO escritores (usuario_id) VALUES (:autor_id)");
+        $insert_stmt->execute(['autor_id' => $autor_id]);
+        $escritor_id = $conn->lastInsertId();
+        $escritor_info = ['escritor_id' => $escritor_id];
     }
     
     $escritor_id = $escritor_info['escritor_id'];
@@ -96,8 +104,7 @@ try {
             u.email,
             u.fecha_registro,
             u.estado as cuenta_activa,
-            u.biografia,
-            u.foto
+            e.estado as estado_escritor
         FROM escritores e
         JOIN usuarios u ON e.usuario_id = u.id
         WHERE e.id = :escritor_id
@@ -155,7 +162,7 @@ try {
     // 4. Royalties del escritor
     $royalties_query = "
         SELECT 
-            SUM(r.monto) as total_royalties,
+            COALESCE(SUM(r.monto), 0) as total_royalties,
             COUNT(*) as total_pagos,
             MAX(r.fecha_pago) as ultimo_pago
         FROM royalties r
@@ -254,10 +261,10 @@ try {
     ];
     echo json_encode($response);
 
-} catch (Exception $e) {
+} catch (Throwable $e) {
     echo json_encode([
         'success' => false,
-        'error' => 'Error de base de datos: ' . $e->getMessage()
+        'error' => 'Error en dashboard.php: ' . $e->getMessage()
     ]);
     http_response_code(500);
-} 
+}

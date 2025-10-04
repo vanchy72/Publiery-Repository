@@ -4,26 +4,16 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
 
-require_once '../../config/database.php';
+require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../config/auth_user.php'; // Ruta corregida y más robusta
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo json_encode(['success' => false, 'error' => 'Método no permitido']);
     exit;
 }
 
-// Iniciar sesión si no está iniciada
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-// Verificar autenticación
-if (!isAuthenticated()) {
-    echo json_encode(['success' => false, 'error' => 'No autorizado']);
-    exit;
-}
-
-$user = getCurrentUser();
-if (!$user || ($user['rol'] !== 'escritor' && $user['rol'] !== 'admin')) {
+// 2. Verificar que el rol sea correcto usando la sesión
+if (!isset($_SESSION['user_rol']) || ($_SESSION['user_rol'] !== 'escritor' && $_SESSION['user_rol'] !== 'admin')) {
     echo json_encode(['success' => false, 'error' => 'Acceso denegado']);
     exit;
 }
@@ -34,14 +24,14 @@ if (!$user || ($user['rol'] !== 'escritor' && $user['rol'] !== 'admin')) {
 try {
     // Log de inicio
     error_log("Subir libro - Iniciando proceso");
-    error_log("Subir libro - Usuario ID: " . $user['id']);
+    error_log("Subir libro - Usuario ID: " . $_SESSION['user_id']); // Usar la sesión
     error_log("Subir libro - Datos recibidos: " . print_r($_POST, true));
     error_log("Subir libro - Archivos recibidos: " . print_r($_FILES, true));
     
     $conn = getDBConnection();
     
     // Obtener datos del formulario
-    $autor_id = $user['id']; // Usar el ID del usuario autenticado
+    $autor_id = $_SESSION['user_id']; // 3. Usar el ID de la sesión
     $titulo = trim($_POST['titulo']);
     $descripcion = trim($_POST['descripcion']);
     $precio = floatval($_POST['precio']);
@@ -169,16 +159,12 @@ try {
     error_log("Subir libro - Libro insertado exitosamente. ID: $libro_id");
     
     // Activar automáticamente al escritor si no está activado
-    if ($user['estado'] !== 'activo') {
+    if ($_SESSION['user_estado'] !== 'activo') { // Usar el estado de la sesión
         $stmt = $conn->prepare("UPDATE usuarios SET estado = 'activo' WHERE id = ?");
         $stmt->execute([$autor_id]);
         
         if ($stmt->rowCount() > 0) {
             error_log("Subir libro - Escritor activado automáticamente. ID: $autor_id");
-            
-            // Actualizar la sesión
-            $_SESSION['user_role'] = 'escritor';
-            $_SESSION['user_id'] = $autor_id;
         }
     }
     

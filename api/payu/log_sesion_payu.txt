@@ -297,3 +297,54 @@
     [foto] => 
 )
 
+2025-07-31 22:48:22 - SESSION: Array
+(
+    [user_id] => 42
+)
+
+2025-07-31 22:48:22 - Usuario detectado: Array
+(
+    [id] => 42
+    [nombre] => IVAN ORTEGA RODRIGUEZ
+    [email] => correoivanortega@gmail.com
+    [password] => $2y$10$LbeNbkTB40nnG4gwpMtjR.gHL0C95JOukCZorM5EThAumHHEfj4fS
+    [documento] => 8639546
+    [rol] => afiliado
+    [estado] => pendiente
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:21:47
+    [fecha_ultimo_login] => 
+    [token_activacion] => 35252d16bf44ff126ecd53238386c69ee91e7a3b6e9c340a7d4ae79f50403892
+    [fecha_expiracion_token] => 2025-07-13 23:21:47
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+2025-09-12 03:15:08 - SESSION: Array
+(
+    [user_id] => 44
+    [user_nombre] => IVAN ORTEGA RAMIREZ
+    [user_rol] => afiliado
+    [user_estado] => pendiente
+)
+
+2025-09-12 03:15:08 - Usuario detectado: Array
+(
+    [id] => 44
+    [nombre] => IVAN ORTEGA RAMIREZ
+    [email] => ivandavidortegaramirez@gmail.com
+    [password] => $2y$10$0aK9yYPHEqRZgVgwgkB9UuNVnpJXzmi10IzTBIVcepawRpArSS7Iu
+    [documento] => 1048204462
+    [rol] => afiliado
+    [estado] => pendiente
+    [biografia] => 
+    [fecha_registro] => 2025-07-12 16:26:57
+    [fecha_ultimo_login] => 
+    [token_activacion] => 5eff22b950a34abbd7a4ea2938ef69d073fa68c244878581c7d1a8c0d170e263
+    [fecha_expiracion_token] => 2025-07-13 23:26:57
+    [cuenta_payu] => 
+    [foto] => 
+)
+
+2025-09-30 19:02:42 - SESSION: 
+2025-09-30 19:02:42 - No autenticado

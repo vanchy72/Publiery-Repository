@@ -1,0 +1,5 @@
+# Denegar el acceso directo a este directorio
+<Files "*">
+    Order allow,deny
+    Deny from all
+</Files>

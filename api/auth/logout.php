@@ -1,23 +1,26 @@
 <?php
 /**
  * API de Autenticación - Logout
- * Maneja el cierre de sesión de usuarios
+ * Maneja el cierre de sesión de usuarios (compatible con sesiones PHP)
  */
+
+session_start(); // Iniciar sesión para poder limpiarla
 
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
-require_once '../../config/database.php';
-
-// Solo permitir método POST
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    jsonResponse(['error' => 'Método no permitido'], 405);
+// Preflight request
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
 }
 
+require_once __DIR__ . '/../../config/database.php';
+
 try {
-    // Obtener el token del header Authorization
+    // Obtener el token del header Authorization (si existe)
     $headers = getallheaders();
     $token = null;
     
@@ -36,12 +39,7 @@ try {
         }
     }
     
-    // Destruir la sesión PHP
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
-    
-    // Limpiar todas las variables de sesión
+    // Limpiar todas las variables de sesión PHP
     $_SESSION = array();
     
     // Destruir la cookie de sesión en todos los contextos posibles
@@ -53,16 +51,28 @@ try {
         );
         // Forzar eliminación en raíz y subdirectorios
         setcookie(session_name(), '', time() - 42000, '/');
-        setcookie(session_name(), '', time() - 42000, '/publiery');
+        setcookie(session_name(), '', time() - 42000, '/publiery/');
     }
+    
+    // Limpiar cookies adicionales si existen
+    setcookie('admin_token', '', time() - 3600, '/');
+    setcookie('user_session', '', time() - 3600, '/');
     
     // Destruir la sesión
     session_destroy();
     
-    jsonResponse(['success' => true, 'message' => 'Sesión cerrada correctamente'], 200);
+    // Respuesta exitosa
+    echo json_encode([
+        'success' => true, 
+        'message' => 'Sesión cerrada correctamente',
+        'redirect' => 'admin-login.html'
+    ], JSON_UNESCAPED_UNICODE);
     
 } catch (Exception $e) {
     error_log("Error en logout: " . $e->getMessage());
-    jsonResponse(['error' => 'Error interno del servidor'], 500);
+    echo json_encode([
+        'success' => false,
+        'error' => 'Error al cerrar sesión: ' . $e->getMessage()
+    ], JSON_UNESCAPED_UNICODE);
 }
 ?> 

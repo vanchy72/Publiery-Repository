@@ -28,7 +28,7 @@ class EmailService {
         $this->smtp_port = defined('SMTP_PORT') ? SMTP_PORT : 2525;
         $this->smtp_user = '3cb91099cfe39c';
         $this->smtp_pass = '10a11701f1a03e';
-        $this->from_name = Publiery;
+        $this->from_name = 'Publiery';
         $this->from_address = EMAIL_FROM_ADDRESS;
     }
     

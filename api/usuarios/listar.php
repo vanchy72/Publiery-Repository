@@ -1,21 +1,53 @@
 <?php
-require_once __DIR__ . '/../../config/database.php';
-header('Content-Type: application/json; charset=utf-8');
+// Headers CORS
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization, X-CSRF-TOKEN');
 
-// Validar que el usuario sea admin (opcional: puedes mejorar esto con autenticación real)
-// Por ahora, solo ejecuta la consulta
+// Preflight request
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+
+// Incluir dependencias.
+require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../utils/auth.php';
+require_once __DIR__ . '/../../utils/response.php';
+
+// Verificar que es admin
+requireAdmin();
+
+// Recibir datos del usuario (no aplica directamente para GET, pero se mantiene la estructura por si se añade filtro)
+$filtro = $_GET['filtro'] ?? ''; // Asume que el filtro viene por GET
 
 try {
-    $conn = getDBConnection();
-    $stmt = $conn->query("SELECT id, nombre, email, rol, estado, fecha_registro FROM usuarios ORDER BY id DESC");
+    $db = getDBConnection();
+    $sql = "SELECT id, nombre, email, rol, estado, fecha_registro FROM usuarios";
+    $params = [];
+
+    if (!empty($filtro)) {
+        $sql .= " WHERE nombre LIKE ? OR email LIKE ? OR rol LIKE ?";
+        $search = '%' . $filtro . '%';
+        $params = [$search, $search, $search];
+    }
+
+    $sql .= " ORDER BY id DESC";
+
+    $stmt = $db->prepare($sql);
+    $stmt->execute($params);
     $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    echo json_encode([
+    
+    jsonResponse([
         'success' => true,
         'usuarios' => $usuarios
-    ], JSON_UNESCAPED_UNICODE);
-} catch (Exception $e) {
-    echo json_encode([
-        'success' => false,
-        'error' => 'Error al obtener usuarios: ' . $e->getMessage()
     ]);
-} 
+} catch (Exception $e) {
+    error_log('Error listando usuarios: ' . $e->getMessage());
+    jsonResponse([
+        'success' => false, 
+        'error' => 'Error al obtener usuarios: ' . $e->getMessage()
+    ], 500);
+}
+?> 
