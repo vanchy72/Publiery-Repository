@@ -1,0 +1,121 @@
+<?php
+/**
+ * VERIFICADOR DE CONFIGURACIÓN ACTUAL
+ * Este archivo nos ayuda a entender qué configuración está funcionando
+ * antes de hacer cambios
+ */
+
+echo "<!DOCTYPE html><html><head><title>Verificación de Configuración</title>";
+echo "<style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+    .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; }
+    .success { color: #28a745; background: #d4edda; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    .error { color: #dc3545; background: #f8d7da; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    .info { color: #0c5460; background: #d1ecf1; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    h2 { color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+</style></head><body>";
+
+echo "<div class='container'>";
+echo "<h1>🔍 Verificación de Configuración Actual</h1>";
+
+// 1. Verificar archivos de configuración existentes
+echo "<h2>📁 Archivos de Configuración Encontrados:</h2>";
+
+$archivos_config = [
+    'api/config.php',
+    'api/database.php', 
+    'api/db/connection.php',
+    'config/database.php',
+    'database/schema.sql'
+];
+
+foreach ($archivos_config as $archivo) {
+    if (file_exists($archivo)) {
+        echo "<div class='success'>✅ $archivo - Existe</div>";
+        
+        // Leer contenido parcial para ver configuración
+        $contenido = file_get_contents($archivo);
+        if (strpos($contenido, 'publiery_db') !== false) {
+            echo "<div class='info'>   → Usa: <strong>publiery_db</strong></div>";
+        } elseif (strpos($contenido, 'publiery') !== false) {
+            echo "<div class='info'>   → Usa: <strong>publiery</strong></div>";
+        }
+    } else {
+        echo "<div class='error'>❌ $archivo - No existe</div>";
+    }
+}
+
+// 2. Intentar conexiones con ambos nombres
+echo "<h2>🔌 Pruebas de Conexión:</h2>";
+
+// Probar con publiery_db
+echo "<h3>Probando con 'publiery_db':</h3>";
+try {
+    $conn1 = new PDO("mysql:host=localhost;dbname=publiery_db", 'root', '');
+    $conn1->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Probar consulta
+    $stmt = $conn1->query("SELECT COUNT(*) as total FROM usuarios");
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    echo "<div class='success'>✅ Conexión exitosa con 'publiery_db'</div>";
+    echo "<div class='info'>   → Usuarios encontrados: " . $result['total'] . "</div>";
+    
+} catch (Exception $e) {
+    echo "<div class='error'>❌ Error con 'publiery_db': " . $e->getMessage() . "</div>";
+}
+
+// Probar con publiery
+echo "<h3>Probando con 'publiery':</h3>";
+try {
+    $conn2 = new PDO("mysql:host=localhost;dbname=publiery", 'root', '');
+    $conn2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Probar consulta
+    $stmt = $conn2->query("SELECT COUNT(*) as total FROM usuarios");
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    echo "<div class='success'>✅ Conexión exitosa con 'publiery'</div>";
+    echo "<div class='info'>   → Usuarios encontrados: " . $result['total'] . "</div>";
+    
+} catch (Exception $e) {
+    echo "<div class='error'>❌ Error con 'publiery': " . $e->getMessage() . "</div>";
+}
+
+// 3. Verificar qué configuración usa actualmente el sistema
+echo "<h2>⚙️ Configuración Activa del Sistema:</h2>";
+
+// Incluir el archivo de configuración principal
+try {
+    if (file_exists('config/database.php')) {
+        require_once 'config/database.php';
+        echo "<div class='success'>✅ Usando config/database.php</div>";
+        
+        // Intentar obtener conexión
+        $db = getDBConnection();
+        $stmt = $db->query("SELECT DATABASE() as db_name");
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        echo "<div class='info'>   → Base de datos activa: <strong>" . $result['db_name'] . "</strong></div>";
+        
+    } elseif (file_exists('api/config.php')) {
+        require_once 'api/config.php';
+        echo "<div class='success'>✅ Usando api/config.php</div>";
+        echo "<div class='info'>   → DB_NAME definido como: <strong>" . DB_NAME . "</strong></div>";
+    }
+    
+} catch (Exception $e) {
+    echo "<div class='error'>❌ Error verificando configuración activa: " . $e->getMessage() . "</div>";
+}
+
+// 4. Recomendación final
+echo "<h2>💡 Recomendación:</h2>";
+echo "<div class='info'>";
+echo "Basado en la verificación anterior, procederemos a:<br>";
+echo "1. Identificar qué base de datos tiene tus datos actuales<br>";
+echo "2. Unificar toda la configuración para usar esa base de datos<br>";
+echo "3. Hacer backup antes de cualquier cambio<br>";
+echo "</div>";
+
+echo "</div></body></html>";
+?>

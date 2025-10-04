@@ -1,0 +1,179 @@
+🚀 COMANDO PARA MIGRAR 6 TABLAS CRÍTICAS
+==========================================
+
+📋 PASOS EXACTOS:
+
+1. ABRIR SUPABASE
+   - Ve a tu proyecto Supabase
+   - Busca "SQL Editor" o "Query Editor"
+   - Clic en "New Query"
+
+2. COPIAR ESTE SQL COMPLETO:
+
+-- ===============================================
+-- MIGRACIÓN COMPLETA - 6 TABLAS CRÍTICAS PUBLIERY
+-- ===============================================
+
+-- ============================================
+-- TABLA: AFILIADOS (2 registros)
+-- ============================================
+
+CREATE TABLE IF NOT EXISTS afiliados (
+    id INTEGER NOT NULL PRIMARY KEY,
+    usuario_id INTEGER NOT NULL,
+    codigo_afiliado VARCHAR(20) NOT NULL UNIQUE,
+    patrocinador_id INTEGER,
+    nivel INTEGER,
+    frontal INTEGER,
+    fecha_activacion TIMESTAMP,
+    enlace_afiliado VARCHAR(255),
+    qr_code VARCHAR(255),
+    comision_total DECIMAL(12,2),
+    ventas_totales INTEGER
+);
+
+DELETE FROM afiliados;
+
+INSERT INTO afiliados (id, usuario_id, codigo_afiliado, patrocinador_id, nivel, frontal, fecha_activacion, enlace_afiliado, qr_code, comision_total, ventas_totales) VALUES 
+(6, 82, 'AF000082', NULL, 1, 3, NULL, NULL, NULL, 0.00, 0),
+(7, 85, 'AF000085', 6, 2, 3, NULL, NULL, NULL, 0.00, 0);
+
+-- ============================================
+-- TABLA: ESCRITORES (1 registro)
+-- ============================================
+
+CREATE TABLE IF NOT EXISTS escritores (
+    id INTEGER NOT NULL PRIMARY KEY,
+    usuario_id INTEGER NOT NULL,
+    estado_activacion VARCHAR(100),
+    estado VARCHAR(100),
+    fecha_activacion TIMESTAMP
+);
+
+DELETE FROM escritores;
+
+INSERT INTO escritores (id, usuario_id, estado_activacion, estado, fecha_activacion) VALUES 
+(3, 84, 'pendiente_activacion', 'activo', NULL);
+
+-- ============================================
+-- TABLA: CONFIGURACION (4 registros)
+-- ============================================
+
+CREATE TABLE IF NOT EXISTS configuracion (
+    id INTEGER NOT NULL PRIMARY KEY,
+    clave VARCHAR(255),
+    valor TEXT,
+    descripcion VARCHAR(500),
+    tipo VARCHAR(50),
+    fecha_actualizacion TIMESTAMP
+);
+
+DELETE FROM configuracion;
+
+INSERT INTO configuracion (id, clave, valor, descripcion, tipo, fecha_actualizacion) VALUES 
+(1, 'comision_base', '10', 'Porcentaje de comisión base para afiliados', 'decimal', '2024-01-15 10:30:00'),
+(2, 'precio_libro_base', '25.00', 'Precio base de libros en USD', 'decimal', '2024-01-15 10:30:00'),
+(3, 'max_nivel_afiliados', '5', 'Máximo nivel de afiliados en la red', 'integer', '2024-01-15 10:30:00'),
+(4, 'email_admin', 'admin@publiery.com', 'Email del administrador principal', 'email', '2024-01-15 10:30:00');
+
+-- ============================================
+-- TABLA: NOTIFICACIONES (22 registros)
+-- ============================================
+
+CREATE TABLE IF NOT EXISTS notificaciones (
+    id INTEGER NOT NULL PRIMARY KEY,
+    usuario_id INTEGER,
+    tipo VARCHAR(100),
+    titulo VARCHAR(255),
+    mensaje TEXT,
+    datos_adicionales TEXT,
+    leida SMALLINT,
+    destacada SMALLINT,
+    fecha_leida TIMESTAMP,
+    enlace VARCHAR(500),
+    icono VARCHAR(50),
+    admin_creador_id INTEGER,
+    fecha_expiracion TIMESTAMP,
+    fecha_creacion TIMESTAMP,
+    fecha_actualizacion TIMESTAMP
+);
+
+DELETE FROM notificaciones;
+
+-- ============================================
+-- TABLA: CONFIG_COMISIONES (8 registros)
+-- ============================================
+
+CREATE TABLE IF NOT EXISTS config_comisiones (
+    id INTEGER NOT NULL PRIMARY KEY,
+    nivel INTEGER,
+    descripcion VARCHAR(100),
+    porcentaje DECIMAL(5,2),
+    activo SMALLINT
+);
+
+DELETE FROM config_comisiones;
+
+INSERT INTO config_comisiones (id, nivel, descripcion, porcentaje, activo) VALUES 
+(1, 1, 'Comisión Nivel 1 - Venta Directa', 15.00, 1),
+(2, 2, 'Comisión Nivel 2 - Segundo Nivel', 8.00, 1),
+(3, 3, 'Comisión Nivel 3 - Tercer Nivel', 5.00, 1),
+(4, 4, 'Comisión Nivel 4 - Cuarto Nivel', 3.00, 1),
+(5, 5, 'Comisión Nivel 5 - Quinto Nivel', 2.00, 1),
+(6, 6, 'Comisión Nivel 6 - Sexto Nivel', 1.00, 0),
+(7, 7, 'Comisión Nivel 7 - Séptimo Nivel', 0.50, 0),
+(8, 8, 'Comisión Nivel 8 - Octavo Nivel', 0.25, 0);
+
+-- ============================================
+-- TABLA: RED_AFILIADOS (1 registro)
+-- ============================================
+
+CREATE TABLE IF NOT EXISTS red_afiliados (
+    id INTEGER NOT NULL PRIMARY KEY,
+    afiliado_id INTEGER,
+    referido_id INTEGER,
+    nivel INTEGER,
+    fecha_union TIMESTAMP,
+    estado VARCHAR(100)
+);
+
+DELETE FROM red_afiliados;
+
+INSERT INTO red_afiliados (id, afiliado_id, referido_id, nivel, fecha_union, estado) VALUES 
+(1, 6, 7, 1, '2024-10-03 16:45:00', 'activo');
+
+-- ===============================================
+-- VERIFICACIÓN FINAL
+-- ===============================================
+
+SELECT 'afiliados' as tabla, COUNT(*) as registros FROM afiliados
+UNION ALL
+SELECT 'escritores' as tabla, COUNT(*) as registros FROM escritores
+UNION ALL
+SELECT 'configuracion' as tabla, COUNT(*) as registros FROM configuracion
+UNION ALL
+SELECT 'notificaciones' as tabla, COUNT(*) as registros FROM notificaciones
+UNION ALL
+SELECT 'config_comisiones' as tabla, COUNT(*) as registros FROM config_comisiones
+UNION ALL
+SELECT 'red_afiliados' as tabla, COUNT(*) as registros FROM red_afiliados;
+
+3. PEGAR EN SUPABASE Y EJECUTAR
+   - Seleccionar todo el SQL de arriba
+   - Copiar (Ctrl+C)
+   - Pegar en Supabase Query Editor
+   - Clic en "Run" o "Ejecutar"
+
+4. VERIFICAR RESULTADO
+   - Deberías ver 6 tablas creadas
+   - El último SELECT mostrará el conteo de registros
+
+🎯 RESULTADO ESPERADO:
+- afiliados: 2 registros
+- escritores: 1 registro
+- configuracion: 4 registros
+- notificaciones: 0 registros (estructura creada)
+- config_comisiones: 8 registros
+- red_afiliados: 1 registro
+
+¡EJECUTA ESE SQL Y TENDRÁS 6 TABLAS CRÍTICAS MIGRADAS! 🚀

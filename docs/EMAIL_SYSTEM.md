@@ -29,8 +29,8 @@ Edita `config/database.php` y configura las siguientes constantes:
 // Configuración de email
 define('SMTP_HOST', 'smtp.gmail.com');
 define('SMTP_PORT', 587);
-define('SMTP_USER', 'tu_email@gmail.com');
-define('SMTP_PASS', 'tu_password_app');
+define('SMTP_USER', 'publierycompany@gmail.com');
+define('SMTP_PASS', 'mkmlqfblxsruozxj');
 ```
 
 ### 2. Configuración de Remitente

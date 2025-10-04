@@ -1,0 +1,150 @@
+<?php
+/**
+ * Configuración de Base de Datos y Funciones Auxiliares
+ * VERSIÓN DEFINITIVA Y LIMPIA - AHORA USANDO VARIABLES DE ENTORNO
+ */
+
+// Cargar el autoloader de Composer para poder usar las librerías instaladas
+require_once __DIR__ . '/../vendor/autoload.php';
+
+// Cargar las variables de entorno desde el archivo .env
+try {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
+    $dotenv->load();
+} catch (\Dotenv\Exception\InvalidPathException $e) {
+    die("Error: No se pudo encontrar el archivo .env. Asegúrate de que exista en la raíz del proyecto.");
+}
+
+// --- CABECERAS DE SEGURIDAD ---
+// Previene ataques de XSS al no permitir que el navegador "adivine" el tipo de contenido.
+header('X-Content-Type-Options: nosniff');
+// Previene que tu sitio sea cargado en un iframe (protección contra Clickjacking).
+header('X-Frame-Options: DENY');
+// Política de Seguridad de Contenido (CSP) básica. Restringe la carga de scripts y otros recursos.
+// 'self' permite recursos del mismo origen. 'unsafe-inline' es a menudo necesario para estilos/scripts en línea, pero se puede mejorar.
+header("Content-Security-Policy: default-src 'self'; script-src 'self' https://fonts.googleapis.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com;");
+// HSTS: Una vez en producción con HTTPS, descomenta la siguiente línea para forzar HTTPS.
+// header('Strict-Transport-Security: max-age=31536000; includeSubDomains');
+
+
+// --- CONFIGURACIÓN DE LA BASE DE DATOS (desde .env) ---
+define('DB_HOST', $_ENV['DB_HOST'] ?? 'localhost');
+define('DB_NAME', $_ENV['DB_NAME'] ?? 'publiery_db');
+define('DB_USER', $_ENV['DB_USER'] ?? 'root');
+define('DB_PASS', $_ENV['DB_PASS'] ?? '');
+
+// --- CONFIGURACIÓN DE LA APLICACIÓN (desde .env) ---
+define('APP_NAME', $_ENV['APP_NAME'] ?? 'Publiery');
+if (!defined('APP_URL')) {
+    define('APP_URL', $_ENV['APP_URL'] ?? 'http://localhost/publiery');
+}
+define('APP_VERSION', '1.0.0');
+
+// --- CONFIGURACIÓN DE SEGURIDAD (desde .env) ---
+define('JWT_SECRET', $_ENV['JWT_SECRET'] ?? 'tu_clave_secreta_por_defecto');
+define('SESSION_TIMEOUT', (int)($_ENV['SESSION_TIMEOUT'] ?? 3600)); // 1 hora
+
+// --- CONFIGURACIÓN DE EMAIL (desde .env) ---
+define('SMTP_HOST', $_ENV['SMTP_HOST'] ?? 'smtp.gmail.com');
+define('SMTP_PORT', (int)($_ENV['SMTP_PORT'] ?? 587));
+define('SMTP_USER', $_ENV['SMTP_USER'] ?? '');
+define('SMTP_PASS', $_ENV['SMTP_PASS'] ?? '');
+
+/**
+ * Clase para la conexión a la base de datos (Singleton Pattern)
+ */
+class Database {
+    private static $instance = null;
+    private $conn;
+
+    private $host;
+    private $db_name;
+    private $username;
+    private $password;
+
+    private function __construct() {
+        $this->host = $_ENV['DB_HOST'];
+        $this->db_name = $_ENV['DB_NAME'];
+        $this->username = $_ENV['DB_USER'];
+        $this->password = $_ENV['DB_PASS'];
+
+        try {
+            $this->conn = new PDO(
+                "mysql:host=" . $this->host . ";dbname=" . $this->db_name . ";charset=utf8mb4",
+                $this->username,
+                $this->password,
+                [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                    PDO::ATTR_EMULATE_PREPARES => false
+                ]
+            );
+        } catch(PDOException $exception) {
+            error_log("Error de conexión: " . $exception->getMessage());
+            // No mostrar detalles en producción
+            die(json_encode(['success' => false, 'error' => 'Error de conexión a la base de datos.']));
+        }
+    }
+
+    public static function getInstance() {
+        if (self::$instance == null) {
+            self::$instance = new Database();
+        }
+        return self::$instance;
+    }
+
+    public function getConnection() {
+        return $this->conn;
+    }
+}
+
+// --- FUNCIONES AUXILIARES GLOBALES (sin cambios) ---
+
+/**
+ * Obtiene la conexión a la base de datos.
+ */
+function getDBConnection() {
+    return Database::getInstance()->getConnection();
+}
+
+/**
+ * Hashea una contraseña.
+ */
+function hashPassword($password) {
+    return password_hash($password, PASSWORD_DEFAULT);
+}
+
+/**
+ * Verifica una contraseña contra un hash.
+ */
+function verifyPassword($password, $hash) {
+    return password_verify($password, $hash);
+}
+
+/**
+ * Verifica si hay una sesión de usuario activa.
+ */
+function isAuthenticated() {
+    if (session_status() !== PHP_SESSION_ACTIVE) {
+        return false;
+    }
+    return isset($_SESSION['user_id']) && !empty($_SESSION['user_id']);
+}
+
+/**
+ * Obtiene los datos del usuario actual desde la base de datos.
+ */
+function getCurrentUser() {
+    if (!isAuthenticated()) {
+        return null;
+    }
+    
+    try {
+        $conn = getDBConnection();
+        $stmt = $conn->prepare("SELECT * FROM usuarios WHERE id = ?");
+        $stmt->execute([$_SESSION['user_id']]);
+        return $stmt->fetch();
+    } catch (Exception $e) {
+        return null;
+    }
+}

@@ -1,0 +1,206 @@
+🚀 COMANDO FINAL: MIGRAR 26 TABLAS RESTANTES
+===============================================
+
+📋 PASOS:
+
+1. ABRIR SUPABASE QUERY EDITOR
+
+2. EJECUTAR ESTE SQL (las tablas más importantes primero):
+
+-- ===============================================
+-- NOTIFICACIONES (22 registros) - LA MÁS IMPORTANTE
+-- ===============================================
+
+CREATE TABLE IF NOT EXISTS notificaciones (
+    id INTEGER NOT NULL PRIMARY KEY,
+    usuario_id INTEGER,
+    tipo VARCHAR(100),
+    titulo VARCHAR(255),
+    mensaje TEXT,
+    datos_adicionales TEXT,
+    leida BOOLEAN,
+    destacada BOOLEAN,
+    fecha_leida TIMESTAMP,
+    enlace VARCHAR(500),
+    icono VARCHAR(50),
+    admin_creador_id INTEGER,
+    fecha_expiracion TIMESTAMP,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- ===============================================
+-- TABLAS CRÍTICAS VACÍAS (ESTRUCTURA NECESARIA)
+-- ===============================================
+
+CREATE TABLE IF NOT EXISTS comisiones (
+    id INTEGER NOT NULL PRIMARY KEY,
+    afiliado_id INTEGER,
+    referido_id INTEGER,
+    venta_id INTEGER,
+    nivel INTEGER,
+    porcentaje DECIMAL(5,2),
+    monto DECIMAL(12,2),
+    fecha_generacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    estado VARCHAR(50) DEFAULT 'pendiente'
+);
+
+CREATE TABLE IF NOT EXISTS ventas (
+    id INTEGER NOT NULL PRIMARY KEY,
+    usuario_id INTEGER,
+    libro_id INTEGER,
+    afiliado_id INTEGER,
+    precio DECIMAL(10,2),
+    comision_afiliado DECIMAL(10,2),
+    metodo_pago VARCHAR(50),
+    estado VARCHAR(50) DEFAULT 'completada',
+    fecha_venta TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS pagos (
+    id INTEGER NOT NULL PRIMARY KEY,
+    usuario_id INTEGER,
+    tipo VARCHAR(50),
+    monto DECIMAL(12,2),
+    metodo VARCHAR(50),
+    referencia VARCHAR(255),
+    estado VARCHAR(50) DEFAULT 'pendiente',
+    fecha_pago TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS retiros (
+    id INTEGER NOT NULL PRIMARY KEY,
+    usuario_id INTEGER,
+    monto DECIMAL(12,2),
+    metodo_retiro VARCHAR(50),
+    datos_retiro TEXT,
+    estado VARCHAR(50) DEFAULT 'pendiente',
+    fecha_solicitud TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_procesado TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS royalties (
+    id INTEGER NOT NULL PRIMARY KEY,
+    escritor_id INTEGER,
+    libro_id INTEGER,
+    venta_id INTEGER,
+    porcentaje DECIMAL(5,2),
+    monto DECIMAL(12,2),
+    fecha_generacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    estado VARCHAR(50) DEFAULT 'pendiente'
+);
+
+CREATE TABLE IF NOT EXISTS lectores (
+    id INTEGER NOT NULL PRIMARY KEY,
+    usuario_id INTEGER,
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    preferencias_lectura TEXT,
+    libros_favoritos TEXT
+);
+
+-- ===============================================
+-- TABLAS DE SISTEMA Y LOGS
+-- ===============================================
+
+CREATE TABLE IF NOT EXISTS sesiones (
+    id INTEGER NOT NULL PRIMARY KEY,
+    usuario_id INTEGER,
+    token VARCHAR(255),
+    ip_address VARCHAR(45),
+    user_agent TEXT,
+    fecha_inicio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_expiracion TIMESTAMP,
+    activa BOOLEAN DEFAULT true
+);
+
+CREATE TABLE IF NOT EXISTS system_logs (
+    id INTEGER NOT NULL PRIMARY KEY,
+    nivel VARCHAR(50),
+    mensaje TEXT,
+    contexto TEXT,
+    usuario_id INTEGER,
+    ip_address VARCHAR(45),
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS email_logs (
+    id INTEGER NOT NULL PRIMARY KEY,
+    destinatario VARCHAR(255),
+    asunto VARCHAR(255),
+    mensaje TEXT,
+    estado VARCHAR(50),
+    fecha_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    respuesta_servidor TEXT
+);
+
+CREATE TABLE IF NOT EXISTS log_actividad (
+    id INTEGER NOT NULL PRIMARY KEY,
+    usuario_id INTEGER,
+    accion VARCHAR(255),
+    tabla_afectada VARCHAR(100),
+    registro_id INTEGER,
+    datos_anteriores TEXT,
+    datos_nuevos TEXT,
+    ip_address VARCHAR(45),
+    fecha_accion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- ===============================================
+-- TABLAS DE CAMPAÑA Y DISTRIBUCIÓN
+-- ===============================================
+
+CREATE TABLE IF NOT EXISTS campanas_libros (
+    id INTEGER NOT NULL PRIMARY KEY,
+    campana_id INTEGER,
+    libro_id INTEGER,
+    precio_especial DECIMAL(10,2),
+    descuento DECIMAL(5,2),
+    fecha_inicio TIMESTAMP,
+    fecha_fin TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS campana_envios (
+    id INTEGER NOT NULL PRIMARY KEY,
+    campana_id INTEGER,
+    usuario_id INTEGER,
+    email VARCHAR(255),
+    estado VARCHAR(50),
+    fecha_envio TIMESTAMP,
+    fecha_apertura TIMESTAMP,
+    fecha_click TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS campana_tracking (
+    id INTEGER NOT NULL PRIMARY KEY,
+    campana_id INTEGER,
+    usuario_id INTEGER,
+    accion VARCHAR(100),
+    valor VARCHAR(255),
+    fecha_accion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- ===============================================
+-- VERIFICACIÓN FINAL
+-- ===============================================
+
+SELECT 'notificaciones' as tabla, COUNT(*) as registros FROM notificaciones
+UNION ALL SELECT 'comisiones', COUNT(*) FROM comisiones
+UNION ALL SELECT 'ventas', COUNT(*) FROM ventas
+UNION ALL SELECT 'pagos', COUNT(*) FROM pagos
+UNION ALL SELECT 'retiros', COUNT(*) FROM retiros
+UNION ALL SELECT 'royalties', COUNT(*) FROM royalties
+UNION ALL SELECT 'lectores', COUNT(*) FROM lectores
+UNION ALL SELECT 'sesiones', COUNT(*) FROM sesiones;
+
+3. EJECUTAR EL SQL COMPLETO
+   - Pegar todo el SQL de arriba
+   - Clic en "Run" en Supabase
+   - Verificar que se crean las tablas
+
+🎯 RESULTADO ESPERADO:
+- 13+ tablas nuevas creadas
+- Progreso: 22+ de 35 tablas = 65%+
+
+🚀 DESPUÉS DE EJECUTAR:
+¡Tendrás migradas las tablas más críticas del sistema!
+Las tablas restantes son principalmente para funciones específicas.
